@@ -1,0 +1,24 @@
+.full {
+  height: 90vh;
+  width: 100vw;
+  background: #283139;
+  margin: 0rem;
+  overflow: hidden;
+}
+
+.image-track {
+  display: flex;
+  gap: 4vmin;
+  position: relative;
+  left: 8%;
+  top: 50%;
+  user-select: none; /* -- Prevent image highlighting -- */
+
+  .image {
+    width: 45vmin;
+    height: 55vmin;
+    position: relative;
+    object-fit: cover;
+    object-position: 100% center;
+  }
+}
