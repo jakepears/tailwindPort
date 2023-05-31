@@ -6,7 +6,7 @@ import Lenis from "@studio-freight/lenis";
 import Loading from "./LoadingScreen/Loading";
 import Navbar from "./Navbar/navbar";
 import MouseFollower from "mouse-follower";
-import "../styles/index.scss";
+import s from "../styles/index.scss";
 import OrientationMessage from "./Orientation";
 
 MouseFollower.registerGSAP(gsap);
@@ -33,7 +33,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="center column">
+    <div className={`${s.center} ${s.column}`}>
       <OrientationMessage />
         <Navbar data-cursor="-difference" />
         <HomeLazy />

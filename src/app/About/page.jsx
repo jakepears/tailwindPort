@@ -1,10 +1,11 @@
 'use client'
+
 import React, { useRef, useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 import Landing from "./Landing/landing";
 import Footer from "./Footer/footer";
 
-function index() {
+function About() {
   useEffect(() => {
     const lenis = new Lenis({
       lerp: 0.075,
@@ -20,12 +21,10 @@ function index() {
     requestAnimationFrame(raf);
   }, []);
 
-  return (
-    <>
-      <Landing />
+  return <div>
+  <Landing />
       <Footer />
-    </>
-  );
+      </div>
 }
 
-export default index;
+export default About;
