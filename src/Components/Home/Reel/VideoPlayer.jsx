@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import promo from "@assets/vids/promo.mp4";
-import "./VideoPlayer.scss";
+import styles from "./VideoPlayer.module.scss";
 
 const VideoPlayer = ({ handleClick, handleScroll }) => {
   const container = useRef(null);
@@ -23,7 +23,7 @@ const VideoPlayer = ({ handleClick, handleScroll }) => {
       ref={container}
       onClick={onClick}
       onWheel={onWheel}
-      className="video-player"
+      className={styles.videoPlayer}
     >
       <video autoPlay="autoplay">
         <source src={promo} type="video/mp4" />

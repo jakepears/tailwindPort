@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import About from "../About/Landing";
 import { gsap } from "gsap";
-import "./styles.scss";
+import "./styles.module.scss";
 
 function Navbar() {
   const LinkRef = useRef(null);
@@ -14,7 +14,7 @@ function Navbar() {
   }, []);
 
   return (
-    <nav>
+    <nav className="nav" >
       <ul>
         <li>
           {/* <NavLink

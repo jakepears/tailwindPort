@@ -2,7 +2,8 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MouseFollower from "mouse-follower";
-import "./News.scss";
+import styles from "./News.module.scss";
+import Image from 'next/image'
 import caspian from "../../../assets/images/caspian.mp4";
 import cameraMan from "../../../assets/images/sebastien-bourguet-ZI1FT0B68K8-unsplash.webp";
 import oregonWelcome from "../../../assets/images/casey-olsen-2s11AHnb_SU-unsplash.webp";
@@ -115,9 +116,9 @@ export default function News() {
   }, []);
 
   return (
-    <div id="news-container" className="center column">
-      <div id="news-media-container" ref={wrapper}>
-        <div className="news-media far-caspian">
+    <div className={`${styles.newsContainer} ${styles.center} ${styles.column}`}>
+      <div className={styles.newsMediaContainer} ref={wrapper}>
+        <div className={styles.newsMedia}>
           <video
             data-cursor-text="We love..."
             data-cursor-stick
@@ -130,23 +131,25 @@ export default function News() {
             type="video/mp4"
           />
         </div>
-        <div className="news-media" ref={image1}>
+        <div className={styles.newsMedia} ref={image1}>
           <picture data-cursor-text="Photos!">
             <source
               src="https://images.pexels.com/photos/2121665/pexels-photo-2121665.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               type="image/webp"
             />
-            <img
+            <Image
               src="https://images.pexels.com/photos/2121665/pexels-photo-2121665.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               loading="lazy"
+              width='100'
+              height={100}
               alt="luh shawty sign"
             />
           </picture>
         </div>
-        <div className="news-media" ref={image2}>
+        <div className={styles.newsMedia} ref={image2}>
           <picture id="3643671" data-v-4a179df6="">
             <source type="image/webp" srcSet={cameraMan} />
-            <img
+            <Image
               data-cursor-text="Photos!"
               src={oregonWelcome}
               alt="a guy holding a camera"
@@ -154,13 +157,13 @@ export default function News() {
             />
           </picture>
         </div>
-        <div className="news-media" ref={image3}>
+        <div className={styles.newsMedia} ref={image3}>
           <picture data-cursor-text="Oregon!">
             <source type="image/webp" srcSet={oregonWelcome} />
-            <img alt="welcome sign" loading="lazy" />
+            <Image alt="welcome sign" loading="lazy" />
           </picture>
         </div>
-        <div className="news-media" ref={image4}>
+        <div className={styles.newsMedia} ref={image4}>
           <video
             data-cursor-text="Videos!"
             playsInline
@@ -173,27 +176,27 @@ export default function News() {
           </video>
         </div>
       </div>
-      <div className="row">
+      <div className={styles.row}>
         <svg
           viewBox="0 0 12 12"
           fill="#fff"
           xmlns="http://www.w3.org/2000/svg"
-          className="icon"
+          className={styles.icon}
           data-v-669b4a84=""
         >
           <path d="M7.41908 4.56679L6.13722 0L4.85418 4.92566L0 6L4.85418 7.25435L6.13722 12L7.3276 7.25435L12 6L7.41908 4.56679Z"></path>
         </svg>
-        <p className="news-small-heading">popularity</p>
+        <p className={styles.newsSmallHeading}>popularity</p>
       </div>
       <h2>
-        <div className="anim">
+        <div className={styles.anim}>
           <div ref={heading0}>let's</div>
         </div>
-        <div className="anim">
+        <div className={styles.anim}>
           <div ref={heading1}>talk</div>
         </div>
       </h2>
-      <p data-cursor-text="I'm lonely" className="news-text">
+      <p data-cursor-text="I'm lonely" className={styles.newsText}>
         i am interested in working with you,
         <br />
         any inquiries or requests are welcome to contact me.

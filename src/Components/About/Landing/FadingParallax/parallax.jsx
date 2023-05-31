@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import dbz from "@assets/sliderImages/dbz.webp";
 import rl from "@assets/sliderImages/rl.webp";
 import don from "@assets/sliderImages/don.webp";
-import "./styles.scss";
+import styles from "./parllax.module.scss";
 
 function FadingParallax() {
   const parallaxRef = useRef(null);

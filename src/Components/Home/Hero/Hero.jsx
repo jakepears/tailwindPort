@@ -1,9 +1,10 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import ScrollCTA from "../ScrollCTA/ScrollCTA";
+import Image from "next/image";
 import BG from "@assets/images/laanding-2.webp";
 import MouseFollower from "mouse-follower";
-import "./Hero.scss";
+import styles from "./Hero.module.scss";
 
 MouseFollower.registerGSAP(gsap);
 // Getting Page Height
@@ -24,7 +25,6 @@ export default function Hero() {
 
   useEffect(() => {
     const cursor = new MouseFollower();
-
     const animate = () => {
       //background
       gsap.fromTo(
@@ -91,7 +91,7 @@ export default function Hero() {
 
   return (
     <section
-      id="hero-container"
+      className={styles.heroContainer}
       onMouseMove={() =>
         window.cursorIcon ? window.cursorIcon.show("Scroll") : null
       }
@@ -99,39 +99,39 @@ export default function Hero() {
     >
       <ScrollCTA />
       {/*<Navbar />*/}
-      <div className="content-width column">
+      <div className={`${styles.contentWidth} ${styles.column}`}>
         <div
-          className="hero-background loading-transition"
+          className={styles.heroBackground}
           ref={backgroundWrapper}
         >
-          <img src={BG} alt="Background hero" ref={backgroundImage} />
+          <Image src={BG} alt="Background hero" ref={backgroundImage} priority />
         </div>
-        <div data-cursor-text="Hey!" className="top-span-container">
-          <div className="anim">
+        <div data-cursor-text="Hey!" className={styles.topSpanContainer}>
+          <div className={styles.anim}>
             <span ref={topSpans[0]}>charmed by tech</span>
           </div>
-          <div className="anim">
+          <div className={styles.anim}>
             <span ref={topSpans[1]}>and entertained by creativity.</span>
           </div>
-          <div className="anim">
+          <div className={styles.anim}>
             <span ref={topSpans[2]}>
               “Man is still the most extraordinary computer of all.”
             </span>
           </div>
         </div>
         <h1>
-          <div className="hero-title-anim">
+          <div className={styles.heroTitleAnim}>
             <p ref={headings[0]}>Art</p>
           </div>
-          <div className="hero-title-anim">
+          <div className={styles.heroTitleAnim}>
             <p ref={headings[1]}>In</p>
           </div>
-          <div className="hero-title-anim">
+          <div className={styles.heroTitleAnim}>
             <p ref={headings[2]}>Motion</p>
           </div>
         </h1>
-        <span className="bottom-span">
-          <h3 className={"my-name"}>jake pearson</h3>
+        <span className={styles.bottomSpan}>
+          <h3 className={styles.myName}>jake pearson</h3>
           engineer / ux designer
         </span>
       </div>

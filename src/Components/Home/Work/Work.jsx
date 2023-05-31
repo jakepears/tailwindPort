@@ -8,7 +8,7 @@ import WK2 from "@assets/vids/munkeyTrailer.mp4";
 import beats from "@assets/images/beats-ad.mp4";
 import primeraSC from "@assets/images/primera-sc.webp";
 import munkeyTrailer from "@assets/images/MunkeyPic.webp";
-import "./Work.scss";
+import styles from "./Work.module.scss";
 
 MouseFollower.registerGSAP(gsap);
 gsap.registerPlugin(ScrollTrigger);
@@ -22,8 +22,8 @@ export default function Work() {
 
   function handleMouseEnter(event) {
     // play video
-    const video = event.target.children[1];
-    if (video && video.classList.contains("video")) video.play();
+    const video = event.currentTarget.querySelector("video");
+    if (video) video.play();
 
     // animation
     const text = event.target.children[2]?.children[0];
@@ -39,8 +39,8 @@ export default function Work() {
 
   function handleMouseLeave(event) {
     // pause video
-    const video = event.target.children[1];
-    if (video && video.classList.contains("video")) video.pause();
+    const video = event.currentTarget.querySelector("video");
+    if (video) video.pause();
 
     // animation
     const text = event.target.children[2]?.children[0];
@@ -138,16 +138,15 @@ export default function Work() {
   }, [workRef.current]);
 
   return (
-    <section className="column content-width" ref={workRef} id="work-section">
-      <div className="anim">
+    <section className={`${styles.column} ${styles.contentWidth} ${styles.workSection}`} ref={workRef}>
+      <div className={styles.anim}>
         <h1 ref={heading}>creations</h1>
       </div>
-      <div className="row">
+      <div className={styles.row}>
         <div
-          id="block-0"
           ref={primera}
           data-cursor-text="Primera!"
-          className="block"
+          className={`${styles.block} ${styles.block0}`}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
@@ -157,11 +156,11 @@ export default function Work() {
             loop="loop"
             muted="muted"
             disablePictureInPicture=""
-            className="video"
+            className={styles.video}
             src={WK1}
             type="video/mp4"
           />
-          <div className="text-wrapper">
+          <div className={styles.textWrapper}>
             <p>
               <span>
                 <strong>Under Development</strong>
@@ -170,27 +169,26 @@ export default function Work() {
             </p>
           </div>
         </div>
-        <div className="column" id="work-right-section">
-          <div className="row">
+        <div className={`${styles.column} ${styles.workRightSection}`}>
+          <div className={styles.row}>
             <svg
               viewBox="0 0 12 12"
               fill="#1D2C27"
               xmlns="http://www.w3.org/2000/svg"
-              className="icon"
+              className={styles.icon}
               data-v-669b4a84=""
             >
               <path d="M7.41908 4.56679L6.13722 0L4.85418 4.92566L0 6L4.85418 7.25435L6.13722 12L7.3276 7.25435L12 6L7.41908 4.56679Z"></path>
             </svg>
             <span>Featured Projects</span>
           </div>
-          <p className="quote">
+          <p className={styles.quote}>
             <br />
             my works (currently ongoing...)
           </p>
           <div
-            id="block-1"
             data-cursor-text="Try it!"
-            className="block munkey"
+            className={`${styles.block} ${styles.block1}`}
             ref={munkey}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -201,11 +199,11 @@ export default function Work() {
               loop="loop"
               muted="muted"
               disablePictureInPicture=""
-              className="video"
+              className={styles.video}
               src={WK2}
               type="video/mp4"
             />
-            <div className="text-wrapper">
+            <div className={styles.textWrapper}>
               <p>
                 <span>
                   <strong>Munkey AI </strong>
@@ -216,17 +214,17 @@ export default function Work() {
           </div>
         </div>
       </div>
-      <div className="row">
+      <div className={styles.row}>
         <div
-          id="block-2"
-          className="block"
+          className={`${styles.block} ${styles.block2}`}
           ref={beatsRef}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
           <Image
             src="https://images.unsplash.com/photo-1627697823116-42877786ac26?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-            className="beats-pic"
+            className={styles.beatsPic}
+            fill={true}
             alt={"dude is being extremely cash money"}
           />
           <video
@@ -234,11 +232,11 @@ export default function Work() {
             loop
             muted
             disablePictureInPicture=""
-            className="video"
+            className={styles.video}
             src={beats}
             type="video/mp4"
           />
-          <div className="text-wrapper">
+          <div className={styles.textWrapper}>
             <p>
               <span>
                 <strong>Coming Soon </strong>

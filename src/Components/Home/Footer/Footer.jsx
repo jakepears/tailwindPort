@@ -5,20 +5,20 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MouseFollower from "mouse-follower";
 import footerVid from "@assets/vids/footer-3.mp4";
-import "./Footer.scss";
+import styles from "./Footer.module.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Footer() {
   MouseFollower.registerGSAP(gsap);
-  const cursor = new MouseFollower();
-
+  
   const [emailCopied, setEmailCopied] = useState(false);
   const footerContainer = useRef(null);
   const heading0 = useRef(null);
   const heading1 = useRef(null);
-
+  
   useEffect(() => {
+    const cursor = new MouseFollower();
     //container parallax
     gsap.fromTo(
       footerContainer.current,
@@ -75,21 +75,21 @@ export default function Footer() {
   };
 
   return (
-    <footer className="center" ref={footerContainer}>
-      <div id="footer-content" className="content-width column">
+    <footer className={styles.center} ref={footerContainer}>
+      <div className={`${styles.footerContent} ${styles.contentWidth} ${styles.column}`}>
         <h2>
-          <div className="anim">
+          <div className={styles.anim}>
             <div ref={heading0}>Jake</div>
           </div>
-          <div className="anim">
+          <div className={styles.anim}>
             <div ref={heading1}>Pearson</div>
           </div>
         </h2>
         <p>creativity driven with a passionate focus on innovation.</p>
         <hr />
-        <div id="footer-final-p" className="block">
-          <div className="footer-list">
-            <ul className="link-list">
+        <div className={`${styles.footerFinalP} ${styles.block}`}>
+          <div className={styles.footerList}>
+            <ul className={styles.linkList}>
               {personalLinks.map(({ label, value }) => (
                 <li key={label}>
                   {label === "Email" ? (
@@ -115,7 +115,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="background">
+      <div className={styles.background}>
         <video
           playsInline
           loop

@@ -1,6 +1,6 @@
 import React from "react";
-import Slider from "./Slider";
-import "./styles.scss";
+import Slider from "./footer";
+import "./styles.module.scss";
 
 function index() {
   return (

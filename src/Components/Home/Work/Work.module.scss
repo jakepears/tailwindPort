@@ -1,20 +1,19 @@
 /*noinspection CssUnusedSymbol*/
 
-@import "../../../styles/cursor.scss";
 
-#work-section {
+.workSection {
   width: 100vw;
   color: #1b2a25;
   overflow: hidden;
 }
 
-#work-section h1 {
+.workSection h1 {
   font-size: 17vw;
   line-height: 17vw;
   transform-origin: left center;
 }
 
-#work-section .anim:first-child {
+.workSection .anim:first-child {
   margin-top: 15vh;
   margin-left: 7vw;
   margin-bottom: 10vh;
@@ -53,7 +52,7 @@
   transition: all 350ms ease-in-out;
 }
 
-.text-wrapper {
+.textWrapper {
   overflow: hidden;
   position: absolute;
   bottom: -1.8vw;
@@ -76,16 +75,16 @@
   font-weight: 500;
 }
 
-#work-right-section {
+.workRightSection {
   margin-left: auto;
 }
 
-#block-0 {
+.block0 {
   margin-left: 7vw;
   height: 40vh;
 }
 
-#block-1 {
+.block1 {
   height: 30.84722vw;
   margin-bottom: 11.59722vw;
   margin-top: 15vh;
@@ -98,48 +97,48 @@
   }
 }
 
-#block-2 {
+.block2 {
   margin-bottom: 20vh;
   width: 30vw;
   height: 50vh;
   transition: all 350ms ease-in-out;
 }
 
-#work-right-section p {
+.workRightSection p {
   margin-top: 3vh;
   font-size: 1.66667vw;
   line-height: 2vh;
   font-weight: 300;
 }
 
-.beats-pic {
+.beatsPic {
   width: 100%;
 }
 
 @media screen and (max-width: 600px) {
-  #work-section {
+  .workSection {
     display: flex;
     padding: 0;
   }
-  #work-section h1 {
+  .workSection h1 {
     align-items: center;
     justify-content: center;
     font-size: 15vw;
     line-height: 25vw;
   }
 
-  #work-section .anim:first-child {
+  .workSection .anim:first-child {
     margin-top: 15vh;
     margin-left: 7vw;
     margin-bottom: 10vh;
   }
 
-  #block-0 {
+  .block0 {
     margin-left: 7vw;
     height: 40vh;
   }
 
-  #block-1 {
+  .block1 {
     height: 30.84722vh;
     width: 30.84722vw;
     margin-bottom: 11.59722vw;
@@ -153,25 +152,26 @@
     }
   }
 
-  #block-2 {
+  .block2 {
     margin-bottom: 20vh;
     width: 40vw;
     height: 40vh;
+    image-rendering: auto;
     transition: all 350ms ease-in-out;
   }
 
-  #work-right-section p {
+  .workRightSection p {
     margin-top: 3vh;
     font-size: 1.66667vw;
     line-height: 2vh;
     font-weight: 300;
   }
 
-  #work-right-section {
+  .workRightSection {
     margin-left: auto;
   }
 
-  #work-section {
+  .workSection {
     width: 100vw;
     color: #1b2a25;
     overflow: hidden;
@@ -210,7 +210,7 @@
     transition: all 350ms ease-in-out;
   }
 
-  .text-wrapper {
+  .textWrapper {
     overflow: hidden;
     position: absolute;
     bottom: -1.8vw;
@@ -221,4 +221,37 @@
     font-size: 0.96vw !important;
     white-space: normal;
   }
+}
+// Icon styles
+.icon {
+  height: 16px;
+  width: 16px;
+  margin-right: 10px;
+}
+
+// Content width
+.contentWidth {
+  width: 84vw;
+  max-width: 84vw;
+}
+
+// Flexbox styles
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.anim {
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
 }

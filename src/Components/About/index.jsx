@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 import Landing from "./Landing";
-import Footer from "./Footer";
+import Footer from "./Footer/footer";
 
 function index() {
   useEffect(() => {

@@ -8,7 +8,7 @@ import wallpaper2 from "@assets/sliderImages/demon.webp";
 import wallpaper3 from "@assets/sliderImages/genji.webp";
 import wallpaper4 from "@assets/sliderImages/kendrick.webp";
 import wallpaper5 from "@assets/sliderImages/rl.webp";
-import "./styles.scss";
+import "./styles.module.scss";
 
 function index() {
   const imageTrackRef = useRef(null);

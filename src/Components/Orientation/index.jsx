@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useEffect, useState } from "react";
-import "./styles.scss";
+import "./styles.module.scss";
 
 const OrientationMessage = () => {
   const [isPortrait, setIsPortrait] = useState(false);

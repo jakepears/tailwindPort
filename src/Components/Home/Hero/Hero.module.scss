@@ -1,43 +1,4 @@
-@import "../../../styles/cursor.scss";
-
-.loader-container {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  display: flex;
-  padding-right: 50px;
-  padding-bottom: 30px;
-  justify-content: flex-end;
-  align-items: flex-end;
-  background-color: #87aab1;
-}
-
-.counter-container {
-  overflow: hidden;
-  height: 30vw;
-  padding-right: 10vw;
-  padding-bottom: 32vh;
-}
-
-.counter-container h3 {
-  z-index: 1;
-  margin-top: 0px;
-  margin-bottom: 0vw;
-  color: #fff;
-  font-size: 10vh;
-  line-height: 10vw;
-  font-weight: 300;
-  list-style: none;
-}
-
-.counter-container h3:hover {
-  text-decoration: none;
-}
-
-#hero-container {
+.heroContainer {
   width: 100vw;
   // max-height: 100%;
   color: #fff;
@@ -46,10 +7,10 @@
   align-items: flex-end;
   position: relative;
   overflow: hidden;
-  padding: 10vw 0;
+  padding: 5vw 0;
 }
 
-.hero-background {
+.heroBackground {
   margin: 0;
   padding: 0;
   width: 100vw;
@@ -65,7 +26,7 @@
   background-size: 100% auto;
 }
 
-.hero-background img {
+.heroBackground img {
   object-fit: cover;
   object-position: 0 -45px;
   width: 100%;
@@ -73,20 +34,20 @@
   object-position: center;
 }
 
-#hero-container h1 {
+.heroContainer h1 {
   transform: translateX(-1.4vw);
   letter-spacing: -0.79861vw;
   line-height: 12.70833vw;
 }
 
-#hero-container span {
+.heroContainer span {
   font-size: 1.66vw;
   font-weight: 300;
   line-height: 2.3vw;
   display: block;
 }
 
-.top-span-container {
+.topSpanContainer {
   margin-top: 10vw;
   margin-bottom: 5vw;
   color: #b75c5f;
@@ -94,22 +55,22 @@
   text-shadow: #1d2c27 1px 1px 4px 6px;
 }
 
-.bottom-span {
+.bottomSpan {
   margin-top: 7vw;
   mix-blend-mode: difference;
 }
 
-.hero-title-anim {
+.heroTitleAnim {
   height: 16vw;
   overflow: hidden;
 }
 
-#hero-container p,
-#hero-container span {
+.heroContainer p,
+.heroContainer span {
   transform-origin: left center;
 }
 
-.my-name {
+.myName {
   color: #87aab1;
 }
 
@@ -125,4 +86,37 @@
     padding-right: 5vw; /* Adjust the padding for smaller screens */
     padding-bottom: 10vh; /* Adjust the padding for smaller screens */
   }
+}
+// Icon styles
+.icon {
+  height: 16px;
+  width: 16px;
+  margin-right: 10px;
+}
+
+// Content width
+.contentWidth {
+  width: 84vw;
+  max-width: 84vw;
+}
+
+// Flexbox styles
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.anim {
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
 }

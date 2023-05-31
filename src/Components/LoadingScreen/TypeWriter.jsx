@@ -1,8 +1,9 @@
 /** @format */
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function TypeWriter() {
+  
   const [textIndex, setTextIndex] = useState(0);
   const [textPosition, setTextPosition] = useState(0);
   const [contents, setContents] = useState("");
@@ -48,7 +49,7 @@ function TypeWriter() {
   const currentRow = Math.max(0, textIndex - scrollAt);
   const typedText = contents.trim();
   const rows = textArray.slice(currentRow, textIndex);
-  const displayText = [...rows, typedText].join("<br/>");
+  const displayText = [...rows, typedText].join("<br/ >");
 
   return <div dangerouslySetInnerHTML={{ __html: displayText }} />;
 }

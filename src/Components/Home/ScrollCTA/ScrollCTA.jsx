@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
-import "./ScrollCTA.scss";
+import styles from "./ScrollCTA.module.scss";
 
 const ScrollCTA = () => {
   const [opacity, setOpacity] = useState(0.5);
@@ -26,7 +26,7 @@ const ScrollCTA = () => {
   }, []);
 
   return (
-    <p id="scroll-cta" style={{ opacity: opacity }} ref={scrollCTA}>
+    <p className={styles.scrollCta} style={{ opacity: opacity }} ref={scrollCTA}>
       Scroll to explore
     </p>
   );

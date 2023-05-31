@@ -1,5 +1,5 @@
 // Import mixins
-@import "mixins";
+@import "_mixins";
 
 // Import fonts
 @import "fonts";
@@ -126,7 +126,7 @@ h2 {
 }
 
 // Content width
-.content-width {
+.contentWidth {
   width: 84vw;
   max-width: 84vw;
 }
@@ -136,14 +136,6 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-html.lenis {
-  height: auto;
-}
-
-.lenis.lenis-scroll {
-  scroll-behavior: smooth;
 }
 
 .anim {

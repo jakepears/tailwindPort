@@ -1,0 +1,44 @@
+.scrollCta {
+  color: #cdc9bb;
+  mix-blend-mode: difference;
+  position: absolute;
+  top: 92vh;
+  right: 4vw;
+  font-size: 1vw;
+  opacity: 0.5;
+  transition: 0.3s;
+  z-index: 2;
+}
+// Icon styles
+.icon {
+  height: 16px;
+  width: 16px;
+  margin-right: 10px;
+}
+
+// Content width
+.contentWidth {
+  width: 84vw;
+  max-width: 84vw;
+}
+
+// Flexbox styles
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.anim {
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}

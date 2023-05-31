@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import frameData from "./frameData.json";
-import "./styles.scss";
+import "./styles.module.scss";
 
 function Selfie() {
   gsap.registerPlugin(ScrollTrigger);

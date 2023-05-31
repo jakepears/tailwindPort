@@ -3,7 +3,7 @@
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import TypeWriter from "./TypeWriter";
-import "./Loading.scss";
+import "./Loading.module.scss";
 
 export default function Loading() {
   const preloader = useRef(null);

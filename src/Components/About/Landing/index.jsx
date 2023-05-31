@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import MouseFollower from "mouse-follower";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./styles.scss";
+import "./styles.module.scss";
 
 MouseFollower.registerGSAP(gsap);
 function index() {

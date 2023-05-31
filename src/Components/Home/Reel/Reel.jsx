@@ -4,24 +4,20 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import VideoPlayer from "./VideoPlayer";
 import bgVid from "@assets/vids/promo.mp4";
 import MouseFollower from "mouse-follower";
-import "./Reel.scss";
+import styles from "./Reel.module.scss";
 
 MouseFollower.registerGSAP(gsap);
 gsap.registerPlugin(ScrollTrigger);
 
 function HomeReel() {
-  const cursor = new MouseFollower();
   const [isPlaying, setIsPlaying] = useState(false);
-
   const video = useRef(null);
   const container = useRef(null);
   const heading0 = useRef(null);
   const heading1 = useRef(null);
-  // get el by id
-  const reelContainer =
-    document.getElementById("reel-container") | useRef(null);
-
+  
   useEffect(() => {
+    const cursor = new MouseFollower();
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container.current,
@@ -54,30 +50,29 @@ function HomeReel() {
   };
 
   return (
-    <div id="reel-wrapper" data-cursor-text="Full Screen?">
+    <div className={styles.reelWrapper} data-cursor-text="Full Screen?">
       <div
-        id="reel-container"
-        className="center column"
+        className={`${styles.reelContainer} ${styles.center} ${styles.column}`}
         ref={container}
         onClick={handleClick}
         onWheel={handleScroll}
       >
-        <div className="row center" id="reel-top-p">
+        <div className={`${styles.reelTopP} ${styles.row} ${styles.center}`}>
           <svg
             viewBox="0 0 12 12"
             xmlns="http://www.w3.org/2000/svg"
-            className="icon"
+            className={styles.icon}
             data-v-669b4a84=""
           >
             <path
               d="M7.41908 4.56679L6.13722 0L4.85418 4.92566L0 6L4.85418 7.25435L6.13722 12L7.3276 7.25435L12 6L7.41908 4.56679Z"
               fill="currentColor"
-              data-v-669b4a84=""
-            ></path>
+              data-v-669b4a84="">
+              </path>
           </svg>
           <p>Visual Extraordinaire</p>
         </div>
-        <div className="row center">
+        <div className={`${styles.row} ${styles.center}`}>
           <h2 ref={heading0}>Need</h2>
           <video
             src={bgVid}
@@ -85,11 +80,11 @@ function HomeReel() {
             loop
             muted
             ref={video}
-            className="video"
+            className={styles.video}
           />
           <h2 ref={heading1}>Something?</h2>
         </div>
-        <p id="reel-bottom-p">
+        <p className={styles.reelBottomP}>
           I know thing or two
           <br />
           about the creative suite

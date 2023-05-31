@@ -1,4 +1,4 @@
-nav {
+.nav {
   color: #dedfe1;
   mix-blend-mode: hard-light;
   position: absolute;
@@ -11,15 +11,15 @@ nav {
   text-decoration: none;
 }
 
-ul {
+.nav ul {
   list-style: none;
 }
 
-li {
+.nav li {
   list-style: none;
 }
 
-link {
+.nav link {
   list-style: none;
   text-decoration: none;
 }
