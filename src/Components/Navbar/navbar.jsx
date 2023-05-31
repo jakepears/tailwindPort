@@ -19,7 +19,7 @@ function Navbar() {
       <ul>
         <li>
           <Link
-          className={styles.link}
+            className={styles.link}
             ref={LinkRef}
             href="/About" >
             About
