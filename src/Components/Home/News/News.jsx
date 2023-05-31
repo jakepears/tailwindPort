@@ -151,7 +151,7 @@ export default function News() {
             <source type="image/webp" srcSet={cameraMan} />
             <Image
               data-cursor-text="Photos!"
-              src={oregonWelcome}
+              src={cameraMan}
               alt="a guy holding a camera"
               loading="lazy"
             />
@@ -160,7 +160,7 @@ export default function News() {
         <div className={styles.newsMedia} ref={image3}>
           <picture data-cursor-text="Oregon!">
             <source type="image/webp" srcSet={oregonWelcome} />
-            <Image alt="welcome sign" loading="lazy" />
+            <Image src={oregonWelcome} alt="welcome sign" loading="lazy" />
           </picture>
         </div>
         <div className={styles.newsMedia} ref={image4}>

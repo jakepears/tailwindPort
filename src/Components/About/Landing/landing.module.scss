@@ -6,14 +6,14 @@
   height: 100%;
   width: 100vw;
 
-  .top-text {
+  .topText {
     line-height: 1.6;
     padding-top: 25vh;
     padding-right: 12vw;
     font-size: 2vw;
   }
 
-  .bottom-text {
+  .bottomText {
     line-height: 1.6;
     padding-top: 8vh;
     padding-bottom: 8vh;
@@ -41,7 +41,7 @@
     }
   }
 
-  .right-col {
+  .rightCol {
     flex: 1;
     padding-left: 40vw;
   }
@@ -51,7 +51,7 @@
   }
 }
 
-.bottom-list {
+.bottomList {
   padding-bottom: 40vh;
 
   button {
@@ -76,12 +76,12 @@
   }
 }
 
-.flip-animate:hover,
-.flip-animate:focus {
+.flipAnimate:hover,
+.flipAnimate:focus {
   color: #dedfe1;
 }
 
-a.flip-animate {
+a.flipAnimate {
   perspective: 1400px;
 
   span {

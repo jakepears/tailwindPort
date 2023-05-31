@@ -1,11 +1,11 @@
 import React from "react";
 import Slider from "./footer";
-import "./styles.module.scss";
+import styles from "./footer.module.scss";
 
-function index() {
+function footer() {
   return (
-    <div className="footer">
-      <div className="what">
+    <div className={styles.footer} >
+      <div className={styles.what}>
         <h3>What do I like?</h3>
       </div>
       <Slider />
@@ -13,4 +13,4 @@ function index() {
   );
 }
 
-export default index;
+export default footer;

@@ -10,7 +10,7 @@ import wallpaper4 from "@assets/sliderImages/kendrick.webp";
 import wallpaper5 from "@assets/sliderImages/rl.webp";
 import "./styles.module.scss";
 
-function index() {
+function slider() {
   const imageTrackRef = useRef(null);
 
   useEffect(() => {
@@ -105,4 +105,4 @@ function index() {
   );
 }
 
-export default index;
+export default slider;

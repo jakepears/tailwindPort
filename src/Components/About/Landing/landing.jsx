@@ -2,12 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 import MouseFollower from "mouse-follower";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./styles.module.scss";
+import styles from "./landing.module.scss";
 
 MouseFollower.registerGSAP(gsap);
-function index() {
+function landing() {
   gsap.registerPlugin(ScrollTrigger);
-  const cursor = new MouseFollower();
+  
   const [emailCopied, setEmailCopied] = useState(false);
   const personalLinks = [
     { label: "Email", value: "jpearsonbusiness@gmail.com" },
@@ -25,8 +25,8 @@ function index() {
   const skewRef = useRef(null);
 
   useEffect(() => {
-    const elements = skewRef.current.querySelectorAll(".fade-in-text");
-
+    const elements = skewRef.current.querySelectorAll(".fadeInText");
+    const cursor = new MouseFollower();
     elements.forEach((element) => {
       gsap.fromTo(
         element,
@@ -46,20 +46,20 @@ function index() {
   }, []);
 
   return (
-    <div className="about" data-cursor="-inverse">
-      <div className="right-col fade-in-text skewElem" ref={skewRef}>
-        <h3 className="top-text">
+    <div className={styles.about} data-cursor="-inverse">
+      <div className={`${styles.rightCol} ${styles.fadeInText} ${styles.skewElem}`} ref={skewRef}>
+        <h3 className={styles.topText}>
           I'm a student who is mesmerized by clean visuals. Whether it by
           scenery in the outdoors or a well designed website, I love to see it.
           I'm currently learning web development and I'm excited to see where it
           takes me. <br />
         </h3>
-        <h3 className="bottom-text">
+        <h3 className={styles.bottomText}>
           I put a strong focus on interaction in my projects in hopes that
           they're be what sets me apart from others. I'm always looking for new
           ways to make my projects more interactive and engaging.{" "}
         </h3>
-        <div className="group fade-in-text">
+        <div className={`${styles.group} ${styles.fadeInText}`}>
           <ul>
             <li>
               <h3>Experience</h3>
@@ -71,7 +71,7 @@ function index() {
               </h4>
             </li>
             <li>
-              <h4 className="special">Freelance Developer</h4>
+              <h4 className={styles.special}>Freelance Developer</h4>
             </li>
             <li>
               <p>2022 - Present</p>
@@ -79,12 +79,12 @@ function index() {
             <li>
               <h3>Contact Me</h3>
             </li>
-            <ul className="bottom-list fade-in-text">
+            <ul className={`${styles.bottomList} ${styles.fadeInText}`}>
               {personalLinks.map(({ label, value }) => (
                 <li key={label}>
                   {label === "Email" ? (
                     <button
-                      className="copy-btn flip-animate"
+                      className={`${styles.copyBtn} ${styles.flipAnimate}`}
                       data-cursor-text="Copy?"
                       onClick={() => {
                         navigator.clipboard.writeText(value);
@@ -99,7 +99,7 @@ function index() {
                   ) : (
                     <a
                       href={value}
-                      className="flip-animate"
+                      className={styles.flipAnimate}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -116,4 +116,4 @@ function index() {
   );
 }
 
-export default index;
+export default landing;

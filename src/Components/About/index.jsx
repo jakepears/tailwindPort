@@ -1,6 +1,7 @@
+'use client'
 import React, { useRef, useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
-import Landing from "./Landing";
+import Landing from "./Landing/landing";
 import Footer from "./Footer/footer";
 
 function index() {

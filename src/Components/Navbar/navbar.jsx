@@ -1,7 +1,8 @@
 import React, { useRef, useEffect } from "react";
-import About from "../About/Landing";
+import About from "../About";
+import Link from 'next/link'
 import { gsap } from "gsap";
-import "./styles.module.scss";
+import styles from "./navbar.module.scss";
 
 function Navbar() {
   const LinkRef = useRef(null);
@@ -14,18 +15,15 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className="nav" >
+    <nav className={styles.nav} >
       <ul>
         <li>
-          {/* <NavLink
+          <Link
+          className={styles.link}
             ref={LinkRef}
-            to="/about"
-            component={About}
-            style={{ textDecoration: "none", color: "#141414" }}
-            activeStyle={{ color: "#141414" }}
-          >
+            href="/about" >
             About
-          </NavLink> */}
+          </Link>
         </li>
       </ul>
     </nav>

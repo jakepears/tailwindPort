@@ -150,7 +150,7 @@ export default function Work() {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <Image src={primeraSC} height="3113" alt="Project 1" loading="lazy" />
+          <Image src={primeraSC} alt="Project 1" loading="lazy" />
           <video
             playsInline=""
             loop="loop"
