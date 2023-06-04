@@ -6,25 +6,27 @@ import styles from "./landing.module.scss";
 
 MouseFollower.registerGSAP(gsap);
 function landing() {
-  gsap.registerPlugin(ScrollTrigger);
+  
   
   const [emailCopied, setEmailCopied] = useState(false);
   const personalLinks = [
     { label: "Email", value: "jpearsonbusiness@gmail.com" },
-    { label: "LinkedIn", value: "http://www.linkedin.com/in/jakepearson123" },
+    { label: "LinkedIn", value: "https://www.linkedin.com/in/jakepearson123" },
     { label: "Dribbble", value: "https://dribbble.com/jopearson" },
     { label: "Behance", value: "https://www.behance.net/jakepearson5" },
     { label: "GitHub", value: "https://github.com/DaCodeWiz" },
   ];
-  const handleEmailCopy = () => {
-    navigator.clipboard.writeText("jpearsonbusiness@gmail.com");
-    setEmailCopied(true);
-    setTimeout(() => setEmailCopied(false), 3000);
-  };
+  
 
   const skewRef = useRef(null);
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const handleEmailCopy = () => {
+    navigator.clipboard.writeText("jpearsonbusiness@gmail.com");
+    setEmailCopied(true);
+    setTimeout(() => setEmailCopied(false), 3000);
+  };
     const elements = skewRef.current.querySelectorAll(".fadeInText");
     const cursor = new MouseFollower();
     elements.forEach((element) => {

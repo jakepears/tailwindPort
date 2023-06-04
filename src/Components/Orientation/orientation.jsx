@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useEffect, useState } from "react";
-import "./styles.module.scss";
+import s from "./orientation.module.scss";
 
 const OrientationMessage = () => {
   const [isPortrait, setIsPortrait] = useState(false);
@@ -29,7 +29,7 @@ const OrientationMessage = () => {
   }
 
   return (
-    <div id="orientation-message">
+    <div className={s.message}>
       <p>
         Please rotate your device to landscape mode for the ideal experience.
       </p>

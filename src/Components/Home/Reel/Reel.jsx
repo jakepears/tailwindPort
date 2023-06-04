@@ -7,7 +7,7 @@ import MouseFollower from "mouse-follower";
 import styles from "./Reel.module.scss";
 
 MouseFollower.registerGSAP(gsap);
-gsap.registerPlugin(ScrollTrigger);
+
 
 function HomeReel() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -17,6 +17,7 @@ function HomeReel() {
   const heading1 = useRef(null);
   
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
     const cursor = new MouseFollower();
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -47,6 +48,7 @@ function HomeReel() {
 
   const handleScroll = () => {
     if (isPlaying) setIsPlaying(false);
+    console.log("im forever");
   };
 
   return (
@@ -67,8 +69,8 @@ function HomeReel() {
             <path
               d="M7.41908 4.56679L6.13722 0L4.85418 4.92566L0 6L4.85418 7.25435L6.13722 12L7.3276 7.25435L12 6L7.41908 4.56679Z"
               fill="currentColor"
-              data-v-669b4a84="">
-              </path>
+              data-v-669b4a84=""
+            ></path>
           </svg>
           <p>Visual Extraordinaire</p>
         </div>

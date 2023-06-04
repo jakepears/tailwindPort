@@ -26,7 +26,7 @@ const ScrollCTA = () => {
   }, []);
 
   return (
-    <p className={styles.scrollCta} style={{ opacity: opacity }} ref={scrollCTA}>
+    <p className={styles.scrollCta} ref={scrollCTA}>
       Scroll to explore
     </p>
   );

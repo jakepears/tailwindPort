@@ -1,12 +1,16 @@
 'use client'
-
-import React, { useRef, useEffect } from "react";
+import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
+import gsap from "gsap";
+import MouseFollower from "mouse-follower";
+import React from "react";
 import Landing from "./Landing/landing";
-import Footer from "./Footer/footer";
 
+MouseFollower.registerGSAP(gsap);
 function AboutPage() {
+  const FooterLazy = React.lazy(() => import("./Footer/footer"));
   useEffect(() => {
+    const cursor = new MouseFollower();
     const lenis = new Lenis({
       lerp: 0.075,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -18,14 +22,14 @@ function AboutPage() {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-    requestAnimationFrame(raf);
-    console.log("this is breaking");
+
+    return () => cancelAnimationFrame(raf);
   }, []);
 
   return (
     <>
       <Landing />
-      <Footer />
+      <FooterLazy />
     </>
   );
 }

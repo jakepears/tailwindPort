@@ -9,7 +9,7 @@ import cameraMan from "../../../assets/images/sebastien-bourguet-ZI1FT0B68K8-uns
 import oregonWelcome from "../../../assets/images/casey-olsen-2s11AHnb_SU-unsplash.webp";
 import lonelyZone from "../../../assets/images/video1.mp4";
 
-gsap.registerPlugin(ScrollTrigger);
+
 MouseFollower.registerGSAP(gsap);
 
 export default function News() {
@@ -22,6 +22,7 @@ export default function News() {
   const heading1 = useRef(null);
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
     const cursor = new MouseFollower();
     //Image 0
     gsap.to(wrapper.current, {
@@ -116,7 +117,9 @@ export default function News() {
   }, []);
 
   return (
-    <div className={`${styles.newsContainer} ${styles.center} ${styles.column}`}>
+    <div
+      className={`${styles.newsContainer} ${styles.center} ${styles.column}`}
+    >
       <div className={styles.newsMediaContainer} ref={wrapper}>
         <div className={styles.newsMedia}>
           <video
@@ -140,7 +143,7 @@ export default function News() {
             <Image
               src="https://images.pexels.com/photos/2121665/pexels-photo-2121665.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               loading="lazy"
-              width='100'
+              width="100"
               height={100}
               alt="luh shawty sign"
             />

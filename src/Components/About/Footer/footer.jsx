@@ -1,5 +1,5 @@
 import React from "react";
-import Slider from "./footer";
+import Slider from "./Slider/slider";
 import styles from "./footer.module.scss";
 
 function footer() {

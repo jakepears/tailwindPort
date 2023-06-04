@@ -7,7 +7,7 @@ import MouseFollower from "mouse-follower";
 import footerVid from "@assets/vids/footer-3.mp4";
 import styles from "./Footer.module.scss";
 
-gsap.registerPlugin(ScrollTrigger);
+
 
 export default function Footer() {
   MouseFollower.registerGSAP(gsap);
@@ -18,6 +18,7 @@ export default function Footer() {
   const heading1 = useRef(null);
   
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
     const cursor = new MouseFollower();
     //container parallax
     gsap.fromTo(
@@ -62,21 +63,23 @@ export default function Footer() {
 
   const personalLinks = [
     { label: "Email", value: "jpearsonbusiness@gmail.com" },
-    { label: "LinkedIn", value: "http://www.linkedin.com/in/jakepearson123" },
+    { label: "LinkedIn", value: "https://www.linkedin.com/in/jakepearson123" },
     { label: "Dribbble", value: "https://dribbble.com/jopearson" },
     { label: "Behance", value: "https://www.behance.net/jakepearson5" },
     { label: "GitHub", value: "https://github.com/DaCodeWiz" },
   ];
 
   const handleEmailCopy = () => {
-    navigator.clipboard.writeText("jpearsonbusiness@gmail.com");
+    navigator.clipboard.writeText("jpearsonbusiness@gmail.com").then(() => false);
     setEmailCopied(true);
     setTimeout(() => setEmailCopied(false), 3000);
   };
 
   return (
     <footer className={styles.center} ref={footerContainer}>
-      <div className={`${styles.footerContent} ${styles.contentWidth} ${styles.column}`}>
+      <div
+        className={`${styles.footerContent} ${styles.contentWidth} ${styles.column}`}
+      >
         <h2>
           <div className={styles.anim}>
             <div ref={heading0}>Jake</div>

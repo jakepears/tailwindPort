@@ -3,17 +3,15 @@
 import React, { useState, useEffect } from "react";
 import gsap from "gsap";
 import Lenis from "@studio-freight/lenis";
-import Loading from "./LoadingScreen/Loading";
 import Navbar from "./Navbar/navbar";
 import MouseFollower from "mouse-follower";
 import s from "../styles/index.scss";
-import OrientationMessage from "./Orientation";
+import OrientationMessage from "./Orientation/orientation";
 
 MouseFollower.registerGSAP(gsap);
 const HomeLazy = React.lazy(() => import("./Home/Home"));
 
 export default function App() {
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const cursor = new MouseFollower();
@@ -29,13 +27,13 @@ export default function App() {
       requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    return () => cancelAnimationFrame(raf);
   }, []);
 
   return (
     <div className={`${s.center} ${s.column}`}>
       <OrientationMessage />
-        <Navbar data-cursor="-difference" />
+        <Navbar />
         <HomeLazy />
     </div>
   );

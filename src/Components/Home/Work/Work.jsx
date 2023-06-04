@@ -11,7 +11,7 @@ import munkeyTrailer from "@assets/images/MunkeyPic.webp";
 import styles from "./Work.module.scss";
 
 MouseFollower.registerGSAP(gsap);
-gsap.registerPlugin(ScrollTrigger);
+
 
 export default function Work() {
   const workRef = useRef(null);
@@ -24,6 +24,7 @@ export default function Work() {
     // play video
     const video = event.currentTarget.querySelector("video");
     if (video) video.play();
+    
 
     // animation
     const text = event.target.children[2]?.children[0];
@@ -43,7 +44,6 @@ export default function Work() {
     if (video) video.pause();
 
     // animation
-    const text = event.target.children[2]?.children[0];
     if (text) {
       gsap.killTweensOf(text);
       gsap.fromTo(
@@ -61,6 +61,7 @@ export default function Work() {
   }
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
     if (workRef.current) {
       // cursor anims
       const cursor = new MouseFollower({
@@ -135,7 +136,7 @@ export default function Work() {
         }
       );
     }
-  }, [workRef.current]);
+  }, []);
 
   return (
     <section className={`${styles.column} ${styles.contentWidth} ${styles.workSection}`} ref={workRef}>
@@ -154,7 +155,7 @@ export default function Work() {
           <video
             playsInline=""
             loop="loop"
-            muted="muted"
+            muted
             disablePictureInPicture=""
             className={styles.video}
             src={WK1}
@@ -197,7 +198,7 @@ export default function Work() {
             <video
               playsInline=""
               loop="loop"
-              muted="muted"
+              muted
               disablePictureInPicture=""
               className={styles.video}
               src={WK2}

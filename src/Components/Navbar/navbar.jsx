@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from "react";
-import About from "../../app/About/page";
 import Link from 'next/link'
 import { gsap } from "gsap";
 import styles from "./navbar.module.scss";
@@ -21,7 +20,7 @@ function Navbar() {
           <Link
             className={styles.link}
             ref={LinkRef}
-            href="/About" >
+            href="/about" >
             About
           </Link>
         </li>

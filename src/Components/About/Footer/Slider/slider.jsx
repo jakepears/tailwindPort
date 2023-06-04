@@ -1,6 +1,5 @@
 /** @format */
-
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import wallpaper0 from "@assets/sliderImages/dbz.webp";
 import wallpaper1 from "@assets/sliderImages/don.webp";
@@ -8,7 +7,7 @@ import wallpaper2 from "@assets/sliderImages/demon.webp";
 import wallpaper3 from "@assets/sliderImages/genji.webp";
 import wallpaper4 from "@assets/sliderImages/kendrick.webp";
 import wallpaper5 from "@assets/sliderImages/rl.webp";
-import "./styles.module.scss";
+import "./slider.module.scss";
 
 function slider() {
   const imageTrackRef = useRef(null);
@@ -78,7 +77,7 @@ function slider() {
       { x: "100vw" },
       { x: "-25vw", duration: 2.17, delay: 0.57, ease: "power4.inOut" }
     );
-  }, [requestAnimationFrame]);
+  }, []);
 
   return (
     <div className="full">
