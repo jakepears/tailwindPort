@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useRef } from "react";
+import Slider from "./Slider/slider";
 import styles from "./footer.module.scss";
-import ScrollContainer from "./ScrollContainer";
+import SliderContext from "./SliderContext";
 
 function Footer() {
+  const footerRef = useRef(null);
+
   return (
     <div className={styles.footer} >
-      <div className={styles.what}>
+      <div className={styles.what} ref={footerRef}>
         <h3>What do I like?</h3>
       </div>
-      <ScrollContainer />
+      <SliderContext.Provider value={footerRef}>
+        <Slider />
+      </SliderContext.Provider>
     </div>
   );
 }

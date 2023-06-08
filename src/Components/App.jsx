@@ -9,10 +9,9 @@ import MouseFollower from "mouse-follower";
 import s from "../styles/index.scss";
 import OrientationMessage from "./Orientation/orientation";
 
-
 export default function App() {
-
   useEffect(() => {
+  
     MouseFollower.registerGSAP(gsap);
     const cursor = new MouseFollower();
     const lenis = new Lenis({
@@ -31,9 +30,9 @@ export default function App() {
 
   return (
     <div className={`${s.center} ${s.column}`}>
-      <OrientationMessage />
-        <Home />
-        <Navbar />
+          <OrientationMessage />
+          <Home />
+          <Navbar />
     </div>
   );
 }

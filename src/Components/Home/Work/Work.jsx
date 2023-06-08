@@ -63,14 +63,6 @@ export default function Work() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    if (workRef.current) {
-      // cursor anims
-      const cursor = new MouseFollower({
-        stateDetection: {
-          "-pointer": "a, button",
-        },
-      });
-
       // primera
       if (primera.current) {
         gsap.fromTo(
@@ -136,9 +128,6 @@ export default function Work() {
           scrollTrigger: { trigger: heading.current, start: "center bottom" },
         }
       );
-    }
-
-    
   }, [handleMouseEnter, handleMouseLeave]);
 
   return (

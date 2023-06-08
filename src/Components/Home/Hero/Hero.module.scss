@@ -20,14 +20,13 @@
   left: 0;
   top: 0;
   background: #1d2c27;
-  transform: translateY(100vh) rotate(10deg);
   transform-origin: center;
   background-size: 100% auto;
 }
 
 .heroBackground img {
   object-fit: cover;
-  object-position: 0 -45px;
+  object-position: 0;
   width: 100%;
   height: auto;
   pointer-events: none;

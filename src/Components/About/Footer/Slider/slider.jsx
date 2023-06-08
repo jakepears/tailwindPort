@@ -1,68 +1,107 @@
 /** @format */
-import { useEffect, useRef } from "react";
+import React, { useEffect, useContext, useState, useRef } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
-import wallpaper0 from "@assets/sliderImages/dbz.webp";
-import wallpaper1 from "@assets/sliderImages/don.webp";
-import wallpaper2 from "@assets/sliderImages/demon.webp";
-import wallpaper3 from "@assets/sliderImages/genji.webp";
-import wallpaper4 from "@assets/sliderImages/kendrick.webp";
-import wallpaper5 from "@assets/sliderImages/rl.webp";
+import vegeta from "@assets/sliderImages/dbz.webp";
+import don from "@assets/sliderImages/don.webp";
+import demon from "@assets/sliderImages/demon.webp";
+import genji from "@assets/sliderImages/genji.webp";
+import kendrick from "@assets/sliderImages/kendrick.webp";
+import rocketLeague from "@assets/sliderImages/rl.webp";
 import styles from "./slider.module.scss";
+import SliderContext from "../SliderContext";
 
 function Slider() {
   const imageTrackRef = useRef(null);
+  const imageTrackRef2 = useRef(null);
+  const footerRef = useContext(SliderContext);
+  const [isScrollEnabled, setIsScrollEnabled] = useState(false);
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const threshold = 0;
     const handleOnScroll = () => {
-      const scrollPercentage =
-        (window.scrollY /
-          (document.documentElement.scrollHeight - window.innerHeight)) *
-        100;
-      const nextPercentage = -scrollPercentage;
+      if (!footerRef.current) return;
 
-      imageTrackRef.current.style.transform = `translate(${nextPercentage}%, -50%)`;
+      const footerTop = footerRef.current.getBoundingClientRect().top;
+      const viewportHeight = window.innerHeight;
 
-      for (const image of imageTrackRef.current.querySelectorAll(
-        `.${styles.image}`
-      )) {
-        image.style.objectPosition = `${100 + nextPercentage}% center`;
+      if (footerTop <= viewportHeight + threshold) {
+        // Footer is at or above the threshold position
+        const scrollPercentage =
+          ((viewportHeight + threshold - footerTop) / viewportHeight) * 100;
+        const nextPercentage = -scrollPercentage;
+
+        imageTrackRef.current.style.transform = `translate(${nextPercentage}%, -10%)`;
+
+        for (const image of imageTrackRef.current.querySelectorAll(
+          `.${styles.image}`
+        )) {
+          image.style.objectPosition = `${180 + nextPercentage}% center`;
+        }
+
+        imageTrackRef2.current.style.transform = `translate(${-nextPercentage}%, -10%)`;
+
+        for (const image2 of imageTrackRef2.current.querySelectorAll(
+          `.${styles.image}`
+        )) {
+          image2.style.objectPosition = `${190 + nextPercentage}% center`;
+        }
+      } else {
+        setIsScrollEnabled(true);
       }
     };
 
     window.addEventListener("scroll", handleOnScroll);
 
-    gsap.fromTo(
-      imageTrackRef.current,
-      { x: "100vw" },
-      { x: "-25vw", duration: 2.17, delay: 0.57, ease: "power4.inOut" }
-    );
-
     return () => {
       window.removeEventListener("scroll", handleOnScroll);
     };
-  }, []);
+
+    const handleMouseWheel = (event) => {
+      if (!isScrollEnabled) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    };
+
+    window.addEventListener("mousewheel", handleMouseWheel, {
+      passive: false,
+    });
+
+    return () => {
+      window.removeEventListener("mousewheel", handleMouseWheel);
+    };
+
+  }, [isScrollEnabled]);
 
   return (
     <div className={styles.full}>
-      <div
-        ref={imageTrackRef}
-        className={styles.imageTrack}
-        data-mouse-down-at="0"
-        data-prev-percentage="0"
-      >
+      <div ref={imageTrackRef} className={styles.imageTrack}>
         <Image
           alt=""
           className={styles.image}
-          data-cursor-text="Drag Images!"
-          src={wallpaper0}
+          src={vegeta}
           draggable="false"
         />
-        <Image alt="" className={styles.image} src={wallpaper1} draggable="false" />
-        <Image alt="" className={styles.image} src={wallpaper2} draggable="false" />
-        <Image alt="" className={styles.image} src={wallpaper3} draggable="false" />
-        <Image alt="" className={styles.image} src={wallpaper4} draggable="false" />
-        <Image alt="" className={styles.image} src={wallpaper5} draggable="false" />
+        <Image alt="" className={styles.image} src={don} draggable="false" />
+        <Image alt="" className={styles.image} src={demon} draggable="false" />
+      </div>
+      <div ref={imageTrackRef2} className={styles.imageTrack2}>
+        <Image alt="" className={styles.image} src={genji} draggable="false" />
+        <Image
+          alt=""
+          className={styles.image}
+          src={kendrick}
+          draggable="false"
+        />
+        <Image
+          alt=""
+          className={styles.image}
+          src={rocketLeague}
+          draggable="false"
+        />
       </div>
     </div>
   );

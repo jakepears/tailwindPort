@@ -1,0 +1,32 @@
+
+.loaderContainer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  display: flex;
+  padding-right: 52px;
+  padding-bottom: 52px;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-color: #87aab1;
+
+  .counterContainer {
+    overflow: hidden;
+    height: 30vw;
+    min-height: 30vw;
+  }
+
+  h3 {
+    z-index: 9999;
+    margin-top: 0px;
+    margin-bottom: 1vw;
+    color: #fff;
+    font-size: 30vw;
+    line-height: 30vw;
+    font-weight: 300;
+  }
+}
+

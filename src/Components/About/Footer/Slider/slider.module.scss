@@ -1,5 +1,5 @@
 .full {
-  height: 90vh;
+  height: 130vh;
   width: 100vw;
   background: #283139;
   margin: 0rem;
@@ -10,8 +10,26 @@
   display: flex;
   gap: 4vmin;
   position: relative;
-  left: 8%;
-  top: 50%;
+  left: 145%;
+  top: 10%;
+  user-select: none; /* -- Prevent image highlighting -- */
+
+  .image {
+    width: 45vmin;
+    height: 55vmin;
+    position: relative;
+    object-fit: cover;
+    object-position: 100% center;
+  }
+}
+
+.imageTrack2 {
+  display: flex;
+  gap: 4vmin;
+  position: relative;
+  right: 130%;
+  top: 15%;
+  transform: translateX(-30%);
   user-select: none; /* -- Prevent image highlighting -- */
 
   .image {

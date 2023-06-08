@@ -21,7 +21,6 @@ export default function News() {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    const cursor = new MouseFollower();
     //Image 0
     gsap.to(wrapper.current, {
       y: () => window.innerHeight * 0.15,

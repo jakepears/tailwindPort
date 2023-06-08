@@ -16,7 +16,6 @@ function HomeReel() {
   
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    const cursor = new MouseFollower();
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container.current,

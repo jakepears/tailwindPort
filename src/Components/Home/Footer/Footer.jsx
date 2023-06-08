@@ -17,7 +17,6 @@ export default function Footer() {
   
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    const cursor = new MouseFollower();
     //container parallax
     gsap.fromTo(
       footerContainer.current,
@@ -35,7 +34,6 @@ export default function Footer() {
       }
     );
     // set stick to footer
-    cursor.setStick(footerContainer.current);
 
     //heading scroll trigger opening
     gsap.fromTo(

@@ -1,80 +1,50 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import ScrollCTA from "../ScrollCTA/ScrollCTA";
 import Image from "next/image";
 import BG from "@assets/images/laanding-2.webp";
 import styles from "./Hero.module.scss";
 
-// Getting Page Height
-function getSectionHeight(element) {
-  if (!element) return 0;
-  const { height } = element.getBoundingClientRect();
-  const childElementCount = element.childNodes.length;
-  return height / childElementCount;
-}
-
 export default function Hero() {
-  // Loading Screen
-  const loaderRef = useRef(null);
+ 
   //Opening animation
-  const backgroundWrapper = useRef(null);
   const topSpans = [useRef(null), useRef(null), useRef(null)];
   const headings = [useRef(null), useRef(null), useRef(null)];
   const backgroundImage = useRef(null);
 
   useEffect(() => {
-    const cursor = new MouseFollower();
+    
     const animate = () => {
-      //background
-      gsap.fromTo(
-        backgroundWrapper.current,
-        {
-          y: "100vh",
-          scale: 1.6,
-          rotation: 10,
-        },
-        {
-          y: 0,
-          scale: 1,
-          rotation: 0,
-          duration: 0.91,
-          ease: "power4.inOut"
-        }
-      );
-
-      //top spans
-      topSpans.forEach((span, i) => {
+      topSpans.forEach((span) => {
         gsap.fromTo(
           span.current,
-          { rotation: 10, opacity: 0, y: () => window.innerHeight * -0.4 },
+          { rotation: 10, opacity: 0, y: -window.innerHeight * 0.4 },
           {
             rotation: 0,
             y: 0,
             opacity: 1,
             duration: 1.4,
             ease: "power4.easeOut",
-            delay: .6 + i / 20,
+            delay: 0.6,
           }
         );
       });
-      //headings
-      headings.forEach((heading, i) => {
+      headings.forEach((heading) => {
         gsap.fromTo(
           heading.current,
-          { rotation: 10, opacity: 0, y: () => window.innerHeight * 0.5 },
+          { rotation: 10, opacity: 0, y: window.innerHeight * 0.5 },
           {
             rotation: 0,
             y: 0,
             opacity: 1,
             duration: 1.3,
             ease: "power4.easeOut",
-            delay: .6 + i / 10,
+            delay: 0.6,
           }
         );
       });
-      // Scroll Animation
       gsap.to(backgroundImage.current, {
-        y: () => window.innerHeight * 2.07,
+        y: window.innerHeight * 2.06,
         opacity: 0.3,
         scale: 1.4,
         scrollTrigger: {
@@ -85,7 +55,7 @@ export default function Hero() {
       });
     };
     setTimeout(() => requestAnimationFrame(animate), 2000);
-  }, [getSectionHeight]);
+  }, []);
 
   return (
     <section
@@ -99,7 +69,6 @@ export default function Hero() {
       <div className={`${styles.contentWidth} ${styles.column}`}>
         <div
           className={styles.heroBackground}
-          ref={backgroundWrapper}
         >
           <Image src={BG} alt="Background hero" ref={backgroundImage} priority />
         </div>

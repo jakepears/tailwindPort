@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@barba/core": "^2.9.7",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
     "gsap": "^3.11.4",
