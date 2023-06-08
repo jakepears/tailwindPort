@@ -1,107 +1,71 @@
 /** @format */
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import Image from "next/image";
 import wallpaper0 from "@assets/sliderImages/dbz.webp";
 import wallpaper1 from "@assets/sliderImages/don.webp";
 import wallpaper2 from "@assets/sliderImages/demon.webp";
 import wallpaper3 from "@assets/sliderImages/genji.webp";
 import wallpaper4 from "@assets/sliderImages/kendrick.webp";
 import wallpaper5 from "@assets/sliderImages/rl.webp";
-import "./slider.module.scss";
+import styles from "./slider.module.scss";
 
-function slider() {
+function Slider() {
   const imageTrackRef = useRef(null);
 
   useEffect(() => {
-    const handleOnDown = (e) =>
-      (imageTrackRef.current.dataset.mouseDownAt = e.clientX);
+    const handleOnScroll = () => {
+      const scrollPercentage =
+        (window.scrollY /
+          (document.documentElement.scrollHeight - window.innerHeight)) *
+        100;
+      const nextPercentage = -scrollPercentage;
 
-    const handleOnUp = () => {
-      imageTrackRef.current.dataset.mouseDownAt = "0";
-      imageTrackRef.current.dataset.prevPercentage =
-        imageTrackRef.current.dataset.percentage;
-    };
+      imageTrackRef.current.style.transform = `translate(${nextPercentage}%, -50%)`;
 
-    const handleOnMove = (e) => {
-      if (imageTrackRef.current.dataset.mouseDownAt === "0") return;
-
-      const mouseDelta =
-        parseFloat(imageTrackRef.current.dataset.mouseDownAt) - e.clientX;
-      const maxDelta = window.innerWidth / 1;
-
-      const percentage = (mouseDelta / maxDelta) * -100;
-      const nextPercentageUnconstrained =
-        parseFloat(imageTrackRef.current.dataset.prevPercentage) + percentage;
-      const nextPercentage = Math.max(
-        Math.min(nextPercentageUnconstrained, 0),
-        -100
-      );
-
-      imageTrackRef.current.dataset.percentage = nextPercentage;
-
-      imageTrackRef.current.animate(
-        {
-          transform: `translate(${nextPercentage}%, -50%)`,
-        },
-        { duration: 1050, fill: "forwards" }
-      );
-
-      for (const image of imageTrackRef.current.getElementsByClassName(
-        "image"
+      for (const image of imageTrackRef.current.querySelectorAll(
+        `.${styles.image}`
       )) {
-        image.animate(
-          {
-            objectPosition: `${100 + nextPercentage}% center`,
-          },
-          { duration: 1050, fill: "forwards" }
-        );
+        image.style.objectPosition = `${100 + nextPercentage}% center`;
       }
     };
 
-    /* -- Had to add extra lines for touch events -- */
-
-    window.onmousedown = (e) => handleOnDown(e);
-
-    window.ontouchstart = (e) => handleOnDown(e.touches[0]);
-
-    window.onmouseup = (e) => handleOnUp(e);
-
-    window.ontouchend = (e) => handleOnUp(e.touches[0]);
-
-    window.onmousemove = (e) => handleOnMove(e);
-
-    window.ontouchmove = (e) => handleOnMove(e.touches[0]);
+    window.addEventListener("scroll", handleOnScroll);
 
     gsap.fromTo(
       imageTrackRef.current,
       { x: "100vw" },
       { x: "-25vw", duration: 2.17, delay: 0.57, ease: "power4.inOut" }
     );
+
+    return () => {
+      window.removeEventListener("scroll", handleOnScroll);
+    };
   }, []);
 
   return (
-    <div className="full">
+    <div className={styles.full}>
       <div
         ref={imageTrackRef}
-        className="image-track"
+        className={styles.imageTrack}
         data-mouse-down-at="0"
         data-prev-percentage="0"
       >
-        <img
+        <Image
           alt=""
-          className="image"
+          className={styles.image}
           data-cursor-text="Drag Images!"
           src={wallpaper0}
           draggable="false"
         />
-        <img alt="" className="image" src={wallpaper1} draggable="false" />
-        <img alt="" className="image" src={wallpaper2} draggable="false" />
-        <img alt="" className="image" src={wallpaper3} draggable="false" />
-        <img alt="" className="image" src={wallpaper4} draggable="false" />
-        <img alt="" className="image" src={wallpaper5} draggable="false" />
+        <Image alt="" className={styles.image} src={wallpaper1} draggable="false" />
+        <Image alt="" className={styles.image} src={wallpaper2} draggable="false" />
+        <Image alt="" className={styles.image} src={wallpaper3} draggable="false" />
+        <Image alt="" className={styles.image} src={wallpaper4} draggable="false" />
+        <Image alt="" className={styles.image} src={wallpaper5} draggable="false" />
       </div>
     </div>
   );
 }
 
-export default slider;
+export default Slider;

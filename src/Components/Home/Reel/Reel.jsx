@@ -3,10 +3,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import VideoPlayer from "./VideoPlayer";
 import bgVid from "@assets/vids/promo.mp4";
-import MouseFollower from "mouse-follower";
 import styles from "./Reel.module.scss";
 
-MouseFollower.registerGSAP(gsap);
 
 
 function HomeReel() {

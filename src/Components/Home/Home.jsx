@@ -1,4 +1,3 @@
-import React from "react";
 import Hero from "./Hero/Hero";
 import News from "./News/News";
 import Reel from "./Reel/Reel";

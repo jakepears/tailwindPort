@@ -3,10 +3,8 @@ import { gsap } from "gsap";
 import ScrollCTA from "../ScrollCTA/ScrollCTA";
 import Image from "next/image";
 import BG from "@assets/images/laanding-2.webp";
-import MouseFollower from "mouse-follower";
 import styles from "./Hero.module.scss";
 
-MouseFollower.registerGSAP(gsap);
 // Getting Page Height
 function getSectionHeight(element) {
   if (!element) return 0;
@@ -14,6 +12,7 @@ function getSectionHeight(element) {
   const childElementCount = element.childNodes.length;
   return height / childElementCount;
 }
+
 export default function Hero() {
   // Loading Screen
   const loaderRef = useRef(null);
@@ -39,8 +38,7 @@ export default function Hero() {
           scale: 1,
           rotation: 0,
           duration: 0.91,
-          ease: "power4.inOut",
-          delay: 0.59,
+          ease: "power4.inOut"
         }
       );
 
@@ -55,7 +53,7 @@ export default function Hero() {
             opacity: 1,
             duration: 1.4,
             ease: "power4.easeOut",
-            delay: 1.6 + i / 20,
+            delay: .6 + i / 20,
           }
         );
       });
@@ -70,7 +68,7 @@ export default function Hero() {
             opacity: 1,
             duration: 1.3,
             ease: "power4.easeOut",
-            delay: 1.6 + i / 10,
+            delay: .6 + i / 10,
           }
         );
       });
@@ -87,7 +85,7 @@ export default function Hero() {
       });
     };
     setTimeout(() => requestAnimationFrame(animate), 2000);
-  }, []);
+  }, [getSectionHeight]);
 
   return (
     <section
@@ -98,7 +96,6 @@ export default function Hero() {
       onMouseLeave={() => (window.cursorIcon ? window.cursorIcon.hide() : null)}
     >
       <ScrollCTA />
-      {/*<Navbar />*/}
       <div className={`${styles.contentWidth} ${styles.column}`}>
         <div
           className={styles.heroBackground}

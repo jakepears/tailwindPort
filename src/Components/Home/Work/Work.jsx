@@ -1,16 +1,13 @@
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from 'next/image'
-import MouseFollower from "mouse-follower";
+import Image from "next/image";
 import WK1 from "@assets/images/primera.mp4";
 import WK2 from "@assets/vids/munkeyTrailer.mp4";
 import beats from "@assets/images/beats-ad.mp4";
 import primeraSC from "@assets/images/primera-sc.webp";
 import munkeyTrailer from "@assets/images/MunkeyPic.webp";
 import styles from "./Work.module.scss";
-
-MouseFollower.registerGSAP(gsap);
 
 
 export default function Work() {
@@ -19,20 +16,23 @@ export default function Work() {
   const primera = useRef(null);
   const beatsRef = useRef(null);
   const heading = useRef(null);
+  const textAnim = useRef(null);
 
   function handleMouseEnter(event) {
     // play video
     const video = event.currentTarget.querySelector("video");
     if (video) video.play();
-    
 
     // animation
-    const text = event.target.children[2]?.children[0];
-    if (text) {
-      gsap.killTweensOf(text);
+    if (textAnim.current) {
+      gsap.killTweensOf(textAnim.current);
       gsap.fromTo(
-        text,
-        { rotation: 10, opacity: 0, y: () => text.clientHeight * 0.5 },
+        textAnim.current,
+        {
+          rotation: 10,
+          opacity: 0,
+          y: () => textAnim.current.clientHeight * 0.5,
+        },
         { rotation: 0, y: 0, opacity: 1, duration: 0.7, ease: "power4.out" }
       );
     }
@@ -44,14 +44,14 @@ export default function Work() {
     if (video) video.pause();
 
     // animation
-    if (text) {
-      gsap.killTweensOf(text);
+    if (textAnim.current) {
+      gsap.killTweensOf(textAnim.current);
       gsap.fromTo(
-        text,
+        textAnim.current,
         { rotation: 0, opacity: 1, y: 0 },
         {
           rotation: -10,
-          y: -text.clientHeight,
+          y: -textAnim.current.clientHeight,
           opacity: 0,
           duration: 0.5,
           ease: "power4.out",
@@ -62,6 +62,7 @@ export default function Work() {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
     if (workRef.current) {
       // cursor anims
       const cursor = new MouseFollower({
@@ -136,10 +137,15 @@ export default function Work() {
         }
       );
     }
-  }, []);
+
+    
+  }, [handleMouseEnter, handleMouseLeave]);
 
   return (
-    <section className={`${styles.column} ${styles.contentWidth} ${styles.workSection}`} ref={workRef}>
+    <section
+      className={`${styles.column} ${styles.contentWidth} ${styles.workSection}`}
+      ref={workRef}
+    >
       <div className={styles.anim}>
         <h1 ref={heading}>creations</h1>
       </div>
@@ -194,7 +200,10 @@ export default function Work() {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <Image src={munkeyTrailer} alt={"picture of dude being cash money"} />
+            <Image
+              src={munkeyTrailer}
+              alt={"picture of dude being cash money"}
+            />
             <video
               playsInline=""
               loop="loop"

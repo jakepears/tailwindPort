@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import MouseFollower from "mouse-follower";
 import styles from "./News.module.scss";
 import Image from 'next/image'
 import caspian from "../../../assets/images/caspian.mp4";
@@ -10,7 +9,6 @@ import oregonWelcome from "../../../assets/images/casey-olsen-2s11AHnb_SU-unspla
 import lonelyZone from "../../../assets/images/video1.mp4";
 
 
-MouseFollower.registerGSAP(gsap);
 
 export default function News() {
   const wrapper = useRef(null);

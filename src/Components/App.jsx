@@ -4,16 +4,16 @@ import React, { useState, useEffect } from "react";
 import gsap from "gsap";
 import Lenis from "@studio-freight/lenis";
 import Navbar from "./Navbar/navbar";
+import Home from './Home/Home';
 import MouseFollower from "mouse-follower";
 import s from "../styles/index.scss";
 import OrientationMessage from "./Orientation/orientation";
 
-MouseFollower.registerGSAP(gsap);
-const HomeLazy = React.lazy(() => import("./Home/Home"));
 
 export default function App() {
 
   useEffect(() => {
+    MouseFollower.registerGSAP(gsap);
     const cursor = new MouseFollower();
     const lenis = new Lenis({
       lerp: 0.075,
@@ -26,15 +26,14 @@ export default function App() {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-
-    return () => cancelAnimationFrame(raf);
+    requestAnimationFrame(raf);
   }, []);
 
   return (
     <div className={`${s.center} ${s.column}`}>
       <OrientationMessage />
+        <Home />
         <Navbar />
-        <HomeLazy />
     </div>
   );
 }

@@ -2,14 +2,14 @@
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
+import Footer from "./Footer/footer"
 import MouseFollower from "mouse-follower";
 import React from "react";
 import Landing from "./Landing/landing";
 
-MouseFollower.registerGSAP(gsap);
 function AboutPage() {
-  const FooterLazy = React.lazy(() => import("./Footer/footer"));
   useEffect(() => {
+    MouseFollower.registerGSAP(gsap);
     const cursor = new MouseFollower();
     const lenis = new Lenis({
       lerp: 0.075,
@@ -22,14 +22,13 @@ function AboutPage() {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-
-    return () => cancelAnimationFrame(raf);
+    requestAnimationFrame(raf);
   }, []);
 
   return (
     <>
       <Landing />
-      <FooterLazy />
+      <Footer />
     </>
   );
 }

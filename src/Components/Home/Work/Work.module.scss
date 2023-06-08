@@ -1,6 +1,5 @@
 /*noinspection CssUnusedSymbol*/
 
-
 .workSection {
   width: 100vw;
   color: #1b2a25;
@@ -26,10 +25,6 @@
 .block:hover video {
   display: block;
   transition: 350ms ease-in-out;
-}
-
-.row {
-  border-radius: 15%;
 }
 
 .block img {
@@ -60,14 +55,14 @@
 }
 
 .block p {
-  font-size: 0.96vw !important;
+  font-size: 0.96vw;
   white-space: nowrap;
   font-weight: 100;
-  line-height: unset !important;
+  line-height: unset;
   opacity: 0;
   transform-origin: left center;
   color: gray;
-  margin-top: 0 !important;
+  margin-top: 0;
 }
 
 .block p strong {
@@ -80,7 +75,7 @@
 }
 
 .block0 {
-  padding-left: 4vw;
+  padding-left: 5vw;
   height: 40vh;
 }
 

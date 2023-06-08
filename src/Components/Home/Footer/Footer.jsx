@@ -3,14 +3,12 @@
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import MouseFollower from "mouse-follower";
 import footerVid from "@assets/vids/footer-3.mp4";
 import styles from "./Footer.module.scss";
 
 
 
 export default function Footer() {
-  MouseFollower.registerGSAP(gsap);
   
   const [emailCopied, setEmailCopied] = useState(false);
   const footerContainer = useRef(null);

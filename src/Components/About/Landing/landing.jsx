@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
-import MouseFollower from "mouse-follower";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./landing.module.scss";
 
-MouseFollower.registerGSAP(gsap);
 function landing() {
   
   
@@ -28,7 +26,6 @@ function landing() {
     setTimeout(() => setEmailCopied(false), 3000);
   };
     const elements = skewRef.current.querySelectorAll(".fadeInText");
-    const cursor = new MouseFollower();
     elements.forEach((element) => {
       gsap.fromTo(
         element,
