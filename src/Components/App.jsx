@@ -7,6 +7,7 @@ import Navbar from "./Navbar/navbar";
 import Home from './Home/Home';
 import MouseFollower from "mouse-follower";
 import s from "../styles/index.scss";
+import '../styles/cursor.scss';
 import OrientationMessage from "./Orientation/orientation";
 
 export default function App() {
