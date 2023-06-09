@@ -33,7 +33,7 @@ export default function Footer() {
         },
       }
     );
-    // set stick to footer
+
 
     //heading scroll trigger opening
     gsap.fromTo(
@@ -72,7 +72,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className={styles.center} ref={footerContainer}>
+    <footer className={styles.center} data-cursor="-invert" ref={footerContainer}>
       <div
         className={`${styles.footerContent} ${styles.contentWidth} ${styles.column}`}
       >

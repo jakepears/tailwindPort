@@ -157,7 +157,7 @@ export default function Work() {
             type="video/mp4"
           />
           <div className={styles.textWrapper}>
-            <p>
+            <p ref={textAnim}>
               <span>
                 <strong>Under Development</strong>
               </span>
@@ -203,7 +203,7 @@ export default function Work() {
               type="video/mp4"
             />
             <div className={styles.textWrapper}>
-              <p>
+              <p ref={textAnim}>
                 <span>
                   <strong>Munkey AI </strong>
                 </span>
@@ -236,7 +236,7 @@ export default function Work() {
             type="video/mp4"
           />
           <div className={styles.textWrapper}>
-            <p>
+            <p ref={textAnim}>
               <span>
                 <strong>Coming Soon </strong>
               </span>

@@ -1,12 +1,13 @@
 .scrollCta {
-  color: #cdc9bb;
-  mix-blend-mode: difference;
+  color: #b75c5f;
+  mix-blend-mode: add;
   position: absolute;
   top: 92vh;
   right: 4vw;
-  font-size: 1vw;
-  opacity: 0.5;
+  font-size: 1.4vw;
   transition: 0.3s;
+  filter: drop-shadow(0px 0px 4px #cdc9bb);
+  text-shadow: #cdc9bb 1px 1px 4px 6px;
   z-index: 2;
 }
 // Icon styles

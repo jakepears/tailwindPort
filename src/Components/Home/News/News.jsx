@@ -121,7 +121,6 @@ export default function News() {
         <div className={styles.newsMedia}>
           <video
             data-cursor-text="We love..."
-            data-cursor-stick
             playsInline
             loop
             muted

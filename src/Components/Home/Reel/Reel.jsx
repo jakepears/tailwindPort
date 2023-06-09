@@ -49,7 +49,7 @@ function HomeReel() {
   };
 
   return (
-    <div className={styles.reelWrapper} data-cursor-text="Full Screen?">
+    <div className={styles.reelWrapper} data-cursor="-inverse" data-cursor-text="Full Screen?">
       <div
         className={`${styles.reelContainer} ${styles.center} ${styles.column}`}
         ref={container}

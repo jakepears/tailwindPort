@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
-import { gsap, Power4 } from "gsap";
+import { gsap } from "gsap";
 import styles from "./loader.module.scss";
 
 function getSectionHeight(element) {
+  useEffect(() => {
   const { height } = element.getBoundingClientRect();
   const { childElementCount } = element;
   return height / childElementCount;
+  }, [element]);
 }
 
 export default function Loader() {
@@ -32,14 +34,14 @@ export default function Loader() {
     ]);
 
     gsap
-      .timeline({ defaultEase: "power4.inOut", defaults: { duration: 1 } })
+      .timeline({ defaultEase: "power4.inOut", defaults: { duration: .8 } })
       .add(sequence1)
       .then(() => {
-        gsap.to(loaderRef.current, { y: "-100vh", duration: 0.5, delay: 1.5 });
-        gsap.to(loaderRef.current, { opacity: 0, duration: 0.5, delay: 2 });
+        gsap.to(loaderRef.current, { y: "-100vh", duration: 0.5, delay: .5 });
+        gsap.to(loaderRef.current, { opacity: 0, duration: 0.5, delay: .5 });
         setShowLoader(false); // Hide the loader after animation completes
       });
-  }, []);
+  }, [getSectionHeight]);
 
   return (
     <>

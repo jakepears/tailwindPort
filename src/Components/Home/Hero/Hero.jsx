@@ -59,18 +59,18 @@ export default function Hero() {
 
   return (
     <section
+      data-cursor="-inverse"
       className={styles.heroContainer}
-      onMouseMove={() =>
-        window.cursorIcon ? window.cursorIcon.show("Scroll") : null
-      }
-      onMouseLeave={() => (window.cursorIcon ? window.cursorIcon.hide() : null)}
     >
       <ScrollCTA />
       <div className={`${styles.contentWidth} ${styles.column}`}>
-        <div
-          className={styles.heroBackground}
-        >
-          <Image src={BG} alt="Background hero" ref={backgroundImage} priority />
+        <div className={styles.heroBackground}>
+          <Image
+            src={BG}
+            alt="Background hero"
+            ref={backgroundImage}
+            priority
+          />
         </div>
         <div data-cursor-text="Hey!" className={styles.topSpanContainer}>
           <div className={styles.anim}>

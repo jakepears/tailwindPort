@@ -4,13 +4,14 @@ import { gsap } from "gsap";
 import styles from "./navbar.module.scss";
 
 function Navbar() {
-  const LinkRef = useRef(null);
+  const linkRef = useRef(null);
   useEffect(() => {
     gsap.fromTo(
-      LinkRef.current,
+      linkRef.current,
       { opacity: 0 },
       { opacity: 1, duration: 1, delay: 2.6 }
     );
+
   }, []);
 
   return (
@@ -19,7 +20,7 @@ function Navbar() {
         <li>
           <Link
             className={styles.link}
-            ref={LinkRef}
+            ref={linkRef}
             href="/about" >
             About
           </Link>
