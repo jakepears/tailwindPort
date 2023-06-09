@@ -6,6 +6,8 @@ import Footer from "./Footer/footer"
 import MouseFollower from "mouse-follower";
 import React from "react";
 import Landing from "./Landing/landing";
+import '@styles/index.scss';
+import "@styles/cursor.scss";
 
 function AboutPage() {
   useEffect(() => {
