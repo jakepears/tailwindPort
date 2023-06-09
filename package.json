@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@studio-freight/lenis": "^1.0.14",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
     "gsap": "^3.11.4",
