@@ -52,6 +52,7 @@
   overflow: hidden;
   position: absolute;
   bottom: -1.8vw;
+  font-size: 0.96vw;
   pointer-events: none;
 }
 
@@ -87,10 +88,6 @@
   margin-left: 3vw;
   max-width: 90%;
   border-radius: 10%;
-
-  &.mf-cursor {
-    transform: scale(1.5);
-  }
 }
 
 .block2 {
@@ -102,7 +99,6 @@
 
 .workRightSection p {
   margin-top: 3vh;
-  font-size: 1.66667vw;
   line-height: 2vh;
   font-weight: 300;
 }

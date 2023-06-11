@@ -28,10 +28,10 @@ function AboutPage() {
   }, []);
 
   return (
-    <>
+    <div>
       <Landing />
       <Footer />
-    </>
+    </div>
   );
 }
 

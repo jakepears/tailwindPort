@@ -9,14 +9,13 @@ import primeraSC from "@assets/images/primera-sc.webp";
 import munkeyTrailer from "@assets/images/MunkeyPic.webp";
 import styles from "./Work.module.scss";
 
-
 export default function Work() {
   const workRef = useRef(null);
   const munkey = useRef(null);
   const primera = useRef(null);
   const beatsRef = useRef(null);
   const heading = useRef(null);
-  const textAnim = useRef(null);
+  const textAnims = useRef([]);
 
   function handleMouseEnter(event) {
     // play video
@@ -24,14 +23,15 @@ export default function Work() {
     if (video) video.play();
 
     // animation
-    if (textAnim.current) {
-      gsap.killTweensOf(textAnim.current);
+    const textAnim = event.currentTarget.querySelector(".textAnim");
+    if (textAnim) {
+      gsap.killTweensOf(textAnim);
       gsap.fromTo(
-        textAnim.current,
+        textAnim,
         {
           rotation: 10,
           opacity: 0,
-          y: () => textAnim.current.clientHeight * 0.5,
+          y: () => textAnim.clientHeight * 0.5,
         },
         { rotation: 0, y: 0, opacity: 1, duration: 0.7, ease: "power4.out" }
       );
@@ -44,14 +44,15 @@ export default function Work() {
     if (video) video.pause();
 
     // animation
-    if (textAnim.current) {
-      gsap.killTweensOf(textAnim.current);
+    const textAnim = event.currentTarget.querySelector(".textAnim");
+    if (textAnim) {
+      gsap.killTweensOf(textAnim);
       gsap.fromTo(
-        textAnim.current,
+        textAnim,
         { rotation: 0, opacity: 1, y: 0 },
         {
           rotation: -10,
-          y: -textAnim.current.clientHeight,
+          y: -textAnim.clientHeight,
           opacity: 0,
           duration: 0.5,
           ease: "power4.out",
@@ -63,72 +64,72 @@ export default function Work() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-      // primera
-      if (primera.current) {
-        gsap.fromTo(
-          primera.current,
-          { y: -20 },
-          {
-            y: 120,
-            scrollTrigger: {
-              trigger: primera.current,
-              ease: "power4.out",
-              scrub: true,
-            },
-          }
-        );
-      }
-
-      // munkey
-      if (munkey.current) {
-        gsap.fromTo(
-          munkey.current,
-          { y: -100 },
-          {
-            y: 110,
-            scrollTrigger: {
-              trigger: munkey.current,
-              ease: "power4.out",
-              scrub: true,
-            },
-          }
-        );
-      }
-
-      //beatsRef
-      if (beatsRef.current) {
-        gsap.fromTo(
-          beatsRef.current,
-          { y: -50 },
-          {
-            y: -120,
-            scrollTrigger: {
-              trigger: beatsRef.current,
-              ease: "power4.out",
-              scrub: true,
-            },
-          }
-        );
-      }
-
-      //heading scroll trigger opening
+    // primera
+    if (primera.current) {
       gsap.fromTo(
-        heading.current,
+        primera.current,
+        { y: -20 },
         {
-          rotation: 6,
-          opacity: 0,
-          y: () => heading.current.clientHeight * 0.5,
-        },
-        {
-          rotation: 0,
-          y: 0,
-          opacity: 1,
-          duration: 0.7,
-          ease: "power4.out",
-          scrollTrigger: { trigger: heading.current, start: "center bottom" },
+          y: 120,
+          scrollTrigger: {
+            trigger: primera.current,
+            ease: "power4.out",
+            scrub: true,
+          },
         }
       );
-  }, [handleMouseEnter, handleMouseLeave]);
+    }
+
+    // munkey
+    if (munkey.current) {
+      gsap.fromTo(
+        munkey.current,
+        { y: -100 },
+        {
+          y: 110,
+          scrollTrigger: {
+            trigger: munkey.current,
+            ease: "power4.out",
+            scrub: true,
+          },
+        }
+      );
+    }
+
+    // beatsRef
+    if (beatsRef.current) {
+      gsap.fromTo(
+        beatsRef.current,
+        { y: -50 },
+        {
+          y: -120,
+          scrollTrigger: {
+            trigger: beatsRef.current,
+            ease: "power4.out",
+            scrub: true,
+          },
+        }
+      );
+    }
+
+    // heading scroll trigger opening
+    gsap.fromTo(
+      heading.current,
+      {
+        rotation: 6,
+        opacity: 0,
+        y: () => heading.current.clientHeight * 0.5,
+      },
+      {
+        rotation: 0,
+        y: 0,
+        opacity: 1,
+        duration: 0.7,
+        ease: "power4.out",
+        scrollTrigger: { trigger: heading.current, start: "center bottom" },
+      }
+    );
+  }, []);
 
   return (
     <section
@@ -157,7 +158,7 @@ export default function Work() {
             type="video/mp4"
           />
           <div className={styles.textWrapper}>
-            <p ref={textAnim}>
+            <p ref={(el) => (textAnims.current[0] = el)} className="textAnim">
               <span>
                 <strong>Under Development</strong>
               </span>
@@ -203,7 +204,7 @@ export default function Work() {
               type="video/mp4"
             />
             <div className={styles.textWrapper}>
-              <p ref={textAnim}>
+              <p ref={(el) => (textAnims.current[1] = el)} className="textAnim">
                 <span>
                   <strong>Munkey AI </strong>
                 </span>
@@ -224,11 +225,10 @@ export default function Work() {
             src="https://images.unsplash.com/photo-1627697823116-42877786ac26?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
             className={styles.beatsPic}
             fill={true}
-            alt={"dude is being extremely cash money"}
-          />
+            alt={"dude is being extremely cash money"} />
           <video
-            playsInline
-            loop
+            playsInline=""
+            loop="loop"
             muted
             disablePictureInPicture=""
             className={styles.video}
@@ -236,11 +236,11 @@ export default function Work() {
             type="video/mp4"
           />
           <div className={styles.textWrapper}>
-            <p ref={textAnim}>
+            <p ref={(el) => (textAnims.current[2] = el)} className="textAnim">
               <span>
-                <strong>Coming Soon </strong>
+                <strong>Beats Ad</strong>
               </span>
-              <span>eCommerce store</span>
+              <span> Motion Design</span>
             </p>
           </div>
         </div>

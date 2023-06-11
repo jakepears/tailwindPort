@@ -7,7 +7,7 @@ import styles from "./Reel.module.scss";
 
 
 
-function HomeReel() {
+function Reel() {
   const [isPlaying, setIsPlaying] = useState(false);
   const video = useRef(null);
   const container = useRef(null);
@@ -84,7 +84,7 @@ function HomeReel() {
           <h2 ref={heading1}>Something?</h2>
         </div>
         <p className={styles.reelBottomP}>
-          I know thing or two
+          I know a thing or two
           <br />
           about the creative suite
         </p>
@@ -96,4 +96,4 @@ function HomeReel() {
   );
 }
 
-export default HomeReel;
+export default Reel;
