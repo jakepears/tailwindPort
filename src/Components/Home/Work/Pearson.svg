@@ -1,49 +1,5 @@
-import { useEffect, useRef } from "react";
-import s from './loader.module.scss'
-
-const Loader = ({ setLoadingVisible }) => {
-  const rectRef = useRef(null);
-  const container = useRef(null);
-  const svg = useRef(null);
-
-  useEffect(() => {
-    //loading progress
-    rectRef.current.style.height = 0;
-
-    setTimeout(() => {
-      //logo transition
-      svg.current.style.height = "2vw";
-      svg.current.style.opacity = 0;
-
-      //container transition
-      container.current.style.clipPath =
-        "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)";
-
-      //update container visibility
-      setTimeout(() => {
-        setLoadingVisible(false);
-      }, 900);
-    }, 2300);
-  }, []);
-
-  return (
-    <div
-      className={`${s.loadingContainer} ${s.center} ${s.loadingTransition}`}
-      ref={container}
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        version="1.1"
-        ref={svg}
-        viewBox="0 0 500 500"
-      >
-        <path
-          fill="none"
-          strokeWidth="1.00"
-          stroke="#000"
-          fillRule="evenodd" clipRule="evenodd"
-          vectorEffect="non-scaling-stroke"
-          d="
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 500 500">
+<path fill="none" stroke-width="1.00" stroke="#000" vector-effect="non-scaling-stroke" d="
   M 0.00 0.00
   L 500.00 0.00
   L 500.00 500.00
@@ -191,14 +147,8 @@ const Loader = ({ setLoadingVisible }) => {
   A 12.84 12.84 0.0 0 0 301.2180 334.9043
   L 301.2933 331.8252
   Z"
-        />
-        <path
-          fill=""
-          strokeWidth="1.00"
-          stroke="#000"
-          fillRule="evenodd" clipRule="evenodd"
-          vectorEffect="non-scaling-stroke"
-          d="
+/>
+<path fill="" stroke-width="1.00" stroke="#000" vector-effect="non-scaling-stroke" d="
   M 209.54 147.26
   C 231.49 147.96 250.18 148.78 275.01 147.19
   A 1.29 1.06 -22.3 0 1 275.90 147.46
@@ -216,14 +166,8 @@ const Loader = ({ setLoadingVisible }) => {
   Q 208.48 149.09 208.88 147.72
   A 0.68 0.64 8.4 0 1 209.54 147.26
   Z"
-        />
-        <path
-          fill=""
-          strokeWidth="1.00"
-          stroke="#000"
-          fillRule="evenodd" clipRule="evenodd"
-          vectorEffect="non-scaling-stroke"
-          d="
+/>
+<path fill="" stroke-width="1.00" stroke="#000" vector-effect="non-scaling-stroke" d="
   M 164.88 404.94
   C 162.20 403.14 163.76 401.89 165.58 400.63
   C 184.62 387.51 192.85 364.29 197.33 342.06
@@ -236,24 +180,6 @@ const Loader = ({ setLoadingVisible }) => {
   C 192.99 391.06 179.30 399.59 165.55 405.01
   A 0.74 0.72 50.4 0 1 164.88 404.94
   Z"
-        />
-        <rect
-          fill=""
-          ref={rectRef}
-          strokeWidth="1.00"
-          stroke="#000"
-          fillRule="evenodd" clipRule="evenodd"
-          vectorEffect="non-scaling-stroke"
-          x="-14.52"
-          y="-14.38"
-          transform="translate(286.74,333.01) rotate(1.4)"
-          width="29.04"
-          height="28.76"
-          rx="12.84"
-        />
-      </svg>
-    </div>
-  );
-};
-
-export default Loader;
+/>
+<rect fill="" stroke-width="1.00" stroke="#000" vector-effect="non-scaling-stroke" x="-14.52" y="-14.38" transform="translate(286.74,333.01) rotate(1.4)" width="29.04" height="28.76" rx="12.84"/>
+</svg>

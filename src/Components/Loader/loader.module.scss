@@ -30,3 +30,35 @@
   }
 }
 
+.icon {
+  height: 16px;
+  width: 16px;
+  margin-right: 10px;
+}
+
+// Content width
+.contentWidth {
+  width: 84vw;
+  max-width: 84vw;
+}
+
+// Flexbox styles
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.anim {
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
