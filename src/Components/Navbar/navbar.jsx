@@ -21,6 +21,7 @@ function Navbar() {
           <Link
             className={styles.link}
             ref={linkRef}
+            data-cursor-video="/video/aboutCursorVid.webm"
             href="/about" >
             About
           </Link>

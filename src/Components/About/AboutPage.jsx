@@ -8,6 +8,7 @@ import React from "react";
 import Landing from "./Landing/landing";
 import '../../styles/cursor.scss';
 import '../../styles/index.scss';
+import AboutNav from "./AboutNav/aboutNav";
 
 function AboutPage() {
   useEffect(() => {
@@ -31,6 +32,7 @@ function AboutPage() {
     <div>
       <Landing />
       <Footer />
+      <AboutNav />
     </div>
   );
 }

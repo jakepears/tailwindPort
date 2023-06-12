@@ -1,0 +1,31 @@
+.nav {
+  position: absolute;
+  top: 4vh;
+  left: 6vw;
+  font-size: 1.2vw;
+  opacity: 0.8;
+  transition: 0.3s;
+  z-index: 2;
+  text-decoration: none;
+}
+
+.link {
+  z-index: 2;
+  text-decoration: none;
+  color: #b75c5f;
+  mix-blend-mode: add;
+  opacity: .9;
+}
+
+.nav ul {
+  list-style: none;
+}
+
+.nav li {
+  list-style: none;
+}
+
+.nav a {
+  list-style: none;
+  text-decoration: none;
+}
