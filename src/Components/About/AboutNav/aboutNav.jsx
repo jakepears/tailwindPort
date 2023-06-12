@@ -9,14 +9,14 @@ function AboutNav() {
     gsap.fromTo(
       linkRef.current,
       { opacity: 0 },
-      { opacity: 1, duration: 1, delay: 2.6 }
+      { opacity: 1, duration: 1, delay: 0.6 }
     );
   }, []);
 
   return (
     <nav className={styles.nav}>
       <ul>
-        <li data-cursor-video="/video/homeCursorVid.webm">
+        <li>
           <Link className={styles.link} ref={linkRef} href="/">
             Home
           </Link>

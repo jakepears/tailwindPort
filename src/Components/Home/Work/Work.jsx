@@ -63,7 +63,6 @@ export default function Work() {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
     // primera
     if (primera.current) {
       gsap.fromTo(
@@ -113,6 +112,7 @@ export default function Work() {
     }
 
     // heading scroll trigger opening
+    if (heading.current === null) return;
     gsap.fromTo(
       heading.current,
       {
@@ -136,8 +136,8 @@ export default function Work() {
       className={`${styles.column} ${styles.contentWidth} ${styles.workSection}`}
       ref={workRef}
     >
-      <div className={styles.anim}>
-        <h1 ref={heading}>creations</h1>
+      <div ref={heading} className={styles.anim}>
+        <h1 >creations</h1>
       </div>
       <div className={styles.row}>
         <div

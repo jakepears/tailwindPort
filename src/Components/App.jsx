@@ -33,8 +33,8 @@ export default function App() {
   return (
     <div className={`${s.center} ${s.column}`}>
           <OrientationMessage />
-          <Home />
           <Navbar />
+          <Home />
     </div>
   );
 }

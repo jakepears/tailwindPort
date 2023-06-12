@@ -33,11 +33,11 @@ function landing() {
         {
           opacity: 1,
           y: 0,
-          duration: 1.2,
+          duration: .8,
           ease: "power4.in",
           scrollTrigger: {
             trigger: element,
-            start: "top 95%",
+            start: "top 50%",
           },
         }
       );
