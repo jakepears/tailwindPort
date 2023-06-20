@@ -15,17 +15,17 @@
 
   .counterContainer {
     overflow: hidden;
-    height: 30vw;
-    min-height: 30vw;
+    height: 30dvw;
+    min-height: 30dvw;
   }
 
   h3 {
     z-index: 9999;
     margin-top: 0px;
-    margin-bottom: 1vw;
+    margin-bottom: 1dvw;
     color: #fff;
-    font-size: 30vw;
-    line-height: 30vw;
+    font-size: 30dvw;
+    line-height: 30dvw;
     font-weight: 300;
   }
 }
@@ -38,8 +38,8 @@
 
 // Content width
 .contentWidth {
-  width: 84vw;
-  max-width: 84vw;
+  width: 84dvw;
+  max-width: 84dvw;
 }
 
 // Flexbox styles

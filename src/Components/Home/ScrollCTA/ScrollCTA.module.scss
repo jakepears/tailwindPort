@@ -2,9 +2,9 @@
   color: #b75c5f;
   mix-blend-mode: add;
   position: absolute;
-  top: 92vh;
-  right: 4vw;
-  font-size: 1.4vw;
+  top: 92dvh;
+  right: 4dvw;
+  font-size: 1.4dvw;
   transition: 0.3s;
   filter: drop-shadow(0px 0px 4px #cdc9bb);
   text-shadow: #cdc9bb 1px 1px 4px 6px;
@@ -19,8 +19,8 @@
 
 // Content width
 .contentWidth {
-  width: 84vw;
-  max-width: 84vw;
+  width: 84dvw;
+  max-width: 84dvw;
 }
 
 // Flexbox styles

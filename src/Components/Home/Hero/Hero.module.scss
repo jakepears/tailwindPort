@@ -1,5 +1,5 @@
 .heroContainer {
-  width: 100vw;
+  width: 100dvw;
   max-height: 100%;
   color: #fff;
   display: flex;
@@ -13,7 +13,7 @@
 .heroBackground {
   margin: 0;
   padding: 0;
-  width: 100vw;
+  width: 100dvw;
   height: auto;
   position: absolute;
   z-index: -1;
@@ -35,32 +35,32 @@
 
 .heroContainer h1 {
   transform: translateX(-1.4vw);
-  letter-spacing: -0.79861vw;
-  line-height: 12.70833vw;
+  letter-spacing: -0.79861dvw;
+  line-height: 12.70833dvw;
 }
 
 .heroContainer span {
-  font-size: 1.66vw;
+  font-size: 1.66dvw;
   font-weight: 300;
-  line-height: 2.3vw;
+  line-height: 2.3dvw;
   display: block;
 }
 
 .topSpanContainer {
-  margin-top: 10vw;
-  margin-bottom: 5vw;
+  margin-top: 10dvw;
+  margin-bottom: 5dvw;
   color: #b75c5f;
   mix-blend-mode: difference;
   text-shadow: #1d2c27 1px 1px 4px 6px;
 }
 
 .bottomSpan {
-  margin-top: 7vw;
+  margin-top: 7dvw;
   mix-blend-mode: difference;
 }
 
 .heroTitleAnim {
-  height: 16vw;
+  height: 16dvw;
   overflow: hidden;
 }
 
@@ -81,9 +81,9 @@
   /* Styles for screens larger than or equal to 576px (e.g., small mobile devices) */
 
   .counter-container {
-    height: 40vw; /* Adjust the height for smaller screens */
-    padding-right: 5vw; /* Adjust the padding for smaller screens */
-    padding-bottom: 10vh; /* Adjust the padding for smaller screens */
+    height: 40dvw; /* Adjust the height for smaller screens */
+    padding-right: 5dvw; /* Adjust the padding for smaller screens */
+    padding-bottom: 10dvh; /* Adjust the padding for smaller screens */
   }
 }
 // Icon styles
@@ -95,8 +95,8 @@
 
 // Content width
 .contentWidth {
-  width: 84vw;
-  max-width: 84vw;
+  width: 84dvw;
+  max-width: 84dvw;
 }
 
 // Flexbox styles

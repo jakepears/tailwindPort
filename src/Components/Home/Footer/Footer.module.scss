@@ -8,17 +8,17 @@
   color: #dedfe1;
   padding: 0;
   font-weight: 300;
-  font-size: 1.2vw;
+  font-size: 1.2dvw;
   z-index: 100;
 }
 
 .center {
-  padding: 13.88889vw 0 5.55556vh;
+  padding: 13.88889vw 0 5.55556dvh;
   background: #283139;
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
   color: #dedfe1;
-  min-height: 100vh;
+  min-height: 100dvh;
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
@@ -29,24 +29,24 @@
 }
 
 .footerContent p:nth-child(2) {
-  font-size: 1.66667vw;
-  line-height: 2.22222vw;
-  margin-top: 1.80556vw;
+  font-size: 1.66667dvw;
+  line-height: 2.22222dvw;
+  margin-top: 1.80556dvw;
 }
 
 footer .background {
   position: absolute;
-  right: 3.47222vw;
-  width: 69.44444vw;
+  right: 3.47222dvw;
+  width: 69.44444dvw;
   top: 0;
-  padding-top: 20vh;
-  padding-left: 10vw;
+  padding-top: 20dvh;
+  padding-left: 10dvw;
   mix-blend-mode: screen;
   z-index: -1;
 }
 
 footer .background video {
-  width: 50vw;
+  width: 50dvw;
 }
 
 .center hr {
@@ -57,13 +57,13 @@ footer .background video {
 }
 
 .footerFinalP {
-  max-width: 80vw;
+  max-width: 80dvw;
   font-weight: 300;
-  font-size: 1.2vw;
+  font-size: 1.2dvw;
 }
 
 .footerList ul {
-  padding-bottom: 8vh;
+  padding-bottom: 8dvh;
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
@@ -111,8 +111,8 @@ footer .background video {
 
 // Content width
 .contentWidth {
-  width: 84vw;
-  max-width: 84vw;
+  width: 84dvw;
+  max-width: 84dvw;
 }
 
 // Flexbox styles

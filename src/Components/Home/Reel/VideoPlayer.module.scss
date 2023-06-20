@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 100dvh;
   width: 100%;
   z-index: 999;
   background: #282820;
@@ -10,7 +10,7 @@
 }
 
 .videoPlayer video {
-  height: 100vh;
+  height: 100dvh;
   width: 100%;
   background: #282820;
 }
@@ -23,8 +23,8 @@
 
 // Content width
 .contentWidth {
-  width: 84vw;
-  max-width: 84vw;
+  width: 84dvw;
+  max-width: 84dvw;
 }
 
 // Flexbox styles
