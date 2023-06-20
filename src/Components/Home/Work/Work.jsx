@@ -8,6 +8,7 @@ import beats from "@assets/images/beats-ad.mp4";
 import primeraSC from "@assets/images/primera-sc.webp";
 import munkeyTrailer from "@assets/images/MunkeyPic.webp";
 import styles from "./Work.module.scss";
+import Link from "next/link";
 
 export default function Work() {
   const workRef = useRef(null);
@@ -194,6 +195,7 @@ export default function Work() {
               src={munkeyTrailer}
               alt={"picture of dude being cash money"}
             />
+            <Link href="https://chat-gpt-nu-five.vercel.app/" />
             <video
               playsInline=""
               loop="loop"
