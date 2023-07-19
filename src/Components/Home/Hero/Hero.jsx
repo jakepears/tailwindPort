@@ -98,7 +98,7 @@ export default function Hero() {
         </h1>
         <span className={styles.bottomSpan}>
           <h3 className={styles.myName}>jake pearson</h3>
-          engineer / ux designer
+          engineer / vfx artist
         </span>
       </div>
     </section>
