@@ -112,6 +112,7 @@
 @media screen and (max-width: 600px) {
   .workSection {
     display: flex;
+    align-items: center;
     padding: 0;
   }
   .workSection h1 {
@@ -122,13 +123,11 @@
   }
 
   .workSection .anim:first-child {
-    margin-top: 15dvh;
-    margin-left: 7dvw;
+    margin-top: 5dvh;
     margin-bottom: 10dvh;
   }
 
   .block0 {
-    margin-left: 7dvw;
     height: 40dvh;
   }
 
@@ -137,7 +136,6 @@
     width: 30.84722dvw;
     margin-bottom: 11.59722dvw;
     margin-top: 15dvh;
-    margin-left: 3dvw;
     max-width: 100%;
     border-radius: 10%;
 
@@ -212,7 +210,7 @@
   }
 
   .block p {
-    font-size: 0.96vw !important;
+    font-size: 1vw !important;
     white-space: normal;
   }
 }

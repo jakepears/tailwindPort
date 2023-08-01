@@ -8,7 +8,6 @@ import Home from './Home/Home';
 import MouseFollower from "mouse-follower";
 import s from "../styles/index.scss";
 import '../styles/cursor.scss';
-import OrientationMessage from "./Orientation/orientation";
 
 export default function App() {
   useEffect(() => {
@@ -32,7 +31,6 @@ export default function App() {
 
   return (
     <div className={`${s.center} ${s.column}`}>
-          <OrientationMessage />
           <Navbar />
           <Home />
     </div>

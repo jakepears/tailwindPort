@@ -6,24 +6,43 @@
   height: 100%;
   width: 100dvw;
 
+  .topHeader {
+    padding-top: 15dvh;
+    padding-right: 12dvw;
+    font-size: 3dvw;
+    line-height: 1.6;
+  }
+
   .topText {
     line-height: 1.6;
-    padding-top: 25dvh;
+    padding-top: 8dvh;
     padding-right: 12dvw;
     font-size: 2dvw;
+  }
+
+  .secondHeader {
+    line-height: 1.6;
+    padding-top: 8dvh;
+    padding-right: 12dvw;
+    font-size: 3dvw;
   }
 
   .bottomText {
     line-height: 1.6;
-    padding-top: 8dvh;
-    padding-bottom: 8dvh;
+    padding-top: 4dvh;
+    padding-bottom: 4dvh;
     padding-right: 12dvw;
     font-size: 2dvw;
+    color: rgba(222, 223, 225, 0.8)
+  }
+
+  .git {
+    padding-top: 4dvh;
   }
 
   .group {
     line-height: 1.6;
-    padding-top: 6dvh;
+    padding-top: 8dvh;
     padding-bottom: 8dvh;
     padding-right: 12dvw;
 
@@ -53,7 +72,7 @@
 }
 
 .bottomList {
-  padding-bottom: 40dvh;
+  padding-bottom: 20dvh;
   list-style: none;
 
   button {

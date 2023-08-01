@@ -46,37 +46,43 @@ function landing() {
 
   return (
     <div className={styles.about} data-cursor="-inverse">
-      <div className={`${styles.rightCol} ${styles.fadeInText} ${styles.skewElem}`} ref={skewRef}>
+      <div
+        className={`${styles.rightCol} ${styles.fadeInText} ${styles.skewElem}`}
+        ref={skewRef}
+      >
+        <h2 className={styles.topHeader}>Visual Storyteller</h2>
         <h3 className={styles.topText}>
-          I'm a student who is mesmerized by clean visuals. Whether it by
-          scenery in the outdoors or a well designed website, I love to see it.
-          I'm currently learning web development and I'm excited to see where it
-          takes me. <br />
+          I'm a designer passionate about translating stories and ideas into
+          engaging interactive experiences. Whether it's through motion, UX, or
+          visuals, I thrive on finding ways to connect with people through art.
+          <br />
         </h3>
+        <h2 className={styles.secondHeader}>Specialties</h2>
         <h3 className={styles.bottomText}>
-          I put a strong focus on interaction in my projects in hopes that
-          they're be what sets me apart from others. I'm always looking for new
-          ways to make my projects more interactive and engaging.{" "}
+          <ul>
+            <li>UI/UX Design and Prototyping</li>
+            <li>Responsive Web Design</li>
+            <li>GSAP / CSS Animations and Interactions</li>
+            <li>3D Modeling and Digital Environments</li>
+            <li>Video Production and Motion Graphics</li>
+          </ul>
         </h3>
         <div className={`${styles.group} ${styles.fadeInText}`}>
           <ul>
             <li>
-              <h3>Experience</h3>
+              <h3>Goals</h3>
             </li>
             <li>
               <h4>
-                I'm looking to break into the professional tech realm so right
-                now it's mainly independent projects.
+                My aim is to continuously push my skills and grow as a digital
+                storyteller. I'm driven to craft experiences that inform,
+                educate, and inspire through thoughtful design. I want to
+                leverage my whole toolkit - animation, 3D, UX, coding - to
+                create work that connects.
               </h4>
             </li>
             <li>
-              <h4 className={styles.special}>Freelance Developer</h4>
-            </li>
-            <li>
-              <p>2022 - Present</p>
-            </li>
-            <li>
-              <h3>Contact Me</h3>
+              <h3 className={styles.git}>Get in touch</h3>
             </li>
             <ul className={`${styles.bottomList} ${styles.fadeInText}`}>
               {personalLinks.map(({ label, value }) => (
