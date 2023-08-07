@@ -85,7 +85,12 @@ function Slider() {
           src={vegeta}
           draggable="false"
         />
-        <Image alt="" className={styles.image} src={don} draggable="false" />
+        <Image
+          alt=""
+          className={styles.image}
+          src={don}
+          draggable="false"
+        />
         <Image alt="" className={styles.image} src={demon} draggable="false" />
       </div>
       <div ref={imageTrackRef2} className={styles.imageTrack2}>

@@ -1,9 +1,9 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useLayoutEffect, useState } from "react";
 import { gsap } from "gsap";
 import ScrollCTA from "../ScrollCTA/ScrollCTA";
 import Image from "next/image";
 import BG from "@assets/images/laanding-2.webp";
-import styles from "./Hero.module.scss";
+import s from "./Hero.module.scss";
 
 export default function Hero() {
  
@@ -12,9 +12,9 @@ export default function Hero() {
   const headings = [useRef(null), useRef(null), useRef(null)];
   const backgroundImage = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     
-    const animate = () => {
+    const animateOnLoad = () => {
       topSpans.forEach((span) => {
         gsap.fromTo(
           span.current,
@@ -54,17 +54,21 @@ export default function Hero() {
         },
       });
     };
-    setTimeout(() => requestAnimationFrame(animate), 2000);
+    // window.addEventListener("loader-finished", animateOnLoad);
+    // return () => {
+    //   window.removeEventListener("loader-finished", animateOnLoad);
+    // };
+    setTimeout(() => requestAnimationFrame(animateOnLoad), 100);
   }, []);
 
   return (
     <section
       data-cursor="-inverse"
-      className={styles.heroContainer}
+      className={s.heroContainer}
     >
       <ScrollCTA />
-      <div className={`${styles.contentWidth} ${styles.column}`}>
-        <div className={styles.heroBackground}>
+      <div className={`${s.contentWidth} ${s.column}`}>
+        <div className={s.heroBackground}>
           <Image
             src={BG}
             alt="Background hero"
@@ -72,32 +76,32 @@ export default function Hero() {
             priority
           />
         </div>
-        <div data-cursor-text="Hey!" className={styles.topSpanContainer}>
-          <div className={styles.anim}>
+        <div data-cursor-text="Hey!" className={s.topSpanContainer}>
+          <div className={s.anim}>
             <span ref={topSpans[0]}>charmed by tech</span>
           </div>
-          <div className={styles.anim}>
+          <div className={s.anim}>
             <span ref={topSpans[1]}>and entertained by creativity.</span>
           </div>
-          <div className={styles.anim}>
+          <div className={s.anim}>
             <span ref={topSpans[2]}>
               “Man is still the most extraordinary computer of all.”
             </span>
           </div>
         </div>
         <h1>
-          <div className={styles.heroTitleAnim}>
+          <div className={s.heroTitleAnim}>
             <p ref={headings[0]}>Art</p>
           </div>
-          <div className={styles.heroTitleAnim}>
+          <div className={s.heroTitleAnim}>
             <p ref={headings[1]}>In</p>
           </div>
-          <div className={styles.heroTitleAnim}>
+          <div className={s.heroTitleAnim}>
             <p ref={headings[2]}>Motion</p>
           </div>
         </h1>
-        <span className={styles.bottomSpan}>
-          <h3 className={styles.myName}>jake pearson</h3>
+        <span className={s.bottomSpan}>
+          <h3 className={s.myName}>jake pearson</h3>
           engineer / motion designer
         </span>
       </div>

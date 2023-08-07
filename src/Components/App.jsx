@@ -1,6 +1,6 @@
 /** @format */
 'use client'
-import React, { useEffect } from "react";
+import React, { useLayoutEffect } from "react";
 import gsap from "gsap";
 import Lenis from "@studio-freight/lenis";
 import Navbar from "./Navbar/navbar";
@@ -10,7 +10,7 @@ import s from "../styles/index.scss";
 import '../styles/cursor.scss';
 
 export default function App() {
-  useEffect(() => {
+  useLayoutEffect(() => {
     MouseFollower.registerGSAP(gsap);
     const cursor = new MouseFollower({
       
