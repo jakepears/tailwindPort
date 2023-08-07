@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import ScrollCTA from "../ScrollCTA/ScrollCTA";
 import Image from "next/image";
@@ -12,53 +12,53 @@ export default function Hero() {
   const headings = [useRef(null), useRef(null), useRef(null)];
   const backgroundImage = useRef(null);
 
-  useLayoutEffect(() => {
+  const animate = () => {
+    topSpans.forEach((span) => {
+      gsap.fromTo(
+        span.current,
+        { rotation: 10, opacity: 0, y: -window.innerHeight * 0.4 },
+        {
+          rotation: 0,
+          y: 0,
+          opacity: 1,
+          duration: 1.4,
+          ease: "power4.easeOut",
+          delay: 0.6,
+        }
+      );
+    });
+    headings.forEach((heading) => {
+      gsap.fromTo(
+        heading.current,
+        { rotation: 10, opacity: 0, y: window.innerHeight * 0.5 },
+        {
+          rotation: 0,
+          y: 0,
+          opacity: 1,
+          duration: 1.3,
+          ease: "power4.easeOut",
+          delay: 0.6,
+        }
+      );
+    });
+    gsap.to(backgroundImage.current, {
+      y: window.innerHeight * 2.06,
+      opacity: 0.3,
+      scale: 1.4,
+      scrollTrigger: {
+        start: "top",
+        end: "bottom",
+        scrub: true,
+      },
+    });
+  };
+  const onLoad = () => {
+    animate();
+  }
+
+  useEffect(() => {
     
-    const animateOnLoad = () => {
-      topSpans.forEach((span) => {
-        gsap.fromTo(
-          span.current,
-          { rotation: 10, opacity: 0, y: -window.innerHeight * 0.4 },
-          {
-            rotation: 0,
-            y: 0,
-            opacity: 1,
-            duration: 1.4,
-            ease: "power4.easeOut",
-            delay: 0.6,
-          }
-        );
-      });
-      headings.forEach((heading) => {
-        gsap.fromTo(
-          heading.current,
-          { rotation: 10, opacity: 0, y: window.innerHeight * 0.5 },
-          {
-            rotation: 0,
-            y: 0,
-            opacity: 1,
-            duration: 1.3,
-            ease: "power4.easeOut",
-            delay: 0.6,
-          }
-        );
-      });
-      gsap.to(backgroundImage.current, {
-        y: window.innerHeight * 2.06,
-        opacity: 0.3,
-        scale: 1.4,
-        scrollTrigger: {
-          start: "top",
-          end: "bottom",
-          scrub: true,
-        },
-      });
-    };
-    // window.addEventListener("loader-finished", animateOnLoad);
-    // return () => {
-    //   window.removeEventListener("loader-finished", animateOnLoad);
-    // };
-    setTimeout(() => requestAnimationFrame(animateOnLoad), 100);
+    setTimeout(() => requestAnimationFrame(onLoad), 200);
   }, []);
 
   return (

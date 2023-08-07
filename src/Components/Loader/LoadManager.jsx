@@ -1,11 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function LoadManager({ imageCount }) {
+export default function LoadManager({imageCount}) {
+
   const [imagesLoaded, setImagesLoaded] = useState(0);
 
-  return {
-    isLoaded: imagesLoaded === imageCount,
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setImagesLoaded(prev => prev + 1);  
+    }, 1500);
 
-    handleImageLoaded: () => setImagesLoaded((prev) => prev + 1),
+    if(imagesLoaded === imageCount) {
+      clearInterval(interval); 
+    }
+
+  }, [imagesLoaded, imageCount]);
+
+  return {
+    isLoaded: imagesLoaded === imageCount
   };
 }
