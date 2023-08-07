@@ -6,7 +6,7 @@ export const metadata = {
 };
 
 const myFont = localFont({
-  src: "/fonts/TWKLausanne-300.woff2",
+  src: "fonts/TWKLausanne-300.woff2",
   display: "swap",
 });
 

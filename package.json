@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "^13.4.13",
     "@studio-freight/lenis": "^1.0.14",
     "@vercel/analytics": "^1.0.1",
     "eslint": "8.41.0",
