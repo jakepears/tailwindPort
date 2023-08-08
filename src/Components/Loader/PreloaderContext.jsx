@@ -6,8 +6,7 @@ import PreloaderUI from "./PreloaderUI";
 export default function PreloaderContext({ children }) {
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
-
-  const { isLoaded } = LoadManager({ imageCount: 10 });
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     if (isLoaded) {
@@ -19,8 +18,9 @@ export default function PreloaderContext({ children }) {
     <>
       {loading && (
         <PreloaderUI
-          updateLoadingProgress={setProgress}
-          progress={progress}
+        updateLoadingProgress={setProgress}
+        progress={progress}
+        // onComplete={() => setIsLoaded(true)}
         />
       )}
       {children}

@@ -81,6 +81,7 @@ function Slider() {
       <div ref={imageTrackRef} className={styles.imageTrack}>
         <Image
           alt=""
+          width={200}
           className={styles.image}
           placeholder="blur"
           quality={100}
@@ -91,22 +92,35 @@ function Slider() {
         />
         <Image
           alt=""
+          width={200}
           className={styles.image}
           placeholder="blur"
           quality={100}
           src={don}
           draggable="false"
         />
-        <Image alt="" className={styles.image}
-        placeholder="blur"
-          quality={100} src={demon} draggable="false" />
-      </div>
-      <div ref={imageTrackRef2} className={styles.imageTrack2}>
-        <Image alt="" className={styles.image}
-        placeholder="blur"
-          quality={100} src={genji} draggable="false" />
         <Image
           alt=""
+          width={200}
+          className={styles.image}
+          placeholder="blur"
+          quality={100}
+          src={demon}
+          draggable="false"
+        />
+      </div>
+      <div ref={imageTrackRef2} className={styles.imageTrack2}>
+        <Image
+          alt=""
+          className={styles.image}
+          placeholder="blur"
+          quality={100}
+          src={genji}
+          draggable="false"
+        />
+        <Image
+          alt=""
+          width={200}
           className={styles.image}
           placeholder="blur"
           quality={100}
@@ -115,6 +129,7 @@ function Slider() {
         />
         <Image
           alt=""
+          width={200}
           className={styles.image}
           placeholder="blur"
           quality={100}

@@ -1,11 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import ScrollCTA from "../ScrollCTA/ScrollCTA";
 import Image from "next/image";
 import BG from "@assets/images/laanding-2.webp";
 import s from "./Hero.module.scss";
 
 export default function Hero() {
+  gsap.registerPlugin(ScrollTrigger);
  
   //Opening animation
   const topSpans = [useRef(null), useRef(null), useRef(null)];
@@ -55,18 +57,14 @@ export default function Hero() {
   
   useEffect(() => {
     
-    const onLoad = () => {
-      animate();
-    }
-    setTimeout(() => requestAnimationFrame(onLoad), 1000);
-    requestAnimationFrame(onLoad);
-  }, []);
+    animate();
+
+    setTimeout(() => requestAnimationFrame(animate), 100);
+    requestAnimationFrame(animate);
+  }, [animate]);
 
   return (
-    <section
-      data-cursor="-inverse"
-      className={s.heroContainer}
-    >
+    <section data-cursor="-inverse" className={s.heroContainer}>
       <ScrollCTA />
       <div className={`${s.contentWidth} ${s.column}`}>
         <div className={s.heroBackground}>
@@ -74,12 +72,11 @@ export default function Hero() {
             src={BG}
             alt="Beautifull landscape"
             placeholder="blur"
-            width={'100dvw'}
-            height={'auto'}
+            fill
+            sizes="100vw"
             quality={100}
             ref={backgroundImage}
             priority
-            style={{ objectFit: "cover" }}
           />
         </div>
         <div data-cursor-text="Hey!" className={s.topSpanContainer}>

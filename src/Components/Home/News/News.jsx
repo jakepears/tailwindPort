@@ -150,6 +150,7 @@ export default function News() {
           <picture id="3643671" data-v-4a179df6="">
             <source type="image/webp" srcSet={cameraMan} />
             <Image
+            width={200}
               data-cursor-text="Photos!"
               src={cameraMan}
               quality={100}
@@ -163,6 +164,7 @@ export default function News() {
           <picture data-cursor-text="Oregon!">
             <source type="image/webp" srcSet={oregonWelcome} />
             <Image
+            width={200}
               src={oregonWelcome}
               alt="welcome sign"
               quality={100}
