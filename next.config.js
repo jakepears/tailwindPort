@@ -7,7 +7,7 @@ const nextConfig = {
   webpack(config, { isServer }) {
     const prefix = config.assetPrefix ?? config.basePath ?? "";
     config.module.rules.push({
-      test: /\.mp4$/,
+      test: /\.webm$/,
       use: [
         {
           loader: "file-loader",
@@ -19,7 +19,7 @@ const nextConfig = {
         },
       ],
     });
-    config.resolve.alias["@assets"] = path.join(__dirname, "src/assets");
+    config.resolve.alias["@assets"] = path.join(__dirname, "public/assets");
 
     return config;
   },

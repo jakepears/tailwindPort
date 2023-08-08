@@ -52,13 +52,14 @@ export default function Hero() {
       },
     });
   };
-  const onLoad = () => {
-    animate();
-  }
-
+  
   useEffect(() => {
     
-    setTimeout(() => requestAnimationFrame(onLoad), 200);
+    const onLoad = () => {
+      animate();
+    }
+    setTimeout(() => requestAnimationFrame(onLoad), 1000);
+    requestAnimationFrame(onLoad);
   }, []);
 
   return (
@@ -71,9 +72,14 @@ export default function Hero() {
         <div className={s.heroBackground}>
           <Image
             src={BG}
-            alt="Background hero"
+            alt="Beautifull landscape"
+            placeholder="blur"
+            width={'100dvw'}
+            height={'auto'}
+            quality={100}
             ref={backgroundImage}
             priority
+            style={{ objectFit: "cover" }}
           />
         </div>
         <div data-cursor-text="Hey!" className={s.topSpanContainer}>

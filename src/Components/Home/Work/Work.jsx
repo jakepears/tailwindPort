@@ -2,9 +2,9 @@ import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import WK1 from "@assets/images/primera.mp4";
-import WK2 from "@assets/vids/munkeyTrailer.mp4";
-import beats from "@assets/images/beats-ad.mp4";
+import WK1 from "@assets/vids/primera.webm";
+import WK2 from "@assets/vids/munkeyTrailer.webm";
+import beats from "@assets/vids/beats-ad.webm";
 import primeraSC from "@assets/images/primera-sc.webp";
 import munkeyTrailer from "@assets/images/MunkeyPic.webp";
 import styles from "./Work.module.scss";
@@ -138,7 +138,7 @@ export default function Work() {
       ref={workRef}
     >
       <div ref={heading} className={styles.anim}>
-        <h1 >creations</h1>
+        <h1>creations</h1>
       </div>
       <div className={styles.row}>
         <div
@@ -148,7 +148,13 @@ export default function Work() {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <Image src={primeraSC} alt="Project 1" loading="lazy" />
+          <Image
+            src={primeraSC}
+            alt="Project 1"
+            quality={100}
+            placeholder="blur"
+            loading="lazy"
+          />
           <video
             playsInline=""
             loop="loop"
@@ -156,7 +162,7 @@ export default function Work() {
             disablePictureInPicture=""
             className={styles.video}
             src={WK1}
-            type="video/mp4"
+            type="video/webm"
           />
           <div className={styles.textWrapper}>
             <p ref={(el) => (textAnims.current[0] = el)} className="textAnim">
@@ -194,6 +200,8 @@ export default function Work() {
             <Image
               src={munkeyTrailer}
               alt={"picture of dude being cash money"}
+              quality={100}
+              placeholder="blur"
             />
             <Link href="https://chat-gpt-nu-five.vercel.app/" />
             <video
@@ -203,7 +211,7 @@ export default function Work() {
               disablePictureInPicture=""
               className={styles.video}
               src={WK2}
-              type="video/mp4"
+              type="video/webm"
             />
             <div className={styles.textWrapper}>
               <p ref={(el) => (textAnims.current[1] = el)} className="textAnim">
@@ -226,8 +234,10 @@ export default function Work() {
           <Image
             src="https://images.unsplash.com/photo-1627697823116-42877786ac26?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
             className={styles.beatsPic}
-            fill={true}
-            alt={"dude is being extremely cash money"} />
+            fill
+            quality={100}
+            alt={"dude is being extremely cash money"}
+          />
           <video
             playsInline=""
             loop="loop"
@@ -235,7 +245,7 @@ export default function Work() {
             disablePictureInPicture=""
             className={styles.video}
             src={beats}
-            type="video/mp4"
+            type="video/webm"
           />
           <div className={styles.textWrapper}>
             <p ref={(el) => (textAnims.current[2] = el)} className="textAnim">

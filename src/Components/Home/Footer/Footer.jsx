@@ -3,7 +3,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import footerVid from "@assets/vids/footer-3.mp4";
+import footerVid from "@assets/vids/footer-3.webm";
 import styles from "./Footer.module.scss";
 
 
@@ -121,7 +121,7 @@ export default function Footer() {
           muted
           disablePictureInPicture
           src={footerVid}
-          type="video/mp4"
+          type="video/webm"
           autoPlay
         />
       </div>

@@ -82,28 +82,42 @@ function Slider() {
         <Image
           alt=""
           className={styles.image}
+          placeholder="blur"
+          quality={100}
           src={vegeta}
+          placeholder="blur"
+          quality={100}
           draggable="false"
         />
         <Image
           alt=""
           className={styles.image}
+          placeholder="blur"
+          quality={100}
           src={don}
           draggable="false"
         />
-        <Image alt="" className={styles.image} src={demon} draggable="false" />
+        <Image alt="" className={styles.image}
+        placeholder="blur"
+          quality={100} src={demon} draggable="false" />
       </div>
       <div ref={imageTrackRef2} className={styles.imageTrack2}>
-        <Image alt="" className={styles.image} src={genji} draggable="false" />
+        <Image alt="" className={styles.image}
+        placeholder="blur"
+          quality={100} src={genji} draggable="false" />
         <Image
           alt=""
           className={styles.image}
+          placeholder="blur"
+          quality={100}
           src={kendrick}
           draggable="false"
         />
         <Image
           alt=""
           className={styles.image}
+          placeholder="blur"
+          quality={100}
           src={rocketLeague}
           draggable="false"
         />

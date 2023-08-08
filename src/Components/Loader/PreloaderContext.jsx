@@ -13,8 +13,8 @@ export default function PreloaderContext({ children }) {
     if (isLoaded) {
       setLoading(false);
     }
+    console.log('loading');
   }, [isLoaded]);
-  console.log('loading');
   return (
     <>
       {loading && (

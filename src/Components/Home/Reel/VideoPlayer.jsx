@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import promo from "@assets/vids/promo.mp4";
+import promo from "@assets/vids/promo.webm";
 import styles from "./VideoPlayer.module.scss";
 
 const VideoPlayer = ({ handleClick, handleScroll }) => {
@@ -26,7 +26,7 @@ const VideoPlayer = ({ handleClick, handleScroll }) => {
       className={styles.videoPlayer}
     >
       <video autoPlay="autoplay">
-        <source src={promo} type="video/mp4" />
+        <source src={promo} type="video/webm" />
       </video>
     </div>
   );

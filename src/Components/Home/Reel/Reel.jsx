@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import VideoPlayer from "./VideoPlayer";
-import bgVid from "@assets/vids/promo.mp4";
+import bgVid from "@assets/vids/promo.webm";
 import styles from "./Reel.module.scss";
 
 
