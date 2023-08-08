@@ -79,63 +79,78 @@ function Slider() {
   return (
     <div className={styles.full}>
       <div ref={imageTrackRef} className={styles.imageTrack}>
+        <div className={styles.image}>
+          <Image
+            alt=""
+            className={styles.image}
+            placeholder="blur"
+            quality={100}
+            fill
+          sizes="45vmin"
+            fill
+            sizes="45vmin"
+            src={vegeta}
+            placeholder="blur"
+            draggable="false"
+          />
+        </div>
+        <div className={styles.image}>
         <Image
           alt=""
-          width={200}
           className={styles.image}
           placeholder="blur"
           quality={100}
-          src={vegeta}
-          placeholder="blur"
-          quality={100}
-          draggable="false"
-        />
-        <Image
-          alt=""
-          width={200}
-          className={styles.image}
-          placeholder="blur"
-          quality={100}
+          fill
+          sizes="45vmin"
           src={don}
           draggable="false"
-        />
+        /></div>
+        <div className={styles.image}>
         <Image
           alt=""
-          width={200}
           className={styles.image}
           placeholder="blur"
           quality={100}
+          fill
+          sizes="45vmin"
           src={demon}
           draggable="false"
-        />
+        /></div>
       </div>
       <div ref={imageTrackRef2} className={styles.imageTrack2}>
+        <div className={styles.image}>
         <Image
           alt=""
           className={styles.image}
           placeholder="blur"
           quality={100}
+          fill
+          sizes="45vmin"
           src={genji}
           draggable="false"
-        />
+        /></div>
+        <div className={styles.image}>
         <Image
           alt=""
-          width={200}
           className={styles.image}
           placeholder="blur"
           quality={100}
+          fill
+          sizes="45vmin"
           src={kendrick}
           draggable="false"
-        />
+        /></div>
+        <div className={styles.image}>
         <Image
           alt=""
-          width={200}
           className={styles.image}
           placeholder="blur"
           quality={100}
+          fill
+          sizes="45vmin"
           src={rocketLeague}
           draggable="false"
-        />
+        /></div>
       </div>
     </div>
   );
