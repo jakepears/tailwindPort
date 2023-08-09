@@ -82,7 +82,7 @@ export default function News() {
         rotation: 3,
         scale: 1.2,
         opacity: 0,
-        y: () => heading0.current.clientHeight * 0.54,
+        y: () => heading0.current?.clientHeight ?? 0 * 0.54,
       },
       {
         rotation: 0,
@@ -100,7 +100,7 @@ export default function News() {
       {
         rotation: -3,
         opacity: 0,
-        y: () => heading1.current.clientHeight * 0.54,
+        y: () => heading1.current?.clientHeight ?? 0 * 0.54,
       },
       {
         rotation: 0,
@@ -148,9 +148,8 @@ export default function News() {
         </div>
         <div className={styles.newsMedia} ref={image2}>
           <picture id="3643671" data-v-4a179df6="">
-            <source type="image/webp" srcSet={cameraMan} />
+            <source type="image/webp" />
             <Image
-            width={200}
               data-cursor-text="Photos!"
               src={cameraMan}
               quality={100}
@@ -162,9 +161,8 @@ export default function News() {
         </div>
         <div className={styles.newsMedia} ref={image3}>
           <picture data-cursor-text="Oregon!">
-            <source type="image/webp" srcSet={oregonWelcome} />
+            <source type="image/webp"/>
             <Image
-            width={200}
               src={oregonWelcome}
               alt="welcome sign"
               quality={100}

@@ -41,7 +41,7 @@ export default function Footer() {
       {
         rotation: 6,
         opacity: 0,
-        y: (i, el) => el.clientHeight * 0.5,
+        y: (i, el) => el?.clientHeight ?? 0 * 0.5,
       },
       {
         rotation: 0,

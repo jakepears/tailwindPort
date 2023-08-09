@@ -6,6 +6,7 @@ import Footer from "./Footer/footer"
 import MouseFollower from "mouse-follower";
 import React from "react";
 import Landing from "./Landing/landing";
+import { AnimatePresence, motion } from "framer-motion";
 import '../../styles/cursor.scss';
 import '../../styles/index.scss';
 import AboutNav from "./AboutNav/aboutNav";
@@ -29,11 +30,18 @@ function AboutPage() {
   }, []);
 
   return (
-    <div>
-      <Landing />
-      <Footer />
-      <AboutNav />
-    </div>
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5, ease: 'anticipate' }}
+      >
+        <Landing />
+        <Footer />
+        <AboutNav />
+      </motion.div>
+    </AnimatePresence>
   );
 }
 

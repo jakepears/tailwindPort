@@ -32,7 +32,7 @@ export default function Work() {
         {
           rotation: 10,
           opacity: 0,
-          y: () => textAnim.clientHeight * 0.5,
+          y: () => textAnim?.clientHeight ?? 0 * 0.5,
         },
         { rotation: 0, y: 0, opacity: 1, duration: 0.7, ease: "power4.out" }
       );
@@ -53,7 +53,7 @@ export default function Work() {
         { rotation: 0, opacity: 1, y: 0 },
         {
           rotation: -10,
-          y: -textAnim.clientHeight,
+          y: -textAnim?.clientHeight ?? 0,
           opacity: 0,
           duration: 0.5,
           ease: "power4.out",
@@ -119,7 +119,7 @@ export default function Work() {
       {
         rotation: 6,
         opacity: 0,
-        y: () => heading.current.clientHeight * 0.5,
+        y: () => heading.current?.clientHeight ?? 0 * 0.5,
       },
       {
         rotation: 0,

@@ -14,6 +14,14 @@ export default function Hero() {
   const headings = [useRef(null), useRef(null), useRef(null)];
   const backgroundImage = useRef(null);
 
+
+  const enterTl = () => {
+  gsap.fromTo(
+    backgroundImage.current,
+    { y: "-30vh", scale: 1.4 },
+    { y: 0, scale: 1, duration: 1.6, ease: "power4.out", delay: 0.26 }
+  );
+}
   const animate = () => {
     topSpans.forEach((span) => {
       gsap.fromTo(
@@ -39,13 +47,14 @@ export default function Hero() {
           opacity: 1,
           duration: 1.3,
           ease: "power4.easeOut",
-          delay: 0.6,
+          delay: 0.4,
         }
       );
     });
-    gsap.to(backgroundImage.current, {
-      y: window.innerHeight * 2.06,
-      opacity: 0.3,
+    gsap.fromTo(backgroundImage.current, 
+      {y: 0, scale: 1, delay: 0.6},
+      {
+      y: window.innerHeight * 1.96,
       scale: 1.4,
       scrollTrigger: {
         start: "top",
@@ -56,12 +65,10 @@ export default function Hero() {
   };
   
   useEffect(() => {
-    
+    enterTl();
     animate();
-
-    setTimeout(() => requestAnimationFrame(animate), 100);
-    requestAnimationFrame(animate);
-  }, [animate]);
+    setTimeout(() => requestAnimationFrame(animate))
+  }, [enterTl, animate]);
 
   return (
     <section data-cursor="-inverse" className={s.heroContainer}>

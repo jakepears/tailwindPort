@@ -1,5 +1,15 @@
-.bar {
+.container {
+    z-index: 9998;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
     height: 100dvh;
+    pointer-events: none;
+}
+
+.bar {
+    height: 100%;
     position: fixed;
     object-fit: cover;
     top: 0;
@@ -8,8 +18,18 @@
     background: #dedfe1;
 }
 
+.bar1 {
+    height: 100%;
+    position: fixed;
+    object-fit: cover;
+    top: 0;
+    left: 75dvw;
+    width: 25dvw;
+    background: #283139;
+}
+
 .bar2 {
-    height: 100dvh;
+    height: 100%;
     position: fixed;
     object-fit: cover;
     top: 0;
@@ -19,21 +39,11 @@
 }
 
 .bar3 {
-    height: 100dvh;
+    height: 100%;
     position: fixed;
     object-fit: cover;
     top: 0;
     left: 50dvw;
     width: 25dvw;
     background: #cdc9bb;
-}
-
-.bar4 {
-    height: 100dvh;
-    position: fixed;
-    object-fit: cover;
-    top: 0;
-    left: 75dvw;
-    width: 25dvw;
-    background: #283139;
 }
