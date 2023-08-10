@@ -6,7 +6,7 @@ import WK1 from "@assets/vids/primera.webm";
 import WK2 from "@assets/vids/reaplyCrop.webm";
 import beats from "@assets/vids/beats-ad.webm";
 import primeraSC from "@assets/images/primera-sc.webp";
-import reaplyImg from "@assets/images/reaplyImg.png";
+import reaplyImg from "@assets/images/reaplyImg.webp";
 import styles from "./Work.module.scss";
 
 export default function Work() {
@@ -205,6 +205,7 @@ gsap.fromTo(
               alt={"picture of dude being cash money"}
               quality={100}
               placeholder="blur"
+              loading="lazy"
             />
             <video
               playsInline=""
