@@ -3,13 +3,13 @@ import Link from "next/link";
 import { gsap } from "gsap";
 import styles from "./aboutNav.module.scss";
 
-function AboutNav() {
+export default function AboutNav() {
   const linkRef = useRef(null);
   useEffect(() => {
     gsap.fromTo(
       linkRef.current,
       { opacity: 0 },
-      { opacity: 1, duration: 1, delay: 0.6 }
+      { opacity: 1, duration: 1, delay: 0.6, ease: "power4.out" }
     );
   }, []);
 
@@ -21,9 +21,13 @@ function AboutNav() {
             Home
           </Link>
         </li>
+        <li>
+          <Link className={styles.link} ref={linkRef} href="/personal">
+            Personal
+          </Link>
+        </li>
       </ul>
     </nav>
   );
 }
 
-export default AboutNav;

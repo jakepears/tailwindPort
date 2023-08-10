@@ -21,6 +21,11 @@ function Navbar() {
           <Link className={styles.link} ref={linkRef} href="/about">
             About
           </Link>
+          </li>
+          <li>
+          <Link className={styles.link} ref={linkRef} href="/personal">
+            Personal
+          </Link>
         </li>
       </ul>
     </nav>

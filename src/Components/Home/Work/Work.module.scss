@@ -38,7 +38,7 @@
 .block video {
   position: absolute;
   object-fit: cover;
-  width: calc(100% + 2px);
+  width: auto;
   height: 100%;
   top: 0;
   left: 0;
@@ -77,26 +77,42 @@
   padding-left: 6dvw;
 }
 
-.block0 {
+.primera {
   padding-left: 5dvw;
   height: 40dvh;
 }
 
-.block1 {
-  height: 30.84722dvw;
-  margin-bottom: 11.59722dvw;
+.reaply {
+  height: 32dvw;
+  aspect-ratio: 1/1;
+  margin-bottom: 12dvh;
   margin-top: 15dvh;
-  margin-left: 3dvw;
-  max-width: 90%;
+  margin-left: 4dvw;
+  max-width: 100%;
   z-index: 2;
-  border-radius: 10%;
+
+  .video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    z-index: 1;
+  }
 }
 
-.block2 {
+.beats {
+  padding-top: 5dvh;
   margin-bottom: 20dvh;
   width: 30dvw;
+  aspect-ratio: 1/1;
   height: 50dvh;
   transition: all 350ms ease-in-out;
+
+  .video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .workRightSection p {
@@ -127,11 +143,11 @@
     margin-bottom: 10dvh;
   }
 
-  .block0 {
+  .primera {
     height: 40dvh;
   }
 
-  .block1 {
+  .reaply {
     height: 30.84722dvh;
     width: 30.84722dvw;
     margin-bottom: 11.59722dvw;
@@ -144,7 +160,7 @@
     }
   }
 
-  .block2 {
+  .beats {
     padding-bottom: 20dvh;
     width: 40dvw;
     height: 30dvh;
@@ -196,6 +212,7 @@
     height: 50%;
     top: 0;
     left: 0;
+    aspect-ratio: auto;
     z-index: 1;
     display: none;
     pointer-events: none;
@@ -216,6 +233,7 @@
 }
 // Icon styles
 .icon {
+  margin-top: .1rem;
   height: 16px;
   width: 16px;
   margin-right: 10px;
@@ -236,6 +254,8 @@
 
 .anim {
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 .row {

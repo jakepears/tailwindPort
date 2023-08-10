@@ -5,8 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import footerVid from "@assets/vids/footer-3.webm";
 import styles from "./Footer.module.scss";
-
-
+import Link from "next/link";
 
 export default function Footer() {
   
@@ -63,6 +62,7 @@ export default function Footer() {
     { label: "Dribbble", value: "https://dribbble.com/jopearson" },
     { label: "Behance", value: "https://www.behance.net/jakepearson5" },
     { label: "GitHub", value: "https://github.com/DaCodeWiz" },
+    { label: "About", value: "/about"}
   ];
 
   const handleEmailCopy = () => {

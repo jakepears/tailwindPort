@@ -1,53 +1,56 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import WK1 from "@assets/vids/primera.webm";
-import WK2 from "@assets/vids/munkeyTrailer.webm";
+import WK2 from "@assets/vids/reaplyCrop.webm";
 import beats from "@assets/vids/beats-ad.webm";
 import primeraSC from "@assets/images/primera-sc.webp";
-import munkeyTrailer from "@assets/images/MunkeyPic.webp";
+import reaplyImg from "@assets/images/reaplyImg.png";
 import styles from "./Work.module.scss";
-import Link from "next/link";
 
 export default function Work() {
   const workRef = useRef(null);
-  const munkey = useRef(null);
+  const reaply = useRef(null);
   const primera = useRef(null);
   const beatsRef = useRef(null);
   const heading = useRef(null);
   const textAnims = useRef([]);
 
-  function handleMouseEnter(event) {
+  const handleMouseEnter = useCallback(event => {
     // play video
     const video = event.currentTarget.querySelector("video");
-    if (video) video.play();
-
-    // animation
+    video && video.play();
+    
     const textAnim = event.currentTarget.querySelector(".textAnim");
-    if (textAnim) {
-      gsap.killTweensOf(textAnim);
-      gsap.fromTo(
-        textAnim,
-        {
-          rotation: 10,
-          opacity: 0,
-          y: () => textAnim?.clientHeight ?? 0 * 0.5,
-        },
-        { rotation: 0, y: 0, opacity: 1, duration: 0.7, ease: "power4.out" }
-      );
-    }
-  }
-
-  function handleMouseLeave(event) {
+    textAnim && animateTextIn(textAnim);
+  
+    // animation
+  }, []);
+  
+  const handleMouseLeave = useCallback(event => {
     // pause video
     const video = event.currentTarget.querySelector("video");
-    if (video) video.pause();
+    video && video.pause();
 
     // animation
     const textAnim = event.currentTarget.querySelector(".textAnim");
-    if (textAnim) {
-      gsap.killTweensOf(textAnim);
+    textAnim && animateTextOut(textAnim);
+  }, []);
+
+  let animateTextIn = (textAnim) => {
+  gsap.fromTo(
+    textAnim,
+    {
+      rotation: 10,
+      opacity: 0,
+      y: () => textAnim?.clientHeight ?? 0 * 0.5,
+    },
+    { rotation: 0, y: 0, opacity: 1, duration: 0.7, ease: "power4.out" }
+  );
+  }
+
+  let animateTextOut = (textAnim) => {
       gsap.fromTo(
         textAnim,
         { rotation: 0, opacity: 1, y: 0 },
@@ -59,77 +62,82 @@ export default function Work() {
           ease: "power4.out",
         }
       );
-    }
-  }
+}
 
+  let scrollTriggerAnim = () => {
+// primera
+gsap.fromTo(
+  primera.current,
+  { y: -80 },
+  {
+    y: 120,
+    scrollTrigger: {
+      trigger: primera.current,
+      ease: "power4.out",
+      scrub: true,
+    },
+  }
+);
+
+// reaply
+  gsap.fromTo(
+    reaply.current,
+    { y: -100 },
+    {
+      y: 140,
+      scrollTrigger: {
+        trigger: reaply.current,
+        ease: "power4.out",
+        scrub: true,
+        velocity: 1.3,
+      },
+    }
+  );
+
+// beatsRef
+
+  gsap.fromTo(
+    beatsRef.current,
+    { y: -50 },
+    {
+      y: 110,
+      scrollTrigger: {
+        velocity: 2,
+        start: "top bottom",
+        invalidateOnRefresh: true,
+        trigger: beatsRef.current,
+        ease: "power4.out",
+        scrub: true,
+      },
+    }
+  );
+  }
+  let HeaderAnim = () => {
+// heading scroll trigger opening
+  gsap.fromTo(
+  heading.current,
+  {
+    y: 100,
+    rotation: 6,
+    opacity: 0,
+    y: () => heading.current?.clientHeight ?? 0 * 0.5,
+  },
+  {
+    rotation: 0,
+    y: 0,
+    opacity: 1,
+    duration: 0.7,
+    ease: "power4.out",
+    scrollTrigger: { trigger: heading.current, start: "center bottom" },
+  }
+);
+  }
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    // primera
-    if (primera.current) {
-      gsap.fromTo(
-        primera.current,
-        { y: -20 },
-        {
-          y: 120,
-          scrollTrigger: {
-            trigger: primera.current,
-            ease: "power4.out",
-            scrub: true,
-          },
-        }
-      );
-    }
+    scrollTriggerAnim();
+    HeaderAnim();
 
-    // munkey
-    if (munkey.current) {
-      gsap.fromTo(
-        munkey.current,
-        { y: -100 },
-        {
-          y: 110,
-          scrollTrigger: {
-            trigger: munkey.current,
-            ease: "power4.out",
-            scrub: true,
-          },
-        }
-      );
-    }
-
-    // beatsRef
-    if (beatsRef.current) {
-      gsap.fromTo(
-        beatsRef.current,
-        { y: -50 },
-        {
-          y: -120,
-          scrollTrigger: {
-            trigger: beatsRef.current,
-            ease: "power4.out",
-            scrub: true,
-          },
-        }
-      );
-    }
-
-    // heading scroll trigger opening
-    if (heading.current === null) return;
-    gsap.fromTo(
-      heading.current,
-      {
-        rotation: 6,
-        opacity: 0,
-        y: () => heading.current?.clientHeight ?? 0 * 0.5,
-      },
-      {
-        rotation: 0,
-        y: 0,
-        opacity: 1,
-        duration: 0.7,
-        ease: "power4.out",
-        scrollTrigger: { trigger: heading.current, start: "center bottom" },
-      }
-    );
+    requestAnimationFrame(scrollTriggerAnim)
   }, []);
 
   return (
@@ -138,13 +146,13 @@ export default function Work() {
       ref={workRef}
     >
       <div ref={heading} className={styles.anim}>
-        <h1>creations</h1>
+        <h1>work</h1>
       </div>
       <div className={styles.row}>
         <div
           ref={primera}
-          data-cursor-text="Primera!"
-          className={`${styles.block} ${styles.block0}`}
+          data-cursor-text="Info below"
+          className={`${styles.block} ${styles.primera}`}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
@@ -167,9 +175,9 @@ export default function Work() {
           <div className={styles.textWrapper}>
             <p ref={(el) => (textAnims.current[0] = el)} className="textAnim">
               <span>
-                <strong>Under Development</strong>
+                <strong>Primera</strong>
               </span>
-              <span> Currently Unavailable</span>
+              <span> Motion Graphics</span>
             </p>
           </div>
         </div>
@@ -184,26 +192,20 @@ export default function Work() {
             >
               <path d="M7.41908 4.56679L6.13722 0L4.85418 4.92566L0 6L4.85418 7.25435L6.13722 12L7.3276 7.25435L12 6L7.41908 4.56679Z"></path>
             </svg>
-            <span>Featured Projects</span>
+            <span>Hover for preview</span>
           </div>
-          <p className={styles.quote}>
-            <br />
-            my works (currently ongoing...)
-          </p>
           <div
-            data-cursor-text="Try it!"
-            className={`${styles.block} ${styles.block1}`}
-            ref={munkey}
+            className={`${styles.block} ${styles.reaply}`}
+            ref={reaply}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
             <Image
-              src={munkeyTrailer}
+              src={reaplyImg}
               alt={"picture of dude being cash money"}
               quality={100}
               placeholder="blur"
             />
-            <Link href="https://chat-gpt-nu-five.vercel.app/" />
             <video
               playsInline=""
               loop="loop"
@@ -216,9 +218,9 @@ export default function Work() {
             <div className={styles.textWrapper}>
               <p ref={(el) => (textAnims.current[1] = el)} className="textAnim">
                 <span>
-                  <strong>Munkey AI </strong>
+                  <strong>Reaply </strong>
                 </span>
-                <span>ChatGPT Remake</span>
+                <span>Motion Design</span>
               </p>
             </div>
           </div>
@@ -226,7 +228,7 @@ export default function Work() {
       </div>
       <div className={styles.row}>
         <div
-          className={`${styles.block} ${styles.block2}`}
+          className={`${styles.block} ${styles.beats}`}
           ref={beatsRef}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
@@ -237,7 +239,7 @@ export default function Work() {
             fill
             sizes="40dvw"
             quality={100}
-            alt={"dude is being extremely cash money"}
+            alt={"picture of dude being cash money"}
           />
           <video
             playsInline=""
@@ -251,7 +253,7 @@ export default function Work() {
           <div className={styles.textWrapper}>
             <p ref={(el) => (textAnims.current[2] = el)} className="textAnim">
               <span>
-                <strong>Beats Ad</strong>
+                <strong>Beats</strong>
               </span>
               <span> Motion Design</span>
             </p>

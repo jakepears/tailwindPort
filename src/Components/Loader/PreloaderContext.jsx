@@ -16,11 +16,18 @@ export default function PreloaderContext({ children }) {
   return (
     <>
       {loading && (
-        <AnimatePresence>
+        <AnimatePresence mode="wait">
+          <motion.div
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 0 }}
+            exit={ { opacity: 0 } }
+            transition={{ duration: 0.6, ease: 'anticipate' }}
+            >
         <PreloaderUI
           updateLoadingProgress={setProgress}
           progress={progress}
         />
+        </motion.div>
         </AnimatePresence>
         )}
       {children}

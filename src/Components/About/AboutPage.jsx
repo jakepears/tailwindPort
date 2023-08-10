@@ -30,12 +30,11 @@ function AboutPage() {
   }, []);
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.5, ease: 'anticipate' }}
+        transition={{ duration: 0.6, ease: 'anticipate' }}
       >
         <Landing />
         <Footer />

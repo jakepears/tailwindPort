@@ -11,6 +11,8 @@ import '../styles/cursor.scss';
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function App() {
+  const MemoNavbar = React.memo(Navbar);
+  const MemoHome = React.memo(Home);
   useEffect(() => {
     MouseFollower.registerGSAP(gsap);
     const cursor = new MouseFollower();
@@ -30,15 +32,14 @@ export default function App() {
 
   return (
     <div className={`${s.center} ${s.column}`}>
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 0.4 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0, background: "transparent" }}
-          transition={{ duration: 0.6, delay: 0.2, ease: 'anticipate' }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "anticipate" }}
         >
-          <Navbar />
-          <Home />
+          <MemoNavbar />
+          <MemoHome />
         </motion.div>
       </AnimatePresence>
     </div>
