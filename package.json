@@ -19,13 +19,9 @@
     "mouse-follower": "^1.1.2",
     "next": "^13.4.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "sass": "^1.59.2",
-    "sass-mq": "^6.0.0",
-    "sharp": "^0.32.1"
+    "sass": "^1.59.2"
   },
   "devDependencies": {
-    "file-loader": "^6.2.0",
     "prettier": "2.8.8"
   }
 }
