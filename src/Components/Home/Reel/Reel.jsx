@@ -5,8 +5,6 @@ import VideoPlayer from "./VideoPlayer";
 import bgVid from "@assets/vids/promo.webm";
 import styles from "./Reel.module.scss";
 
-
-
 function Reel() {
   const [isPlaying, setIsPlaying] = useState(false);
   const video = useRef(null);
@@ -37,7 +35,7 @@ function Reel() {
     return () => {
       tl.kill();
     };
-  }, [container.current, video.current, heading0.current, heading1.current]);
+  }, []);
 
   const handleClick = () => {
     setIsPlaying(!isPlaying);

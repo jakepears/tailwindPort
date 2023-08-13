@@ -9,7 +9,7 @@ import demon from "@assets/sliderImages/demon.webp";
 import genji from "@assets/sliderImages/genji.webp";
 import kendrick from "@assets/sliderImages/kendrick.webp";
 import rocketLeague from "@assets/sliderImages/rl.webp";
-import styles from "./slider.module.scss";
+import styles from "./Slider.module.scss";
 import SliderContext from "../SliderContext";
 
 function Slider() {
@@ -74,7 +74,7 @@ function Slider() {
       window.removeEventListener("mousewheel", handleMouseWheel);
     };
 
-  }, [isScrollEnabled]);
+  }, [isScrollEnabled, footerRef]);
 
   return (
     <div className={styles.full}>
@@ -86,11 +86,8 @@ function Slider() {
             placeholder="blur"
             quality={100}
             fill
-          sizes="45vmin"
-            fill
             sizes="45vmin"
             src={vegeta}
-            placeholder="blur"
             draggable="false"
           />
         </div>

@@ -9,7 +9,6 @@ import oregonWelcome from "@assets/images/casey-olsen-2s11AHnb_SU-unsplash.webp"
 import lonelyZone from "@assets/vids/video1.webm";
 
 
-
 export default function News() {
   const wrapper = useRef(null);
   const image1 = useRef(null);

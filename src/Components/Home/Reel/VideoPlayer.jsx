@@ -3,7 +3,7 @@ import gsap from "gsap";
 import promo from "@assets/vids/promo.webm";
 import styles from "./VideoPlayer.module.scss";
 
-const VideoPlayer = ({ handleClick, handleScroll }) => {
+export default function VideoPlayer({ handleClick, handleScroll }) {
   const container = useRef(null);
 
   useEffect(() => {
@@ -32,4 +32,3 @@ const VideoPlayer = ({ handleClick, handleScroll }) => {
   );
 };
 
-export default VideoPlayer;

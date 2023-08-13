@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
-import styles from "./aboutNav.module.scss";
+import styles from "./AboutNav.module.scss";
 
 export default function AboutNav() {
   const linkRef = useRef(null);

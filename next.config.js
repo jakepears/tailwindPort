@@ -19,15 +19,15 @@ const nextConfig = {
         },
       ],
     });
-    config.resolve.alias["@assets"] = path.join(__dirname, "public/assets");
-    config.resolve.alias["@Components"] = path.join(__dirname, "src/Components");
-    
     return config;
   },
-};
+  reactStrictMode: true,
 
+  swcMinify: true,
+
+  transpilePackages: ["ui"],
+};
 
 module.exports = nextConfig;
 
 const path = require("path");
-

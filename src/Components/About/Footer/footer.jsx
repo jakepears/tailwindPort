@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
-import Slider from "./Slider/slider";
-import styles from "./footer.module.scss";
+import Slider from "./Slider/Slider";
+import styles from "./Footer.module.scss";
 import SliderContext from "./SliderContext";
 
 function Footer() {

@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
 import styles from "./ScrollCTA.module.scss";
 
-const ScrollCTA = () => {
+function ScrollCTA() {
   const [opacity, setOpacity] = useState(0.5);
 
   const handleScroll = () => {

@@ -38,7 +38,7 @@ export default function Work() {
     textAnim && animateTextOut(textAnim);
   }, []);
 
-  let animateTextIn = (textAnim) => {
+  const animateTextIn = (textAnim) => {
   gsap.fromTo(
     textAnim,
     {
@@ -50,7 +50,7 @@ export default function Work() {
   );
   }
 
-  let animateTextOut = (textAnim) => {
+  const animateTextOut = (textAnim) => {
       gsap.fromTo(
         textAnim,
         { rotation: 0, opacity: 1, y: 0 },
@@ -64,7 +64,7 @@ export default function Work() {
       );
 }
 
-  let scrollTriggerAnim = () => {
+  const scrollTriggerAnim = () => {
 // primera
 gsap.fromTo(
   primera.current,
@@ -112,7 +112,7 @@ gsap.fromTo(
     }
   );
   }
-  let HeaderAnim = () => {
+  const HeaderAnim = () => {
 // heading scroll trigger opening
   gsap.fromTo(
   heading.current,

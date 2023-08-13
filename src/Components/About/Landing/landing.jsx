@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import styles from "./landing.module.scss";
+import styles from "./Landing.module.scss";
 
-function landing() {
+export default function Landing() {
   
   
   const [emailCopied, setEmailCopied] = useState(false);
@@ -15,7 +15,6 @@ function landing() {
     { label: "GitHub", value: "https://github.com/DaCodeWiz" },
   ];
   
-
   const skewRef = useRef(null);
 
   useEffect(() => {
@@ -120,5 +119,3 @@ function landing() {
     </div>
   );
 }
-
-export default landing;

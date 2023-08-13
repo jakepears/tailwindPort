@@ -2,14 +2,13 @@
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
-import Footer from "./Footer/footer"
+import Footer from "./Footer/Footer"
 import MouseFollower from "mouse-follower";
-import React from "react";
-import Landing from "./Landing/landing";
+import Landing from "./Landing/Landing";
 import { AnimatePresence, motion } from "framer-motion";
 import '../../styles/cursor.scss';
 import '../../styles/index.scss';
-import AboutNav from "./AboutNav/aboutNav";
+import AboutNav from "./AboutNav/AboutNav";
 
 function AboutPage() {
   useEffect(() => {
