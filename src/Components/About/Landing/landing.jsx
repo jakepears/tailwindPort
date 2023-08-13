@@ -69,16 +69,16 @@ export default function Landing() {
         <div className={`${styles.group} ${styles.fadeInText}`}>
           <ul>
             <li>
-              <h3>Goals</h3>
+              <h2 className={styles.goal}>Goals</h2>
             </li>
             <li>
-              <h4>
+              <h3 className={styles.aim}>
                 My aim is to continuously push my skills and grow as a digital
                 storyteller. I'm driven to craft experiences that inform,
                 educate, and inspire through thoughtful design. I want to
                 leverage my whole toolkit - animation, 3D, UX, coding - to
                 create work that connects.
-              </h4>
+              </h3>
             </li>
             <li>
               <h3 className={styles.git}>Get in touch</h3>

@@ -90,7 +90,7 @@ export default function News() {
         opacity: 1,
         duration: 1.13,
         ease: "power4.inOut",
-        scrollTrigger: { trigger: heading1.current, start: "top center" },
+        scrollTrigger: { trigger: heading1.current, start: "top bottom" },
       }
     );
 
@@ -107,7 +107,7 @@ export default function News() {
         opacity: 1,
         duration: 1.13,
         ease: "power4.inOut",
-        scrollTrigger: { trigger: heading1.current, start: "top center" },
+        scrollTrigger: { trigger: heading1.current, start: "top bottom" },
       }
     );
   }, []);

@@ -38,6 +38,16 @@
 
   .git {
     padding-top: 4dvh;
+    font-size: 2dvw;
+  }
+
+  .goal {
+    font-size: 3dvw;
+  }
+
+  .aim {
+    font-size: 1.5dvw;
+    color: rgba(222, 223, 225, 0.8)
   }
 
   .group {
@@ -74,6 +84,7 @@
 .bottomList {
   padding-bottom: 20dvh;
   list-style: none;
+  font-size: 1.5dvw;
 
   button {
     padding: 0;

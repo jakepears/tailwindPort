@@ -1,16 +1,20 @@
 'use client'
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
-import Footer from "./Footer/Footer"
 import MouseFollower from "mouse-follower";
-import Landing from "./Landing/Landing";
+import dynamic from "next/dynamic";
 import { AnimatePresence, motion } from "framer-motion";
 import '../../styles/cursor.scss';
 import '../../styles/index.scss';
-import AboutNav from "./AboutNav/AboutNav";
 
 function AboutPage() {
+  const LazyFooter = dynamic(() => import("./Footer/Footer"));
+  const LazyLanding = dynamic(() => import("./Landing/Landing"));
+  const LazyAboutNav = dynamic(() => import("./AboutNav/AboutNav"));
+  const MemoFooter = useMemo(() => LazyFooter, [LazyFooter]);
+  const MemoLanding = useMemo(() => LazyLanding, [LazyLanding]);
+  const AboutNav = useMemo(() => LazyAboutNav, [LazyAboutNav]);
   useEffect(() => {
     MouseFollower.registerGSAP(gsap);
     const cursor = new MouseFollower();
@@ -35,8 +39,8 @@ function AboutPage() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, ease: 'anticipate' }}
       >
-        <Landing />
-        <Footer />
+        <MemoLanding />
+        <MemoFooter />
         <AboutNav />
       </motion.div>
     </AnimatePresence>

@@ -1,18 +1,19 @@
 /** @format */
 'use client'
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import gsap from "gsap";
 import Lenis from "@studio-freight/lenis";
-import Navbar from "./Navbar/navbar";
-import Home from './Home/Home';
 import MouseFollower from "mouse-follower";
-import s from "../styles/index.scss";
-import '../styles/cursor.scss';
 import { AnimatePresence, motion } from "framer-motion";
+import dynamic from "next/dynamic";
+import styles from "../styles/index.scss";
+import '../styles/cursor.scss';
 
 export default function App() {
-  const MemoNavbar = React.memo(Navbar);
-  const MemoHome = React.memo(Home);
+  const LazyNavbar = dynamic(() => import("../Components/Navbar/Navbar"));
+  const LazyHome = dynamic(() => import("../Components/Home/Home"));
+  const MemoNavbar = useMemo(() => (LazyNavbar), [LazyNavbar]);
+  const MemoHome = useMemo(() => (LazyHome), [LazyHome]);
   useEffect(() => {
     MouseFollower.registerGSAP(gsap);
     const cursor = new MouseFollower();
@@ -31,17 +32,17 @@ export default function App() {
   }, []);
 
   return (
-    <div className={`${s.center} ${s.column}`}>
-      <AnimatePresence mode="wait">
+    <div className={`${styles.center} ${styles.column}`}>
+      <AnimatePresence mode="wait" unmountOnExit>
         <motion.div
-          initial={{ opacity: 0.4 }}
+          initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2, ease: "anticipate" }}
+          transition={{ duration: 0.6, ease: "anticipate" }}
         >
           <MemoNavbar />
           <MemoHome />
         </motion.div>
-      </AnimatePresence>
+        </AnimatePresence>
     </div>
   );
 }

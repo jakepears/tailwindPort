@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
-import styles from "./navbar.module.scss";
+import styles from "./Navbar.module.scss";
 
 function Navbar() {
   const linkRef = useRef(null);

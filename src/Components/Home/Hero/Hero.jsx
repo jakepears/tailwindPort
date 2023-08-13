@@ -63,7 +63,7 @@ export default function Hero() {
         },
       });
     };
-    setTimeout(() => requestAnimationFrame(animate))
+    setTimeout(() => requestAnimationFrame(animate), 300)
   });
 
   return (
@@ -73,7 +73,7 @@ export default function Hero() {
         <div className={s.heroBackground}>
           <Image
             src={BG}
-            alt="Beautifull landscape"
+            alt="Beautiful landscape"
             placeholder="blur"
             fill
             sizes="100vw"

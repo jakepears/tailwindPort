@@ -192,7 +192,7 @@ gsap.fromTo(
             >
               <path d="M7.41908 4.56679L6.13722 0L4.85418 4.92566L0 6L4.85418 7.25435L6.13722 12L7.3276 7.25435L12 6L7.41908 4.56679Z"></path>
             </svg>
-            <span>Hover for preview</span>
+            <span className={styles.hoverFor}>Hover for preview</span>
           </div>
           <div
             className={`${styles.block} ${styles.reaply}`}
@@ -240,6 +240,7 @@ gsap.fromTo(
             fill
             sizes="40dvw"
             quality={100}
+            loading="lazy"
             alt={"picture of dude being cash money"}
           />
           <video

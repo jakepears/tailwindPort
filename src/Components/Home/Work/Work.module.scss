@@ -35,6 +35,10 @@
   pointer-events: none;
 }
 
+.hoverFor {
+  font-size: 1.5dvw;
+}
+
 .block video {
   position: absolute;
   object-fit: cover;
@@ -233,10 +237,10 @@
 }
 // Icon styles
 .icon {
-  margin-top: .1rem;
+  margin-top: .25rem;
   height: 16px;
   width: 16px;
-  margin-right: 10px;
+  margin-right: 12px;
 }
 
 // Content width

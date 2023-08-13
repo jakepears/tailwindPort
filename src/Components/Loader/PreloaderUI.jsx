@@ -1,7 +1,7 @@
 'use client'
 import { useEffect } from "react";
 import s from './PreloaderUI.module.scss'
-import { anticipate, easeIn, motion } from 'framer-motion'
+import { AnimatePresence, anticipate, easeIn, motion } from 'framer-motion'
 
 export default function PreloaderUI({ updateLoadingProgress, progress }) {
   useEffect(() => {
@@ -17,12 +17,12 @@ export default function PreloaderUI({ updateLoadingProgress, progress }) {
 
   return (
     <>
+    <AnimatePresence>
     <motion.div 
       initial={{ opacity: 1 }}
       exit={{ 
-        opacity: 0,
-        transition: { delay: 1.1, duration: 0.8, ease: 'anticipate' },
-      }}  
+        opacity: 0}}
+      transition= {{ delay: 1.1, duration: 0.8, ease: 'anticipate' }}
     >
       {progress < 100 && (
         <div className={s.preloaderStyles}>
@@ -30,6 +30,7 @@ export default function PreloaderUI({ updateLoadingProgress, progress }) {
         </div>
       )}
       </motion.div>
+      </AnimatePresence>
     </>
   );
 }
