@@ -22,7 +22,7 @@ function Reel() {
         pinSpacing: true,
         pin: true,
         pinType: "fixed",
-        start: "top bottom",
+        start: "top top",
       },
     });
     // Scale Video to fill container
@@ -35,7 +35,7 @@ function Reel() {
     return () => {
       tl.kill();
     };
-  }, []);
+  }, [container, video, heading0, heading1]);
 
   const handleClick = () => {
     setIsPlaying(!isPlaying);
