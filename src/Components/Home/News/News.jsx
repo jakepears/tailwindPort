@@ -110,7 +110,7 @@ export default function News() {
         scrollTrigger: { trigger: heading1.current, start: "top bottom" },
       }
     );
-  }, []);
+  }, [image1, image2, image3, image4, wrapper, heading0, heading1]);
 
   return (
     <div
