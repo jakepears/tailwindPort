@@ -75,9 +75,8 @@ export default function Hero() {
             src={BG}
             alt="Beautiful landscape"
             placeholder="blur"
-            fill
+            width={1920}
             sizes="100vw"
-            quality={100}
             ref={backgroundImage}
             priority
           />

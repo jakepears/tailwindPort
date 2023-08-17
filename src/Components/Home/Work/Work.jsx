@@ -159,7 +159,6 @@ gsap.fromTo(
           <Image
             src={primeraSC}
             alt="Project 1"
-            quality={100}
             placeholder="blur"
             loading="lazy"
           />
@@ -203,7 +202,6 @@ gsap.fromTo(
             <Image
               src={reaplyImg}
               alt={"picture of dude being cash money"}
-              quality={100}
               placeholder="blur"
               loading="lazy"
             />
@@ -239,7 +237,6 @@ gsap.fromTo(
             className={styles.beatsPic}
             fill
             sizes="40dvw"
-            quality={100}
             loading="lazy"
             alt={"picture of dude being cash money"}
           />

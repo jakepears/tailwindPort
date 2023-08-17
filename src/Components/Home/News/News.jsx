@@ -119,7 +119,6 @@ export default function News() {
       <div className={styles.newsMediaContainer} ref={wrapper}>
         <div className={styles.newsMedia}>
           <video
-            data-cursor-text="We love..."
             playsInline
             loop
             muted
@@ -130,7 +129,7 @@ export default function News() {
           />
         </div>
         <div className={styles.newsMedia} ref={image1}>
-          <picture data-cursor-text="Photos!">
+          <picture>
             <source
               src="https://images.pexels.com/photos/2121665/pexels-photo-2121665.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               type="image/webp"
@@ -138,9 +137,8 @@ export default function News() {
             <Image
               src="https://images.pexels.com/photos/2121665/pexels-photo-2121665.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               loading="lazy"
-              width='450'
-              height='300'
-              quality={100}
+              height={750}
+              width={1260}
               alt="luh shawty sign"
             />
           </picture>
@@ -149,9 +147,7 @@ export default function News() {
           <picture id="3643671" data-v-4a179df6="">
             <source type="image/webp" />
             <Image
-              data-cursor-text="Photos!"
               src={cameraMan}
-              quality={100}
               placeholder="blur"
               alt="a guy holding a camera"
               loading="lazy"
@@ -159,12 +155,11 @@ export default function News() {
           </picture>
         </div>
         <div className={styles.newsMedia} ref={image3}>
-          <picture data-cursor-text="Oregon!">
+          <picture>
             <source type="image/webp"/>
             <Image
               src={oregonWelcome}
               alt="welcome sign"
-              quality={100}
               placeholder="blur"
               loading="lazy"
             />
@@ -172,7 +167,6 @@ export default function News() {
         </div>
         <div className={styles.newsMedia} ref={image4}>
           <video
-            data-cursor-text="Videos!"
             playsInline
             loop
             muted
