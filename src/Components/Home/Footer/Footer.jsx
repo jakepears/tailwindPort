@@ -61,7 +61,7 @@ export default function Footer() {
     { label: "LinkedIn", value: "https://www.linkedin.com/in/jakepearson123" },
     { label: "Dribbble", value: "https://dribbble.com/jopearson" },
     { label: "Behance", value: "https://www.behance.net/jakepearson5" },
-    { label: "GitHub", value: "https://github.com/DaCodeWiz" },
+    { label: "GitHub", value: "https://github.com/jakepears" },
     { label: "About", value: "/about"}
   ];
 

@@ -12,7 +12,7 @@ export default function Landing() {
     { label: "LinkedIn", value: "https://www.linkedin.com/in/jakepearson123" },
     { label: "Dribbble", value: "https://dribbble.com/jopearson" },
     { label: "Behance", value: "https://www.behance.net/jakepearson5" },
-    { label: "GitHub", value: "https://github.com/DaCodeWiz" },
+    { label: "GitHub", value: "https://github.com/jakepears" },
   ];
   
   const skewRef = useRef(null);
