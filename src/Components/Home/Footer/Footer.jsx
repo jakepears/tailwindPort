@@ -57,7 +57,7 @@ export default function Footer() {
   }, []);
 
   const personalLinks = [
-    { label: "Email", value: "jpearsonbusiness@gmail.com" },
+    { label: "Email", value: "hello@jpearson.art" },
     { label: "LinkedIn", value: "https://www.linkedin.com/in/jakepearson123" },
     { label: "Dribbble", value: "https://dribbble.com/jopearson" },
     { label: "Behance", value: "https://www.behance.net/jakepearson5" },
@@ -66,7 +66,7 @@ export default function Footer() {
   ];
 
   const handleEmailCopy = () => {
-    navigator.clipboard.writeText("jpearsonbusiness@gmail.com").then(() => false);
+    navigator.clipboard.writeText("hello@jpearson.art").then(() => false);
     setEmailCopied(true);
     setTimeout(() => setEmailCopied(false), 3000);
   };
