@@ -58,11 +58,27 @@ export default function Footer() {
 
   const personalLinks = [
     { label: "Email", value: "hello@jpearson.art" },
-    { label: "LinkedIn", value: "https://www.linkedin.com/in/jakepearson123" },
-    { label: "Dribbble", value: "https://dribbble.com/jopearson" },
-    { label: "Behance", value: "https://www.behance.net/jakepearson5" },
-    { label: "GitHub", value: "https://github.com/jakepears" },
-    { label: "About", value: "/about"}
+    {
+      label: "LinkedIn",
+      value: "https://www.linkedin.com/in/jakepearson123",
+      target: "_blank",
+    },
+    {
+      label: "Dribbble",
+      value: "https://dribbble.com/jopearson",
+      target: "_blank",
+    },
+    {
+      label: "Behance",
+      value: "https://www.behance.net/jakepearson5",
+      target: "_blank",
+    },
+    {
+      label: "GitHub",
+      value: "https://github.com/jakepears",
+      target: "_blank",
+    },
+    { label: "About", value: "/about" },
   ];
 
   const handleEmailCopy = () => {
@@ -89,7 +105,7 @@ export default function Footer() {
         <div className={`${styles.footerFinalP} ${styles.block}`}>
           <div className={styles.footerList}>
             <ul className={styles.linkList}>
-              {personalLinks.map(({ label, value }) => (
+              {personalLinks.map(({ label, value, target }) => (
                 <li key={label}>
                   {label === "Email" ? (
                     <button
@@ -104,9 +120,9 @@ export default function Footer() {
                       {emailCopied ? "Copied!" : label}
                     </button>
                   ) : (
-                    <a href={value} target="_blank" rel="noopener noreferrer">
+                    <Link href={value} target={target || "_self"} rel="noopener noreferrer">
                       {label}
-                    </a>
+                    </Link>
                   )}
                 </li>
               ))}
