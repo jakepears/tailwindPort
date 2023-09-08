@@ -1,3 +1,4 @@
+"use client";
 import React, { useRef, useEffect, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -17,18 +18,18 @@ export default function Work() {
   const heading = useRef(null);
   const textAnims = useRef([]);
 
-  const handleMouseEnter = useCallback(event => {
+  const handleMouseEnter = useCallback((event) => {
     // play video
     const video = event.currentTarget.querySelector("video");
     video && video.play();
-    
+
     const textAnim = event.currentTarget.querySelector(".textAnim");
     textAnim && animateTextIn(textAnim);
-  
+
     // animation
   }, []);
-  
-  const handleMouseLeave = useCallback(event => {
+
+  const handleMouseLeave = useCallback((event) => {
     // pause video
     const video = event.currentTarget.querySelector("video");
     video && video.pause();
@@ -39,105 +40,105 @@ export default function Work() {
   }, []);
 
   const animateTextIn = (textAnim) => {
-  gsap.fromTo(
-    textAnim,
-    {
-      rotation: 10,
-      opacity: 0,
-      y: () => textAnim?.clientHeight ?? 0 * 0.5,
-    },
-    { rotation: 0, y: 0, opacity: 1, duration: 0.7, ease: "power4.out" }
-  );
-  }
+    gsap.fromTo(
+      textAnim,
+      {
+        rotation: 10,
+        opacity: 0,
+        y: () => textAnim?.clientHeight ?? 0 * 0.5,
+      },
+      { rotation: 0, y: 0, opacity: 1, duration: 0.7, ease: "power4.out" }
+    );
+  };
 
   const animateTextOut = (textAnim) => {
-      gsap.fromTo(
-        textAnim,
-        { rotation: 0, opacity: 1, y: 0 },
-        {
-          rotation: -10,
-          y: -textAnim?.clientHeight ?? 0,
-          opacity: 0,
-          duration: 0.5,
-          ease: "power4.out",
-        }
-      );
-}
+    gsap.fromTo(
+      textAnim,
+      { rotation: 0, opacity: 1, y: 0 },
+      {
+        rotation: -10,
+        y: -textAnim?.clientHeight ?? 0,
+        opacity: 0,
+        duration: 0.5,
+        ease: "power4.out",
+      }
+    );
+  };
 
   const scrollTriggerAnim = () => {
-// primera
-gsap.fromTo(
-  primera.current,
-  { y: -80 },
-  {
-    y: 120,
-    scrollTrigger: {
-      trigger: primera.current,
-      ease: "power4.out",
-      scrub: true,
-    },
-  }
-);
+    // primera
+    gsap.fromTo(
+      primera.current,
+      { y: -80 },
+      {
+        y: 120,
+        scrollTrigger: {
+          trigger: primera.current,
+          ease: "power4.out",
+          scrub: true,
+        },
+      }
+    );
 
-// reaply
-  gsap.fromTo(
-    reaply.current,
-    { y: -100 },
-    {
-      y: 140,
-      scrollTrigger: {
-        trigger: reaply.current,
-        ease: "power4.out",
-        scrub: true,
-        velocity: 1.3,
-      },
-    }
-  );
+    // reaply
+    gsap.fromTo(
+      reaply.current,
+      { y: -100 },
+      {
+        y: 140,
+        scrollTrigger: {
+          trigger: reaply.current,
+          ease: "power4.out",
+          scrub: true,
+          velocity: 1.3,
+        },
+      }
+    );
 
-// beatsRef
+    // beatsRef
 
-  gsap.fromTo(
-    beatsRef.current,
-    { y: -50 },
-    {
-      y: 110,
-      scrollTrigger: {
-        velocity: 2,
-        start: "top bottom",
-        invalidateOnRefresh: true,
-        trigger: beatsRef.current,
-        ease: "power4.out",
-        scrub: true,
-      },
-    }
-  );
-  }
+    gsap.fromTo(
+      beatsRef.current,
+      { y: -50 },
+      {
+        y: 110,
+        scrollTrigger: {
+          velocity: 2,
+          start: "top bottom",
+          invalidateOnRefresh: true,
+          trigger: beatsRef.current,
+          ease: "power4.out",
+          scrub: true,
+        },
+      }
+    );
+  };
   const HeaderAnim = () => {
-// heading scroll trigger opening
-  gsap.fromTo(
-  heading.current,
-  {
-    y: 100,
-    rotation: 6,
-    opacity: 0,
-    y: () => heading.current?.clientHeight ?? 0 * 0.5,
-  },
-  {
-    rotation: 0,
-    y: 0,
-    opacity: 1,
-    duration: 0.7,
-    ease: "power4.out",
-    scrollTrigger: { trigger: heading.current, start: "center bottom" },
-  }
-);
-  }
+    // heading scroll trigger opening
+    gsap.fromTo(
+      heading.current,
+      {
+        y: 100,
+        rotation: 6,
+        opacity: 0,
+        y: () => heading.current?.clientHeight ?? 0 * 0.5,
+      },
+      {
+        rotation: 0,
+        y: 0,
+        opacity: 1,
+        duration: 0.7,
+        ease: "power4.out",
+        scrollTrigger: { trigger: heading.current, start: "center bottom" },
+      }
+    );
+  };
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     scrollTriggerAnim();
     HeaderAnim();
 
-    requestAnimationFrame(scrollTriggerAnim)
+    requestAnimationFrame(scrollTriggerAnim);
   }, []);
 
   return (

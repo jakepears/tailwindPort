@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
 import styles from "./ScrollCTA.module.scss";
@@ -30,6 +31,6 @@ function ScrollCTA() {
       Scroll to explore
     </p>
   );
-};
+}
 
 export default ScrollCTA;

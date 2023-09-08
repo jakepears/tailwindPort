@@ -1,5 +1,5 @@
 /** @format */
-
+"use client";
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -8,12 +8,11 @@ import styles from "./Footer.module.scss";
 import Link from "next/link";
 
 export default function Footer() {
-  
   const [emailCopied, setEmailCopied] = useState(false);
   const footerContainer = useRef(null);
   const heading0 = useRef(null);
   const heading1 = useRef(null);
-  
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     //container parallax
@@ -32,7 +31,6 @@ export default function Footer() {
         },
       }
     );
-
 
     //heading scroll trigger opening
     gsap.fromTo(
@@ -88,7 +86,11 @@ export default function Footer() {
   };
 
   return (
-    <footer className={styles.center} data-cursor="-invert" ref={footerContainer}>
+    <footer
+      className={styles.center}
+      data-cursor="-invert"
+      ref={footerContainer}
+    >
       <div
         className={`${styles.footerContent} ${styles.contentWidth} ${styles.column}`}
       >
@@ -120,7 +122,11 @@ export default function Footer() {
                       {emailCopied ? "Copied!" : label}
                     </button>
                   ) : (
-                    <Link href={value} target={target || "_self"} rel="noopener noreferrer">
+                    <Link
+                      href={value}
+                      target={target || "_self"}
+                      rel="noopener noreferrer"
+                    >
                       {label}
                     </Link>
                   )}

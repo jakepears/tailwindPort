@@ -1,3 +1,4 @@
+"use client";
 import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
@@ -21,8 +22,8 @@ function Navbar() {
           <Link className={styles.link} ref={linkRef} href="/about">
             About
           </Link>
-          </li>
-          <li>
+        </li>
+        <li>
           <Link className={styles.link} ref={linkRef} href="/personal">
             Personal
           </Link>

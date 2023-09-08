@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import promo from "@assets/vids/promo.webm";
@@ -30,5 +31,4 @@ export default function VideoPlayer({ handleClick, handleScroll }) {
       </video>
     </div>
   );
-};
-
+}

@@ -1,3 +1,4 @@
+"use client";
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -11,7 +12,7 @@ function Reel() {
   const container = useRef(null);
   const heading0 = useRef(null);
   const heading1 = useRef(null);
-  
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const tl = gsap.timeline({
@@ -47,7 +48,11 @@ function Reel() {
   };
 
   return (
-    <div className={styles.reelWrapper} data-cursor="-inverse" data-cursor-text="Full Screen?">
+    <div
+      className={styles.reelWrapper}
+      data-cursor="-inverse"
+      data-cursor-text="Full Screen?"
+    >
       <div
         className={`${styles.reelContainer} ${styles.center} ${styles.column}`}
         ref={container}

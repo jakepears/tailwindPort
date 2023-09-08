@@ -1,13 +1,13 @@
+"use client";
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./News.module.scss";
-import Image from 'next/image'
+import Image from "next/image";
 import caspian from "@assets/vids/caspian.webm";
 import cameraMan from "@assets/images/sebastien-bourguet-ZI1FT0B68K8-unsplash.webp";
 import oregonWelcome from "@assets/images/casey-olsen-2s11AHnb_SU-unsplash.webp";
 import lonelyZone from "@assets/vids/video1.webm";
-
 
 export default function News() {
   const wrapper = useRef(null);
@@ -156,7 +156,7 @@ export default function News() {
         </div>
         <div className={styles.newsMedia} ref={image3}>
           <picture>
-            <source type="image/webp"/>
+            <source type="image/webp" />
             <Image
               src={oregonWelcome}
               alt="welcome sign"
@@ -166,13 +166,7 @@ export default function News() {
           </picture>
         </div>
         <div className={styles.newsMedia} ref={image4}>
-          <video
-            playsInline
-            loop
-            muted
-            autoPlay
-            disablePictureInPicture
-          >
+          <video playsInline loop muted autoPlay disablePictureInPicture>
             <source src={lonelyZone} type="video/webm" />
           </video>
         </div>

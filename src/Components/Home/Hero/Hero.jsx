@@ -1,4 +1,5 @@
-import React, { useRef, useEffect, useState, useMemo } from "react";
+"use client";
+import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import ScrollCTA from "../ScrollCTA/ScrollCTA";
@@ -8,20 +9,17 @@ import s from "./Hero.module.scss";
 
 export default function Hero() {
   gsap.registerPlugin(ScrollTrigger);
- 
-  //Opening animation
   const topSpans = [useRef(null), useRef(null), useRef(null)];
   const headings = [useRef(null), useRef(null), useRef(null)];
-  const backgroundImage = useRef(null);
-  
+  const backgroundImage = useRef();
   useEffect(() => {
     const enterTl = () => {
-    gsap.fromTo(
-      backgroundImage.current,
-      { y: "-30vh", scale: 1.4 },
-      { y: 0, scale: 1, duration: 1.6, ease: "power4.out", delay: 0.26 }
-    );
-  }
+      gsap.fromTo(
+        backgroundImage.current,
+        { y: "-30vh", scale: 1.4 },
+        { y: 0, scale: 1, duration: 1.6, ease: "power4.out", delay: 0.26 }
+      );
+    };
     const animate = () => {
       topSpans.forEach((span) => {
         gsap.fromTo(
@@ -51,21 +49,22 @@ export default function Hero() {
           }
         );
       });
-      gsap.fromTo(backgroundImage.current, 
-        {y: 0, scale: 1, delay: 0.6},
+      gsap.fromTo(
+        backgroundImage.current,
+        { y: 0, scale: 1, delay: 0.6 },
         {
-        y: window.innerHeight * 1.96,
-        scale: 1.4,
-        scrollTrigger: {
-          start: "top",
-          end: "bottom",
-          scrub: true,
-        },
-      });
+          y: window.innerHeight * 1.96,
+          scale: 1.4,
+          scrollTrigger: {
+            start: "start",
+            end: "bottom",
+            scrub: true,
+          },
+        }
+      );
     };
-    setTimeout(() => requestAnimationFrame(animate), 300)
+    setTimeout(() => requestAnimationFrame(animate), 100);
   });
-
   return (
     <section data-cursor="-inverse" className={s.heroContainer}>
       <ScrollCTA />
