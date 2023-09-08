@@ -18,16 +18,16 @@
     "gsap": "^3.11.4",
     "motion": "^10.16.2",
     "mouse-follower": "^1.1.2",
-    "next": "^13.4.13",
+    "next": "^13.4.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.59.2",
     "sharp": "^0.32.4"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.4.13",
     "eslint-config-prettier": "^9.0.0",
     "file-loader": "^6.2.0",
-    "prettier": "2.8.8"
+    "prettier": "2.8.8",
+    "sass": "^1.66.1"
   }
 }
