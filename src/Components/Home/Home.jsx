@@ -7,11 +7,11 @@ export default function Home() {
   const LazyReel = dynamic(() => import("./Reel/Reel"));
   const LazyNew = dynamic(() => import("./News/News"));
   const LazyFooter = dynamic(() => import("./Footer/Footer"));
-  const Hero = useMemo(() => (LazyHero), [LazyHero]);
-  const Work = useMemo(() => (LazyWork), [LazyWork]);
-  const Reel = useMemo(() => (LazyReel), [LazyReel]);
-  const News = useMemo(() => (LazyNew), [LazyNew]);
-  const Footer = useMemo(() => (LazyFooter), [LazyFooter]);
+  const Hero = useMemo(() => LazyHero, [LazyHero]);
+  const Work = useMemo(() => LazyWork, [LazyWork]);
+  const Reel = useMemo(() => LazyReel, [LazyReel]);
+  const News = useMemo(() => LazyNew, [LazyNew]);
+  const Footer = useMemo(() => LazyFooter, [LazyFooter]);
   return (
     <>
       <Hero />
@@ -22,4 +22,3 @@ export default function Home() {
     </>
   );
 }
-
