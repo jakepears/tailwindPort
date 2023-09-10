@@ -70,9 +70,8 @@ export default function Hero() {
       setBgVisible(true);
       setTimeout(() => {
         animation();
-      }, 1000);
+      }, 2500);
     });
-
     requestAnimationFrame(animation);
   });
   return (
@@ -84,7 +83,7 @@ export default function Hero() {
             src={BG}
             alt="Beautiful landscape"
             placeholder="blur"
-            width={1920}
+            width={1440}
             sizes="100vw"
             ref={backgroundImage}
             priority
