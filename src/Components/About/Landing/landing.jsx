@@ -1,11 +1,10 @@
+"use client";
 import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./Landing.module.scss";
 
 export default function Landing() {
-  
-  
   const [emailCopied, setEmailCopied] = useState(false);
   const personalLinks = [
     { label: "Email", value: "hello@jpearson.art" },
@@ -14,16 +13,16 @@ export default function Landing() {
     { label: "Behance", value: "https://www.behance.net/jakepearson5" },
     { label: "GitHub", value: "https://github.com/jakepears" },
   ];
-  
+
   const skewRef = useRef(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const handleEmailCopy = () => {
-    navigator.clipboard.writeText("hello@jpearson.art");
-    setEmailCopied(true);
-    setTimeout(() => setEmailCopied(false), 3000);
-  };
+      navigator.clipboard.writeText("hello@jpearson.art");
+      setEmailCopied(true);
+      setTimeout(() => setEmailCopied(false), 3000);
+    };
     const elements = skewRef.current.querySelectorAll(".fadeInText");
     elements.forEach((element) => {
       gsap.fromTo(
@@ -32,7 +31,8 @@ export default function Landing() {
         {
           opacity: 1,
           y: 0,
-          duration: .8,
+          duration: 1.2,
+          delay: 0.6,
           ease: "power4.in",
           scrollTrigger: {
             trigger: element,

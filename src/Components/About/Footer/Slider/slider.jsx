@@ -1,4 +1,5 @@
 /** @format */
+"use client";
 import React, { useEffect, useContext, useState, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -10,7 +11,9 @@ import genji from "@assets/sliderImages/genji.webp";
 import kendrick from "@assets/sliderImages/kendrick.webp";
 import rocketLeague from "@assets/sliderImages/rl.webp";
 import styles from "./Slider.module.scss";
-import SliderContext from "../SliderContext";
+import dynamic from "next/dynamic";
+
+const SliderContext = dynamic(() => import("../SliderContext"));
 
 function Slider() {
   const imageTrackRef = useRef(null);
@@ -73,7 +76,7 @@ function Slider() {
     return () => {
       window.removeEventListener("mousewheel", handleMouseWheel);
     };
-
+    requestAnimationFrame(handleOnScroll);
   }, [isScrollEnabled, footerRef]);
 
   return (
@@ -92,62 +95,67 @@ function Slider() {
           />
         </div>
         <div className={styles.image}>
-        <Image
-          alt=""
-          className={styles.image}
-          placeholder="blur"
-          quality={100}
-          fill
-          sizes="45vmin"
-          src={don}
-          draggable="false"
-        /></div>
+          <Image
+            alt=""
+            className={styles.image}
+            placeholder="blur"
+            quality={100}
+            fill
+            sizes="45vmin"
+            src={don}
+            draggable="false"
+          />
+        </div>
         <div className={styles.image}>
-        <Image
-          alt=""
-          className={styles.image}
-          placeholder="blur"
-          quality={100}
-          fill
-          sizes="45vmin"
-          src={demon}
-          draggable="false"
-        /></div>
+          <Image
+            alt=""
+            className={styles.image}
+            placeholder="blur"
+            quality={100}
+            fill
+            sizes="45vmin"
+            src={demon}
+            draggable="false"
+          />
+        </div>
       </div>
       <div ref={imageTrackRef2} className={styles.imageTrack2}>
         <div className={styles.image}>
-        <Image
-          alt=""
-          className={styles.image}
-          placeholder="blur"
-          quality={100}
-          fill
-          sizes="45vmin"
-          src={genji}
-          draggable="false"
-        /></div>
+          <Image
+            alt=""
+            className={styles.image}
+            placeholder="blur"
+            quality={100}
+            fill
+            sizes="45vmin"
+            src={genji}
+            draggable="false"
+          />
+        </div>
         <div className={styles.image}>
-        <Image
-          alt=""
-          className={styles.image}
-          placeholder="blur"
-          quality={100}
-          fill
-          sizes="45vmin"
-          src={kendrick}
-          draggable="false"
-        /></div>
+          <Image
+            alt=""
+            className={styles.image}
+            placeholder="blur"
+            quality={100}
+            fill
+            sizes="45vmin"
+            src={kendrick}
+            draggable="false"
+          />
+        </div>
         <div className={styles.image}>
-        <Image
-          alt=""
-          className={styles.image}
-          placeholder="blur"
-          quality={100}
-          fill
-          sizes="45vmin"
-          src={rocketLeague}
-          draggable="false"
-        /></div>
+          <Image
+            alt=""
+            className={styles.image}
+            placeholder="blur"
+            quality={100}
+            fill
+            sizes="45vmin"
+            src={rocketLeague}
+            draggable="false"
+          />
+        </div>
       </div>
     </div>
   );

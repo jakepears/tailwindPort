@@ -1,3 +1,4 @@
+"use client";
 import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
@@ -30,4 +31,3 @@ export default function AboutNav() {
     </nav>
   );
 }
-

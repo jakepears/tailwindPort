@@ -4,7 +4,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import footerVid from "@assets/vids/footer-3.webm";
-import styles from "./Footer.module.scss";
+import s from "./Footer.module.scss";
 import Link from "next/link";
 
 export default function Footer() {
@@ -86,27 +86,21 @@ export default function Footer() {
   };
 
   return (
-    <footer
-      className={styles.center}
-      data-cursor="-invert"
-      ref={footerContainer}
-    >
-      <div
-        className={`${styles.footerContent} ${styles.contentWidth} ${styles.column}`}
-      >
+    <footer className={s.center} data-cursor="-invert" ref={footerContainer}>
+      <div className={`${s.footerContent} ${s.contentWidth} ${s.column}`}>
         <h2>
-          <div className={styles.anim}>
+          <div className={s.anim}>
             <div ref={heading0}>Jake</div>
           </div>
-          <div className={styles.anim}>
+          <div className={s.anim}>
             <div ref={heading1}>Pearson</div>
           </div>
         </h2>
         <p>creativity driven with a passionate focus on innovation.</p>
         <hr />
-        <div className={`${styles.footerFinalP} ${styles.block}`}>
-          <div className={styles.footerList}>
-            <ul className={styles.linkList}>
+        <div className={`${s.footerFinalP} ${s.block}`}>
+          <div className={s.footerList}>
+            <ul className={s.linkList}>
               {personalLinks.map(({ label, value, target }) => (
                 <li key={label}>
                   {label === "Email" ? (
@@ -136,7 +130,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className={styles.background}>
+      <div className={s.background}>
         <video
           playsInline
           loop

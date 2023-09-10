@@ -2,9 +2,13 @@
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import VideoPlayer from "./VideoPlayer";
 import bgVid from "@assets/vids/promo.webm";
 import styles from "./Reel.module.scss";
+import dynamic from "next/dynamic";
+
+const VideoPlayer = dynamic(() => import("./VideoPlayer"), {
+  ssr: false,
+});
 
 function Reel() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -36,6 +40,7 @@ function Reel() {
     return () => {
       tl.kill();
     };
+    requestAnimationFrame(tl);
   }, [container, video, heading0, heading1]);
 
   const handleClick = () => {

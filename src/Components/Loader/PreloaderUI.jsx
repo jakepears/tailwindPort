@@ -12,6 +12,7 @@ export default function PreloaderUI({ updateLoadingProgress, progress }) {
     setTimeout(() => {
       clearInterval(interval);
     });
+    requestAnimationFrame(interval);
   }, [updateLoadingProgress]);
 
   return (

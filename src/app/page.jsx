@@ -1,12 +1,16 @@
-import App from "../Components/App.jsx";
-import PreloaderContext from "../Components/Loader/PreloaderContext.jsx";
 import { Analytics } from "@vercel/analytics/react";
+import dynamic from "next/dynamic";
+
+const PreloaderContext = dynamic(() =>
+  import("../Components/Loader/PreloaderContext")
+);
+const App = dynamic(() => import("../Components/App.jsx"), { useSSR: true });
 
 export default function Home() {
-  return(
-  <PreloaderContext>
-  <App />
-  <Analytics />
-  </PreloaderContext>
-)
+  return (
+    <PreloaderContext>
+      <App />
+      <Analytics />
+    </PreloaderContext>
+  );
 }
