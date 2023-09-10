@@ -7,9 +7,10 @@
   width: 100dvw;
   background-color: #87aab1;
   z-index: 9999;
+  transition: opacity 1s ease-in-out;
 
   .percentage {
-  color: #dedfe1;
-  font-size: 1.5rem;
-}
+    color: #dedfe1;
+    font-size: 1.5rem;
+  }
 }

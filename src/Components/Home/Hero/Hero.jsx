@@ -12,46 +12,47 @@ export default function Hero() {
   const topSpans = [useRef(null), useRef(null), useRef(null)];
   const headings = [useRef(null), useRef(null), useRef(null)];
   const backgroundImage = useRef(null);
-  // const image = useRef(backgroundImage);
-  // const imgLoad = imagesLoaded(image);
-  // const isLoaded = useState(false);
-  // const isAnimationEnd = useState(false);
+  const image = useRef(backgroundImage);
+  const imgLoad = imagesLoaded(image);
+  const isLoaded = useRef(false);
+  const isAnimationEnd = useRef(false);
+  const [bgVisible, setBgVisible] = useState(false);
   useEffect(() => {
-    const animate = () => {
+    const animation = () => {
       gsap.fromTo(
         backgroundImage.current,
         { y: "-30vh", scale: 1.4 },
         { y: 0, scale: 1, duration: 1.6, ease: "power4.out", delay: 0.26 }
       );
+      topSpans.forEach((span) => {
+        gsap.fromTo(
+          span.current,
+          { rotation: 10, opacity: 0, y: -window.innerHeight * 0.4 },
+          {
+            rotation: 0,
+            y: 0,
+            opacity: 1,
+            duration: 1.4,
+            ease: "power4.easeOut",
+            delay: 0.6,
+          }
+        );
+      });
+      headings.forEach((heading) => {
+        gsap.fromTo(
+          heading.current,
+          { rotation: 10, opacity: 0, y: window.innerHeight * 0.5 },
+          {
+            rotation: 0,
+            y: 0,
+            opacity: 1,
+            duration: 1.3,
+            ease: "power4.easeOut",
+            delay: 0.4,
+          }
+        );
+      });
     };
-    topSpans.forEach((span) => {
-      gsap.fromTo(
-        span.current,
-        { rotation: 10, opacity: 0, y: -window.innerHeight * 0.4 },
-        {
-          rotation: 0,
-          y: 0,
-          opacity: 1,
-          duration: 1.4,
-          ease: "power4.easeOut",
-          delay: 0.6,
-        }
-      );
-    });
-    headings.forEach((heading) => {
-      gsap.fromTo(
-        heading.current,
-        { rotation: 10, opacity: 0, y: window.innerHeight * 0.5 },
-        {
-          rotation: 0,
-          y: 0,
-          opacity: 1,
-          duration: 1.3,
-          ease: "power4.easeOut",
-          delay: 0.4,
-        }
-      );
-    });
     gsap.fromTo(
       backgroundImage.current,
       { y: 0, scale: 1, delay: 0.6 },
@@ -59,26 +60,20 @@ export default function Hero() {
         y: window.innerHeight * 1.96,
         scale: 1.4,
         scrollTrigger: {
-          start: "top",
+          start: "start",
           end: "bottom",
           scrub: true,
         },
       }
     );
-    // const fireAnimation = () => {
-    //   const tl = gsap.timeline({
-    //     onComplete: () => {
-    //       isAnimationEnd = false;
-    //       if (isLoaded) animation();
-    //     },
-    //   });
-    //   imgLoad.on("always", function () {
-    //     isLoaded = false;
-    //     if (isAnimationEnd) animation();
-    //   });
-    // };
-    // fireAnimation();
-    setTimeout(() => requestAnimationFrame(animate), 200);
+    imgLoad.on("always", () => {
+      setBgVisible(true);
+      setTimeout(() => {
+        animation();
+      }, 1000);
+    });
+
+    requestAnimationFrame(animation);
   });
   return (
     <section data-cursor="-inverse" className={s.heroContainer}>
