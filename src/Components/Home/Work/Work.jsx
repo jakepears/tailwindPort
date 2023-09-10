@@ -104,7 +104,7 @@ export default function Work() {
         y: 110,
         scrollTrigger: {
           velocity: 2,
-          start: "top bottom",
+          start: "start end",
           invalidateOnRefresh: true,
           trigger: beatsRef.current,
           ease: "power4.out",

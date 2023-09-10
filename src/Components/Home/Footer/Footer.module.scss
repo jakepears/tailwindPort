@@ -2,6 +2,7 @@
   color: #dedfe1;
   text-decoration: none;
 }
+
 .center button {
   background: none;
   border: none;
@@ -166,3 +167,43 @@ footer .background video {
   display: flex;
   flex-direction: column;
 }
+
+// @media (max-width: 768px) {
+//   .center {
+//     height: 100dvh;
+//   }
+
+//   .footerContent {
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//   }
+
+//   .footerList ul {
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     gap: 1rem;
+//   }
+
+//   .linkList {
+//     margin-top: 5dvh;
+//     text-size-adjust: auto;
+//   }
+
+//   .footerFinalP {
+//     text-align: center;
+//   }
+
+//   .footerContent {
+//     padding: 0 0;
+//     height: 100dvh;
+
+//     img,
+//     video {
+//       object-fit: contain;
+//       height: 100%;
+//       width: 100%;
+//     }
+//   }
+// }
