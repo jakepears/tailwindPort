@@ -115,17 +115,17 @@
   flex-direction: column;
 }
 
-// @media (max-width: 768px) {
-//   .newsContainer {
-//     padding: 0 0;
-//     height: 100dvh;
+@media (max-width: 768px) {
+  .newsContainer {
+    padding: 0 0;
+    height: 100dvh;
 
-//     img,
-//     video {
-//       object-fit: contain;
-//       height: 100%;
-//       width: 100%;
-//     }
-//   }
+    img,
+    video {
+      object-fit: contain;
+      height: 100%;
+      width: 100%;
+    }
+  }
 
-// }
+}

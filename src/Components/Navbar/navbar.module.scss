@@ -57,14 +57,14 @@
   text-decoration: none;
 }
 
-// @media screen and (max-width: 300px) {
-//   .nav {
-//     top: 1dvh;
-//     right: 3dvw;
-//     font-size: 3rem;
+@media screen and (max-width: 300px) {
+  .nav {
+    top: 1dvh;
+    right: 3dvw;
+    font-size: 3rem;
 
-//     & ul {
-//       gap: 1rem;
-//     }
-//   }
-// }
+    & ul {
+      gap: 1rem;
+    }
+  }
+}
