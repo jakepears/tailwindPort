@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useContext } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
@@ -72,7 +72,7 @@ export default function Hero() {
       setBgVisible(true);
       setTimeout(() => {
         animation();
-      }, 2500);
+      }, 100);
     });
     requestAnimationFrame(animation);
   });
