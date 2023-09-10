@@ -130,41 +130,29 @@ export default function News() {
           />
         </div>
         <div className={styles.newsMedia} ref={image1}>
-          <picture>
-            <source
-              src="https://images.pexels.com/photos/2121665/pexels-photo-2121665.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-              type="image/webp"
-            />
-            <Image
-              src="https://images.pexels.com/photos/2121665/pexels-photo-2121665.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-              loading="lazy"
-              height={750}
-              width={1260}
-              alt="luh shawty sign"
-            />
-          </picture>
+          <Image
+            src="https://images.pexels.com/photos/2121665/pexels-photo-2121665.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            loading="lazy"
+            height={750}
+            width={1260}
+            alt="luh shawty sign"
+          />
         </div>
         <div className={styles.newsMedia} ref={image2}>
-          <picture id="3643671" data-v-4a179df6="">
-            <source type="image/webp" />
-            <Image
-              src={cameraMan}
-              placeholder="blur"
-              alt="a guy holding a camera"
-              loading="lazy"
-            />
-          </picture>
+          <Image
+            src={cameraMan}
+            placeholder="blur"
+            alt="a guy holding a camera"
+            loading="lazy"
+          />
         </div>
         <div className={styles.newsMedia} ref={image3}>
-          <picture>
-            <source type="image/webp" />
-            <Image
-              src={oregonWelcome}
-              alt="welcome sign"
-              placeholder="blur"
-              loading="lazy"
-            />
-          </picture>
+          <Image
+            src={oregonWelcome}
+            alt="welcome sign"
+            placeholder="blur"
+            loading="lazy"
+          />
         </div>
         <div className={styles.newsMedia} ref={image4}>
           <video playsInline loop muted autoPlay disablePictureInPicture>
