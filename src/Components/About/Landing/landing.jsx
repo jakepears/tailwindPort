@@ -51,7 +51,7 @@ export default function Landing() {
       >
         <h2 className={styles.topHeader}>Visual Storyteller</h2>
         <h3 className={styles.topText}>
-          I'm a designer passionate about translating stories and ideas into
+          I'm a developer passionate about translating stories and ideas into
           engaging interactive experiences. Whether it's through motion, UX, or
           visuals, I thrive on finding ways to connect with people through art.
           <br />
