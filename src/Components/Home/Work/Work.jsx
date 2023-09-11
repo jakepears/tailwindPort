@@ -3,8 +3,8 @@ import React, { useRef, useEffect, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import WK1 from "@assets/vids/primera.webm";
-import WK2 from "@assets/vids/reaplyCrop.webm";
+import primeraVid from "@assets/vids/primera.webm";
+import reaplyVid from "@assets/vids/reaplyCrop.webm";
 import beats from "@assets/vids/beats-ad.webm";
 import primeraSC from "@assets/images/primera-sc.webp";
 import reaplyImg from "@assets/images/reaplyImg.webp";
@@ -169,9 +169,11 @@ export default function Work() {
             muted
             disablePictureInPicture=""
             className={styles.video}
-            src={WK1}
+            src={primeraVid}
             type="video/webm"
-          />
+          >
+            <source src={primeraVid} type="video/webm" />
+          </video>
           <div className={styles.textWrapper}>
             <p ref={(el) => (textAnims.current[0] = el)} className="textAnim">
               <span>
@@ -212,9 +214,11 @@ export default function Work() {
               muted
               disablePictureInPicture=""
               className={styles.video}
-              src={WK2}
+              src={reaplyVid}
               type="video/webm"
-            />
+            >
+              <source src={reaplyVid} type="video/webm" />
+            </video>
             <div className={styles.textWrapper}>
               <p ref={(el) => (textAnims.current[1] = el)} className="textAnim">
                 <span>
@@ -249,7 +253,9 @@ export default function Work() {
             className={styles.video}
             src={beats}
             type="video/webm"
-          />
+          >
+            <source src={beats} type="video/webm" />
+          </video>
           <div className={styles.textWrapper}>
             <p ref={(el) => (textAnims.current[2] = el)} className="textAnim">
               <span>

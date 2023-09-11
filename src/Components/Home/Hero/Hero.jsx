@@ -72,7 +72,7 @@ export default function Hero() {
       setBgVisible(true);
       setTimeout(() => {
         animation();
-      }, 100);
+      });
     });
     requestAnimationFrame(animation);
   });

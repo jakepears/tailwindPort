@@ -15,10 +15,10 @@ export default function App() {
 
   return (
     <div className={`${styles.center} ${styles.column}`}>
-      <Navbar />
-      <Cursor />
-      <Scroll />
       <Home />
+      <Navbar />
+      <Scroll />
+      <Cursor />
     </div>
   );
 }

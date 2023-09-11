@@ -1,32 +1,28 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  swcMinify: true,
+  reactStrictMode: true,
   images: {
     formats: ["image/webp"],
     domains: ["images.unsplash.com", "images.pexels.com"],
   },
-  webpack(config, { isServer }) {
-    const prefix = config.assetPrefix ?? config.basePath ?? "";
+  webpack(config, options) {
     config.module.rules.push({
       test: /\.webm$/,
       use: [
         {
           loader: "file-loader",
           options: {
-            publicPath: `${prefix}/_next/static/media/`,
-            outputPath: `${isServer ? "../" : ""}static/media/`,
+            publicPath: "/_next/static/videos/",
+            outputPath: "static/videos/",
             name: "[name].[hash].[ext]",
           },
         },
       ],
     });
+
     return config;
   },
-
-  reactStrictMode: true,
-
-  swcMinify: true,
 };
 
-module.exports = nextConfig;
-
-const path = require("path");
+export default nextConfig;
