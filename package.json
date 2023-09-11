@@ -29,6 +29,12 @@
     "eslint-config-prettier": "^9.0.0",
     "file-loader": "^6.2.0",
     "prettier": "2.8.8",
-    "sass": "^1.66.1"
+    "sass": "^1.66.1",
+    "bun-types": "latest"
+  },
+  "module": "index.ts",
+  "type": "module",
+  "peerDependencies": {
+    "typescript": "^5.0.0"
   }
 }
