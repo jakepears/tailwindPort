@@ -11,9 +11,7 @@ import genji from "@assets/sliderImages/genji.webp";
 import kendrick from "@assets/sliderImages/kendrick.webp";
 import rocketLeague from "@assets/sliderImages/rl.webp";
 import styles from "./Slider.module.scss";
-import dynamic from "next/dynamic";
-
-const SliderContext = dynamic(() => import("../SliderContext"));
+import SliderContext from "../SliderContext";
 
 function Slider() {
   const imageTrackRef = useRef(null);

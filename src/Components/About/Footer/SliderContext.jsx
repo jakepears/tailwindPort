@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import { createContext } from "react";
 
-export const SliderContext = createContext(null);
+export default createContext(null);

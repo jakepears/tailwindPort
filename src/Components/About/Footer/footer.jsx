@@ -1,10 +1,8 @@
 "use client";
 import React, { useRef } from "react";
 import styles from "./Footer.module.scss";
-import dynamic from "next/dynamic";
-
-const Slider = dynamic(() => import("./Slider/Slider"));
-const SliderContext = dynamic(() => import("./SliderContext"));
+import SliderContext from "./SliderContext";
+import Slider from "./Slider/Slider";
 
 export default function Footer() {
   const footerRef = useRef(null);

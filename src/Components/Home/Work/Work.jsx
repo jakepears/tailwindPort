@@ -3,11 +3,11 @@ import React, { useRef, useEffect, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import primeraVid from "@assets/vids/primera.webm";
-import reaplyVid from "@assets/vids/reaplyCrop.webm";
-import beats from "@assets/vids/beats-ad.webm";
-import primeraSC from "@assets/images/primera-sc.webp";
-import reaplyImg from "@assets/images/reaplyImg.webp";
+import primeraVid from "public/assets/vids/primera.webm";
+import reaplyVid from "public/assets/vids/reaplyCrop.webm";
+import beats from "public/assets/vids/beats-ad.webm";
+import primeraSC from "public/assets/images/primera-sc.webp";
+import reaplyImg from "public/assets/images/reaplyImg.webp";
 import styles from "./Work.module.scss";
 
 export default function Work() {
