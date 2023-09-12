@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/bundle-analyzer": "^13.4.13",
+    "@next/bundle-analyzer": "^13.4.19",
     "@studio-freight/lenis": "^1.0.14",
     "@vercel/analytics": "^1.0.1",
     "eslint": "8.41.0",
@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.4.13",
+    "bun": "^1.0.0",
     "eslint-config-prettier": "^9.0.0",
     "file-loader": "^6.2.0",
     "prettier": "2.8.8",
