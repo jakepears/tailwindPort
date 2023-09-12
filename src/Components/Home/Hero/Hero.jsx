@@ -20,6 +20,21 @@ export default function Hero() {
   const isAnimationEnd = useRef(false);
   const [bgVisible, setBgVisible] = useState(false);
   useEffect(() => {
+    const st = () => {
+      gsap.fromTo(
+        backgroundImage.current,
+        { y: 0, scale: 1, delay: 0.6 },
+        {
+          y: window.innerHeight * 1.96,
+          scale: 1.4,
+          scrollTrigger: {
+            start: "top",
+            end: "bottom",
+            scrub: true,
+          },
+        }
+      );
+    };
     const animation = () => {
       gsap.fromTo(
         backgroundImage.current,
@@ -55,26 +70,14 @@ export default function Hero() {
         );
       });
     };
-    gsap.fromTo(
-      backgroundImage.current,
-      { y: 0, scale: 1, delay: 0.6 },
-      {
-        y: window.innerHeight * 1.96,
-        scale: 1.4,
-        scrollTrigger: {
-          start: "start",
-          end: "bottom",
-          scrub: true,
-        },
-      }
-    );
     imgLoad.on("always", () => {
       setBgVisible(true);
       setTimeout(() => {
+        st();
         animation();
       });
     });
-    requestAnimationFrame(animation);
+    requestAnimationFrame(st, animation);
   });
   return (
     <section data-cursor="-inverse" className={s.heroContainer}>
