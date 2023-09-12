@@ -1,8 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
-
-const PreloaderUI = dynamic(() => import("./PreloaderUI"));
+import PreloaderUI from "./PreloaderUI";
 
 export default function PreloaderContext({ children }) {
   const [loading, setLoading] = useState(true);
