@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={myFont.className}>
       <head>
-        <link rel="shortcut icon" href="/Pearson.webp" />
+        <link rel="shortcut icon" href="/Pearson.webp" type="image/webp" />
       </head>
       <body>{children}</body>
     </html>
