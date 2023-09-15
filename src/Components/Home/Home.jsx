@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import dynamic from "next/dynamic";
-
+// this for for gitpush green button
 export default function Home() {
   const LazyHero = dynamic(() => import("./Hero/Hero"));
   const LazyWork = dynamic(() => import("./Work/Work"));
