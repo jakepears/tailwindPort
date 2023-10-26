@@ -1,21 +1,27 @@
 "use client";
-import { useState, useEffect } from "react";
-import dynamic from "next/dynamic";
+import { useContext, useEffect } from "react";
+import { getCookie } from "cookies-next";
+import usePreloader from "./usePreloader";
 import PreloaderUI from "./PreloaderUI";
 
 export default function PreloaderContext({ children }) {
-  const [loading, setLoading] = useState(true);
-  const [progress, setProgress] = useState(0);
+  const { loading, progress, setProgress } = usePreloader();
+
+  const showPreloader = !getCookie("preloaderShown");
 
   useEffect(() => {
-    if (progress === 99) {
+    if (progress === 100) {
       setLoading(false);
     }
   }, [progress]);
   return (
     <>
-      {loading && (
-        <PreloaderUI updateLoadingProgress={setProgress} progress={progress} />
+      {showPreloader && (
+        <PreloaderUI
+          loading={loading}
+          progress={progress}
+          setProgress={setProgress}
+        />
       )}
       {children}
     </>
