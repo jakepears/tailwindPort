@@ -1,7 +1,7 @@
 /** @format */
 import React, { useMemo } from "react";
 import dynamic from "next/dynamic";
-import styles from "../styles/index.scss";
+import "../styles/globals.css";
 
 export default function App() {
   const LazyHome = dynamic(() => import("../Components/Home/Home"));
@@ -14,7 +14,7 @@ export default function App() {
   const Navbar = useMemo(() => LazyNavbar, [LazyNavbar]);
 
   return (
-    <div className={`${styles.center} ${styles.column}`}>
+    <div className="flex flex-col items-center justify-center">
       <Home />
       <Scroll />
       <Cursor />

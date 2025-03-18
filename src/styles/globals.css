@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --big-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+    --smallest-font-size: 0.75rem;
+  }
+
+  @media screen and (max-width: 968px) {
+    :root {
+      --big-font-size: 2.5rem;
+      --h1-font-size: 1.875rem;
+      --h2-font-size: 1.25rem;
+      --h3-font-size: 1.125rem;
+      --normal-font-size: 0.875rem;
+      --small-font-size: 0.813rem;
+      --smaller-font-size: 0.75rem;
+      --smallest-font-size: 0.688rem;
+    }
+  }
+
+  html {
+    @apply h-full font-sans antialiased;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  html::-webkit-scrollbar {
+    display: none;
+  }
+
+  html::selection {
+    @apply bg-accent;
+  }
+
+  body {
+    @apply min-h-full overflow-auto text-rendering-optimize overscroll-none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+  #root {
+    @apply w-full sticky;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-normal;
+  }
+
+  h1 {
+    @apply text-[17.36111dvw] leading-[16dvw] font-light;
+  }
+
+  h2 {
+    @apply text-[10dvw] font-light;
+  }
+}
+
+@layer components {
+  .icon {
+    @apply h-4 w-4 mr-2.5;
+  }
+
+  .contentWidth {
+    @apply w-[84dvw] max-w-[84dvw];
+  }
+
+  .center {
+    @apply flex items-center justify-center;
+  }
+
+  .anim {
+    @apply overflow-hidden;
+  }
+
+  .row {
+    @apply flex flex-row;
+  }
+
+  .column {
+    @apply flex flex-col;
+  }
+}
+
+/* Lenis styles */
+html.lenis {
+  @apply h-auto;
+}
+
+.lenis.lenis-smooth {
+  @apply scroll-auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  @apply overscroll-contain;
+}
+
+.lenis.lenis-stopped {
+  @apply overflow-hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  @apply pointer-events-none;
+}
